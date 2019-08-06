@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0597EC5022F9651600300305 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0597EC4F22F9651600300305 /* AppDelegate.swift */; };
+		0597EC5222F9651600300305 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0597EC5122F9651600300305 /* ViewController.swift */; };
+		0597EC5522F9651600300305 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0597EC5322F9651600300305 /* Main.storyboard */; };
+		0597EC5722F9651800300305 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0597EC5622F9651800300305 /* Assets.xcassets */; };
+		0597EC5A22F9651800300305 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0597EC5822F9651800300305 /* LaunchScreen.storyboard */; };
+		0597EC7022F965F000300305 /* PJSIP.h in Headers */ = {isa = PBXBuildFile; fileRef = 0597EC6E22F965F000300305 /* PJSIP.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0597EC7322F965F000300305 /* PJSIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0597EC6C22F965F000300305 /* PJSIP.framework */; };
+		0597EC7422F965F000300305 /* PJSIP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0597EC6C22F965F000300305 /* PJSIP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0597EC7922F965F500300305 /* Pods_ipjsystest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0597EC6522F965DA00300305 /* Pods_ipjsystest.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0597EC7122F965F000300305 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0597EC4422F9651600300305 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0597EC6B22F965F000300305;
+			remoteInfo = PJSIP;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0597EC7822F965F000300305 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0597EC7422F965F000300305 /* PJSIP.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0597EC4C22F9651600300305 /* PJSIP-Carthage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PJSIP-Carthage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0597EC4F22F9651600300305 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0597EC5122F9651600300305 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0597EC5422F9651600300305 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0597EC5622F9651800300305 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0597EC5922F9651800300305 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0597EC5B22F9651800300305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0597EC6522F965DA00300305 /* Pods_ipjsystest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pods_ipjsystest.framework; sourceTree = "<group>"; };
+		0597EC6C22F965F000300305 /* PJSIP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PJSIP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0597EC6E22F965F000300305 /* PJSIP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PJSIP.h; sourceTree = "<group>"; };
+		0597EC6F22F965F000300305 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0597EC4922F9651600300305 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0597EC7322F965F000300305 /* PJSIP.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0597EC6922F965F000300305 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0597EC7922F965F500300305 /* Pods_ipjsystest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0597EC4322F9651600300305 = {
+			isa = PBXGroup;
+			children = (
+				0597EC4E22F9651600300305 /* PJSIP-Carthage */,
+				0597EC6D22F965F000300305 /* PJSIP */,
+				0597EC4D22F9651600300305 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0597EC4D22F9651600300305 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0597EC4C22F9651600300305 /* PJSIP-Carthage.app */,
+				0597EC6C22F965F000300305 /* PJSIP.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0597EC4E22F9651600300305 /* PJSIP-Carthage */ = {
+			isa = PBXGroup;
+			children = (
+				0597EC6522F965DA00300305 /* Pods_ipjsystest.framework */,
+				0597EC4F22F9651600300305 /* AppDelegate.swift */,
+				0597EC5122F9651600300305 /* ViewController.swift */,
+				0597EC5322F9651600300305 /* Main.storyboard */,
+				0597EC5622F9651800300305 /* Assets.xcassets */,
+				0597EC5822F9651800300305 /* LaunchScreen.storyboard */,
+				0597EC5B22F9651800300305 /* Info.plist */,
+			);
+			path = "PJSIP-Carthage";
+			sourceTree = "<group>";
+		};
+		0597EC6D22F965F000300305 /* PJSIP */ = {
+			isa = PBXGroup;
+			children = (
+				0597EC6E22F965F000300305 /* PJSIP.h */,
+				0597EC6F22F965F000300305 /* Info.plist */,
+			);
+			path = PJSIP;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0597EC6722F965F000300305 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0597EC7022F965F000300305 /* PJSIP.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0597EC4B22F9651600300305 /* PJSIP-Carthage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0597EC5E22F9651800300305 /* Build configuration list for PBXNativeTarget "PJSIP-Carthage" */;
+			buildPhases = (
+				0597EC4822F9651600300305 /* Sources */,
+				0597EC4922F9651600300305 /* Frameworks */,
+				0597EC4A22F9651600300305 /* Resources */,
+				0597EC7822F965F000300305 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0597EC7222F965F000300305 /* PBXTargetDependency */,
+			);
+			name = "PJSIP-Carthage";
+			productName = "PJSIP-Carthage";
+			productReference = 0597EC4C22F9651600300305 /* PJSIP-Carthage.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0597EC6B22F965F000300305 /* PJSIP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0597EC7522F965F000300305 /* Build configuration list for PBXNativeTarget "PJSIP" */;
+			buildPhases = (
+				0597EC6722F965F000300305 /* Headers */,
+				0597EC6822F965F000300305 /* Sources */,
+				0597EC6922F965F000300305 /* Frameworks */,
+				0597EC6A22F965F000300305 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PJSIP;
+			productName = PJSIP;
+			productReference = 0597EC6C22F965F000300305 /* PJSIP.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0597EC4422F9651600300305 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = "Devansh Vyas";
+				TargetAttributes = {
+					0597EC4B22F9651600300305 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					0597EC6B22F965F000300305 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = 0597EC4722F9651600300305 /* Build configuration list for PBXProject "PJSIP-Carthage" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0597EC4322F9651600300305;
+			productRefGroup = 0597EC4D22F9651600300305 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0597EC4B22F9651600300305 /* PJSIP-Carthage */,
+				0597EC6B22F965F000300305 /* PJSIP */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0597EC4A22F9651600300305 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0597EC5A22F9651800300305 /* LaunchScreen.storyboard in Resources */,
+				0597EC5722F9651800300305 /* Assets.xcassets in Resources */,
+				0597EC5522F9651600300305 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0597EC6A22F965F000300305 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0597EC4822F9651600300305 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0597EC5222F9651600300305 /* ViewController.swift in Sources */,
+				0597EC5022F9651600300305 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0597EC6822F965F000300305 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0597EC7222F965F000300305 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0597EC6B22F965F000300305 /* PJSIP */;
+			targetProxy = 0597EC7122F965F000300305 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0597EC5322F9651600300305 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0597EC5422F9651600300305 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0597EC5822F9651800300305 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0597EC5922F9651800300305 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0597EC5C22F9651800300305 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0597EC5D22F9651800300305 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0597EC5F22F9651800300305 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PJSIP-Carthage",
+				);
+				INFOPLIST_FILE = "PJSIP-Carthage/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.solutionanalysts.PJSIP-Carthage";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0597EC6022F9651800300305 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PJSIP-Carthage",
+				);
+				INFOPLIST_FILE = "PJSIP-Carthage/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.solutionanalysts.PJSIP-Carthage";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0597EC7622F965F000300305 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PJSIP-Carthage",
+				);
+				INFOPLIST_FILE = PJSIP/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.solutionanalysts.PJSIP;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0597EC7722F965F000300305 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PJSIP-Carthage",
+				);
+				INFOPLIST_FILE = PJSIP/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.solutionanalysts.PJSIP;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0597EC4722F9651600300305 /* Build configuration list for PBXProject "PJSIP-Carthage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0597EC5C22F9651800300305 /* Debug */,
+				0597EC5D22F9651800300305 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0597EC5E22F9651800300305 /* Build configuration list for PBXNativeTarget "PJSIP-Carthage" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0597EC5F22F9651800300305 /* Debug */,
+				0597EC6022F9651800300305 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0597EC7522F965F000300305 /* Build configuration list for PBXNativeTarget "PJSIP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0597EC7622F965F000300305 /* Debug */,
+				0597EC7722F965F000300305 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0597EC4422F9651600300305 /* Project object */;
+}
