@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0597EC6B22F965F000300305"
-               BuildableName = "PJSIP_Carthage.framework"
-               BlueprintName = "PJSIP-Carthage"
+               BlueprintIdentifier = "05D97ACE22FAA9DF0094F86C"
+               BuildableName = "PJSIPCarthage.framework"
+               BlueprintName = "PJSIPCarthage"
                ReferencedContainer = "container:PJSIP-Carthage.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0597EC6B22F965F000300305"
-            BuildableName = "PJSIP_Carthage.framework"
-            BlueprintName = "PJSIP-Carthage"
+            BlueprintIdentifier = "05D97ACE22FAA9DF0094F86C"
+            BuildableName = "PJSIPCarthage.framework"
+            BlueprintName = "PJSIPCarthage"
             ReferencedContainer = "container:PJSIP-Carthage.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0597EC6B22F965F000300305"
-            BuildableName = "PJSIP_Carthage.framework"
-            BlueprintName = "PJSIP-Carthage"
+            BlueprintIdentifier = "05D97ACE22FAA9DF0094F86C"
+            BuildableName = "PJSIPCarthage.framework"
+            BlueprintName = "PJSIPCarthage"
             ReferencedContainer = "container:PJSIP-Carthage.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
