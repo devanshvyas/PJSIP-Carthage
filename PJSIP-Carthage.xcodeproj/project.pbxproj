@@ -7,319 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0529C22C22F9BA0D00FA3E8F /* opus_custom.h in Headers */ = {isa = PBXBuildFile; fileRef = 0529C22922F9BA0B00FA3E8F /* opus_custom.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0529C22D22F9BA0D00FA3E8F /* opus_defines.h in Headers */ = {isa = PBXBuildFile; fileRef = 0529C22A22F9BA0B00FA3E8F /* opus_defines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0529C22E22F9BA0D00FA3E8F /* opus_multistream.h in Headers */ = {isa = PBXBuildFile; fileRef = 0529C22722F9BA0B00FA3E8F /* opus_multistream.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0529C22F22F9BA0D00FA3E8F /* opus_projection.h in Headers */ = {isa = PBXBuildFile; fileRef = 0529C22822F9BA0B00FA3E8F /* opus_projection.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0529C23022F9BA0D00FA3E8F /* opus_types.h in Headers */ = {isa = PBXBuildFile; fileRef = 0529C22B22F9BA0B00FA3E8F /* opus_types.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0529C23122F9BA0D00FA3E8F /* opus.h in Headers */ = {isa = PBXBuildFile; fileRef = 0529C22622F9BA0B00FA3E8F /* opus.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0597EC7022F965F000300305 /* PJSIP.h in Headers */ = {isa = PBXBuildFile; fileRef = 0597EC6E22F965F000300305 /* PJSIP.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0597EC7322F965F000300305 /* PJSIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0597EC6C22F965F000300305 /* PJSIP.framework */; };
 		0597EC7422F965F000300305 /* PJSIP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0597EC6C22F965F000300305 /* PJSIP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		059C1DB322FA8D0E00ED09CB /* sock.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D5122FA8D0D00ED09CB /* sock.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DB422FA8D0E00ED09CB /* ip_helper.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D5222FA8D0D00ED09CB /* ip_helper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DB522FA8D0E00ED09CB /* file_io.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D5322FA8D0D00ED09CB /* file_io.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DB622FA8D0E00ED09CB /* time.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D5522FA8D0D00ED09CB /* time.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DB722FA8D0E00ED09CB /* os_sunos.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D5622FA8D0D00ED09CB /* os_sunos.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DB822FA8D0E00ED09CB /* m_m68k.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D5722FA8D0D00ED09CB /* m_m68k.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DB922FA8D0E00ED09CB /* malloc.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D5822FA8D0D00ED09CB /* malloc.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DBA22FA8D0E00ED09CB /* cc_msvc.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D5922FA8D0D00ED09CB /* cc_msvc.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DBB22FA8D0E00ED09CB /* m_armv4.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D5A22FA8D0D00ED09CB /* m_armv4.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DBC22FA8D0E00ED09CB /* limits.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D5B22FA8D0D00ED09CB /* limits.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DBD22FA8D0E00ED09CB /* os_win32_wince.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D5C22FA8D0D00ED09CB /* os_win32_wince.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DBE22FA8D0E00ED09CB /* cc_armcc.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D5D22FA8D0D00ED09CB /* cc_armcc.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DBF22FA8D0E00ED09CB /* m_powerpc.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D5E22FA8D0D00ED09CB /* m_powerpc.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DC022FA8D0E00ED09CB /* os_rtems.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D5F22FA8D0D00ED09CB /* os_rtems.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DC122FA8D0E00ED09CB /* high_precision.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D6022FA8D0D00ED09CB /* high_precision.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DC222FA8D0E00ED09CB /* cc_codew.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D6122FA8D0D00ED09CB /* cc_codew.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DC322FA8D0E00ED09CB /* cc_gcce.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D6222FA8D0D00ED09CB /* cc_gcce.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DC422FA8D0E00ED09CB /* m_x86_64.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D6322FA8D0D00ED09CB /* m_x86_64.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DC622FA8D0E00ED09CB /* setjmp.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D6522FA8D0D00ED09CB /* setjmp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DC722FA8D0E00ED09CB /* os_darwinos.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D6622FA8D0D00ED09CB /* os_darwinos.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DC822FA8D0E00ED09CB /* os_winuwp.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D6722FA8D0D00ED09CB /* os_winuwp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DC922FA8D0E00ED09CB /* os_linux.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D6822FA8D0D00ED09CB /* os_linux.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DCA22FA8D0E00ED09CB /* stdfileio.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D6922FA8D0D00ED09CB /* stdfileio.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DCB22FA8D0E00ED09CB /* m_alpha.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D6A22FA8D0D00ED09CB /* m_alpha.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DCC22FA8D0E00ED09CB /* ctype.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D6B22FA8D0D00ED09CB /* ctype.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DCD22FA8D0E00ED09CB /* cc_mwcc.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D6C22FA8D0D00ED09CB /* cc_mwcc.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DCE22FA8D0E00ED09CB /* os_win32.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D6D22FA8D0D00ED09CB /* os_win32.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DCF22FA8D0E00ED09CB /* os_symbian.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D6E22FA8D0D00ED09CB /* os_symbian.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DD022FA8D0E00ED09CB /* rand.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D6F22FA8D0D00ED09CB /* rand.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DD122FA8D0E00ED09CB /* errno.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D7022FA8D0D00ED09CB /* errno.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DD222FA8D0E00ED09CB /* stdarg.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D7122FA8D0D00ED09CB /* stdarg.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DD322FA8D0E00ED09CB /* size_t.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D7222FA8D0D00ED09CB /* size_t.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DD522FA8D0E00ED09CB /* os_auto.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D7422FA8D0D00ED09CB /* os_auto.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DD622FA8D0E00ED09CB /* m_i386.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D7522FA8D0D00ED09CB /* m_i386.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DD722FA8D0E00ED09CB /* assert.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D7622FA8D0D00ED09CB /* assert.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DD822FA8D0E00ED09CB /* cc_gcc.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D7722FA8D0D00ED09CB /* cc_gcc.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DD922FA8D0E00ED09CB /* socket.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D7822FA8D0D00ED09CB /* socket.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DDA22FA8D0E00ED09CB /* m_auto.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D7922FA8D0D00ED09CB /* m_auto.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DDB22FA8D0E00ED09CB /* os_winphone8.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D7A22FA8D0D00ED09CB /* os_winphone8.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DDC22FA8D0E00ED09CB /* os_palmos.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D7B22FA8D0D00ED09CB /* os_palmos.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DDD22FA8D0E00ED09CB /* string.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D7C22FA8D0D00ED09CB /* string.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DDE22FA8D0E00ED09CB /* m_sparc.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D7D22FA8D0D00ED09CB /* m_sparc.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DDF22FA8D0E00ED09CB /* pool.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D7E22FA8D0D00ED09CB /* pool.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DE022FA8D0E00ED09CB /* ssl_sock.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D7F22FA8D0D00ED09CB /* ssl_sock.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DE122FA8D0E00ED09CB /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D8022FA8D0D00ED09CB /* config.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DE222FA8D0E00ED09CB /* sock_select.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D8122FA8D0D00ED09CB /* sock_select.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DE322FA8D0E00ED09CB /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D8222FA8D0D00ED09CB /* types.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DE422FA8D0E00ED09CB /* limits.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D8322FA8D0D00ED09CB /* limits.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DE522FA8D0E00ED09CB /* config_site_sample.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D8422FA8D0D00ED09CB /* config_site_sample.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DE622FA8D0E00ED09CB /* lock.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D8522FA8D0D00ED09CB /* lock.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DE722FA8D0E00ED09CB /* config_site.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D8622FA8D0D00ED09CB /* config_site.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DE822FA8D0E00ED09CB /* os.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D8722FA8D0D00ED09CB /* os.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DE922FA8D0E00ED09CB /* guid.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D8822FA8D0D00ED09CB /* guid.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DEA22FA8D0E00ED09CB /* fifobuf.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D8922FA8D0D00ED09CB /* fifobuf.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DEB22FA8D0E00ED09CB /* pool_i.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D8A22FA8D0D00ED09CB /* pool_i.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DEC22FA8D0E00ED09CB /* list_i.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D8B22FA8D0D00ED09CB /* list_i.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DED22FA8D0E00ED09CB /* except.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D8C22FA8D0D00ED09CB /* except.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DEE22FA8D0E00ED09CB /* file_access.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D8D22FA8D0D00ED09CB /* file_access.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DEF22FA8D0E00ED09CB /* timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D8E22FA8D0D00ED09CB /* timer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DF022FA8D0E00ED09CB /* unicode.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D8F22FA8D0D00ED09CB /* unicode.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DF122FA8D0E00ED09CB /* list.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D9022FA8D0D00ED09CB /* list.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DF222FA8D0E00ED09CB /* rbtree.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D9122FA8D0D00ED09CB /* rbtree.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DF322FA8D0E00ED09CB /* activesock.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D9222FA8D0D00ED09CB /* activesock.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DF422FA8D0E00ED09CB /* log.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D9322FA8D0D00ED09CB /* log.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DF522FA8D0E00ED09CB /* ctype.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D9422FA8D0D00ED09CB /* ctype.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DF622FA8D0E00ED09CB /* sock_qos.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D9522FA8D0D00ED09CB /* sock_qos.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DF722FA8D0E00ED09CB /* array.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D9622FA8D0D00ED09CB /* array.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DF822FA8D0E00ED09CB /* string_i.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D9722FA8D0D00ED09CB /* string_i.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DF922FA8D0E00ED09CB /* rand.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D9822FA8D0D00ED09CB /* rand.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DFA22FA8D0E00ED09CB /* addr_resolv.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D9922FA8D0D00ED09CB /* addr_resolv.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DFB22FA8D0E00ED09CB /* math.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D9A22FA8D0D00ED09CB /* math.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DFC22FA8D0E00ED09CB /* errno.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D9B22FA8D0D00ED09CB /* errno.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DFD22FA8D0E00ED09CB /* ioqueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D9C22FA8D0D00ED09CB /* ioqueue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DFE22FA8D0E00ED09CB /* doxygen.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D9D22FA8D0D00ED09CB /* doxygen.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1DFF22FA8D0E00ED09CB /* assert.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D9E22FA8D0D00ED09CB /* assert.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E0022FA8D0E00ED09CB /* hash.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1D9F22FA8D0D00ED09CB /* hash.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E0122FA8D0E00ED09CB /* pool_alt.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1DA022FA8D0D00ED09CB /* pool_alt.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E0222FA8D0E00ED09CB /* pool_buf.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1DA122FA8D0D00ED09CB /* pool_buf.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E0322FA8D0E00ED09CB /* string.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1DA222FA8D0D00ED09CB /* string.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E0422FA8D0E00ED09CB /* pjlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1DA322FA8D0E00ED09CB /* pjlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E0522FA8D0E00ED09CB /* pjlib++.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1DA422FA8D0E00ED09CB /* pjlib++.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E0622FA8D0E00ED09CB /* hash.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1DA622FA8D0E00ED09CB /* hash.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E0722FA8D0E00ED09CB /* lock.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1DA722FA8D0E00ED09CB /* lock.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E0822FA8D0E00ED09CB /* proactor.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1DA822FA8D0E00ED09CB /* proactor.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E0922FA8D0E00ED09CB /* file.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1DA922FA8D0E00ED09CB /* file.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E0A22FA8D0E00ED09CB /* list.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1DAA22FA8D0E00ED09CB /* list.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E0B22FA8D0E00ED09CB /* pool.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1DAB22FA8D0E00ED09CB /* pool.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E0C22FA8D0E00ED09CB /* timer.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1DAC22FA8D0E00ED09CB /* timer.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E0D22FA8D0E00ED09CB /* string.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1DAD22FA8D0E00ED09CB /* string.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E0E22FA8D0E00ED09CB /* tree.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1DAE22FA8D0E00ED09CB /* tree.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E0F22FA8D0E00ED09CB /* scanner.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1DAF22FA8D0E00ED09CB /* scanner.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E1022FA8D0E00ED09CB /* types.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1DB022FA8D0E00ED09CB /* types.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E1122FA8D0E00ED09CB /* os.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1DB122FA8D0E00ED09CB /* os.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E1222FA8D0E00ED09CB /* sock.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1DB222FA8D0E00ED09CB /* sock.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E3022FA8DD300ED09CB /* cli_console.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E1422FA8DD200ED09CB /* cli_console.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E3122FA8DD300ED09CB /* scanner_cis_bitwise.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E1522FA8DD200ED09CB /* scanner_cis_bitwise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E3222FA8DD300ED09CB /* http_client.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E1622FA8DD200ED09CB /* http_client.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E3322FA8DD300ED09CB /* base64.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E1722FA8DD200ED09CB /* base64.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E3422FA8DD300ED09CB /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E1822FA8DD200ED09CB /* config.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E3522FA8DD300ED09CB /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E1922FA8DD200ED09CB /* types.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E3622FA8DD300ED09CB /* cli_imp.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E1A22FA8DD200ED09CB /* cli_imp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E3722FA8DD300ED09CB /* md5.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E1B22FA8DD200ED09CB /* md5.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E3822FA8DD300ED09CB /* dns_server.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E1C22FA8DD200ED09CB /* dns_server.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E3922FA8DD300ED09CB /* hmac_md5.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E1D22FA8DD200ED09CB /* hmac_md5.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E3A22FA8DD300ED09CB /* getopt.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E1E22FA8DD200ED09CB /* getopt.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E3B22FA8DD300ED09CB /* cli.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E1F22FA8DD200ED09CB /* cli.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E3C22FA8DD300ED09CB /* scanner_cis_uint.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E2022FA8DD200ED09CB /* scanner_cis_uint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E3D22FA8DD300ED09CB /* xml.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E2122FA8DD200ED09CB /* xml.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E3E22FA8DD300ED09CB /* scanner.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E2222FA8DD200ED09CB /* scanner.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E3F22FA8DD300ED09CB /* json.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E2322FA8DD200ED09CB /* json.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E4022FA8DD300ED09CB /* resolver.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E2422FA8DD200ED09CB /* resolver.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E4122FA8DD300ED09CB /* hmac_sha1.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E2522FA8DD200ED09CB /* hmac_sha1.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E4222FA8DD300ED09CB /* cli_telnet.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E2622FA8DD200ED09CB /* cli_telnet.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E4322FA8DD300ED09CB /* srv_resolver.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E2722FA8DD200ED09CB /* srv_resolver.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E4422FA8DD300ED09CB /* pcap.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E2822FA8DD200ED09CB /* pcap.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E4522FA8DD300ED09CB /* sha1.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E2922FA8DD200ED09CB /* sha1.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E4622FA8DD300ED09CB /* errno.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E2A22FA8DD200ED09CB /* errno.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E4722FA8DD300ED09CB /* stun_simple.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E2B22FA8DD200ED09CB /* stun_simple.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E4822FA8DD300ED09CB /* dns.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E2C22FA8DD200ED09CB /* dns.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E4922FA8DD300ED09CB /* crc32.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E2D22FA8DD200ED09CB /* crc32.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E4A22FA8DD300ED09CB /* string.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E2E22FA8DD200ED09CB /* string.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1E4B22FA8DD300ED09CB /* pjlib-util.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E2F22FA8DD200ED09CB /* pjlib-util.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EB922FA8E3400ED09CB /* pjmedia_videodev.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E4C22FA8E3300ED09CB /* pjmedia_videodev.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EBA22FA8E3400ED09CB /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E4E22FA8E3300ED09CB /* config.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EBB22FA8E3400ED09CB /* audiodev.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E4F22FA8E3300ED09CB /* audiodev.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EBC22FA8E3400ED09CB /* audiodev_imp.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E5022FA8E3300ED09CB /* audiodev_imp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EBD22FA8E3400ED09CB /* errno.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E5122FA8E3300ED09CB /* errno.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EBE22FA8E3400ED09CB /* audiotest.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E5222FA8E3300ED09CB /* audiotest.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EBF22FA8E3400ED09CB /* pjmedia_audiodev.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E5322FA8E3300ED09CB /* pjmedia_audiodev.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EC022FA8E3400ED09CB /* pjmedia-codec.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E5422FA8E3300ED09CB /* pjmedia-codec.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EC122FA8E3400ED09CB /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E5622FA8E3300ED09CB /* config.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EC222FA8E3400ED09CB /* videodev.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E5722FA8E3300ED09CB /* videodev.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EC322FA8E3400ED09CB /* opengl_dev.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E5822FA8E3300ED09CB /* opengl_dev.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EC422FA8E3400ED09CB /* errno.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E5922FA8E3300ED09CB /* errno.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EC522FA8E3400ED09CB /* videodev_imp.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E5A22FA8E3300ED09CB /* videodev_imp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EC622FA8E3400ED09CB /* avi_dev.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E5B22FA8E3300ED09CB /* avi_dev.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EC722FA8E3400ED09CB /* pjmedia.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E5C22FA8E3400ED09CB /* pjmedia.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EC822FA8E3400ED09CB /* vid_port.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E5E22FA8E3400ED09CB /* vid_port.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EC922FA8E3400ED09CB /* circbuf.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E5F22FA8E3400ED09CB /* circbuf.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1ECA22FA8E3400ED09CB /* conference.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E6022FA8E3400ED09CB /* conference.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1ECB22FA8E3400ED09CB /* sound.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E6122FA8E3400ED09CB /* sound.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1ECC22FA8E3400ED09CB /* resample.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E6222FA8E3400ED09CB /* resample.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1ECD22FA8E3400ED09CB /* endpoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E6322FA8E3400ED09CB /* endpoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1ECE22FA8E3400ED09CB /* wav_playlist.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E6422FA8E3400ED09CB /* wav_playlist.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1ECF22FA8E3400ED09CB /* bidirectional.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E6522FA8E3400ED09CB /* bidirectional.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1ED022FA8E3400ED09CB /* vid_tee.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E6622FA8E3400ED09CB /* vid_tee.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1ED122FA8E3400ED09CB /* port.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E6722FA8E3400ED09CB /* port.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1ED222FA8E3400ED09CB /* vid_codec.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E6822FA8E3400ED09CB /* vid_codec.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1ED322FA8E3400ED09CB /* symbian_sound_aps.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E6922FA8E3400ED09CB /* symbian_sound_aps.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1ED422FA8E3400ED09CB /* transport_srtp.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E6A22FA8E3400ED09CB /* transport_srtp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1ED522FA8E3400ED09CB /* delaybuf.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E6B22FA8E3400ED09CB /* delaybuf.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1ED622FA8E3400ED09CB /* stereo.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E6C22FA8E3400ED09CB /* stereo.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1ED822FA8E3400ED09CB /* rtcp_xr.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E6E22FA8E3400ED09CB /* rtcp_xr.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1ED922FA8E3400ED09CB /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E6F22FA8E3400ED09CB /* config.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EDA22FA8E3400ED09CB /* event.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E7022FA8E3400ED09CB /* event.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EDB22FA8E3400ED09CB /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E7122FA8E3400ED09CB /* types.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EDC22FA8E3400ED09CB /* tonegen.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E7222FA8E3400ED09CB /* tonegen.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EDD22FA8E3400ED09CB /* videodev.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E7322FA8E3400ED09CB /* videodev.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EDE22FA8E3400ED09CB /* avi_stream.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E7422FA8E3400ED09CB /* avi_stream.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EDF22FA8E3400ED09CB /* null_port.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E7522FA8E3400ED09CB /* null_port.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EE022FA8E3400ED09CB /* rtp.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E7622FA8E3400ED09CB /* rtp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EE122FA8E3400ED09CB /* avi.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E7722FA8E3400ED09CB /* avi.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EE222FA8E3400ED09CB /* audiodev.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E7822FA8E3400ED09CB /* audiodev.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EE322FA8E3400ED09CB /* silencedet.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E7922FA8E3400ED09CB /* silencedet.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EE422FA8E3400ED09CB /* frame.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E7A22FA8E3400ED09CB /* frame.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EE522FA8E3400ED09CB /* transport_loop.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E7B22FA8E3400ED09CB /* transport_loop.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EE622FA8E3400ED09CB /* rtcp_fb.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E7C22FA8E3400ED09CB /* rtcp_fb.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EE722FA8E3400ED09CB /* echo.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E7D22FA8E3400ED09CB /* echo.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EE822FA8E3400ED09CB /* converter.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E7E22FA8E3400ED09CB /* converter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EE922FA8E3400ED09CB /* vid_conf.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E7F22FA8E3400ED09CB /* vid_conf.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EEA22FA8E3400ED09CB /* stream.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E8022FA8E3400ED09CB /* stream.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EEB22FA8E3400ED09CB /* wsola.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E8122FA8E3400ED09CB /* wsola.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EEC22FA8E3400ED09CB /* wav_port.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E8222FA8E3400ED09CB /* wav_port.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EED22FA8E3400ED09CB /* alaw_ulaw.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E8322FA8E3400ED09CB /* alaw_ulaw.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EEE22FA8E3400ED09CB /* sdp_neg.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E8422FA8E3400ED09CB /* sdp_neg.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EEF22FA8E3400ED09CB /* echo_port.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E8522FA8E3400ED09CB /* echo_port.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EF022FA8E3400ED09CB /* codec.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E8622FA8E3400ED09CB /* codec.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EF122FA8E3400ED09CB /* session.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E8722FA8E3400ED09CB /* session.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EF222FA8E3400ED09CB /* signatures.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E8822FA8E3400ED09CB /* signatures.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EF322FA8E3400ED09CB /* splitcomb.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E8922FA8E3400ED09CB /* splitcomb.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EF422FA8E3400ED09CB /* vid_codec_util.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E8A22FA8E3400ED09CB /* vid_codec_util.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EF522FA8E3400ED09CB /* transport_ice.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E8B22FA8E3400ED09CB /* transport_ice.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EF622FA8E3500ED09CB /* rtcp.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E8C22FA8E3400ED09CB /* rtcp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EF722FA8E3500ED09CB /* vid_stream.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E8D22FA8E3400ED09CB /* vid_stream.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EF822FA8E3500ED09CB /* transport.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E8E22FA8E3400ED09CB /* transport.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EF922FA8E3500ED09CB /* plc.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E8F22FA8E3400ED09CB /* plc.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EFA22FA8E3500ED09CB /* stream_common.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E9022FA8E3400ED09CB /* stream_common.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EFB22FA8E3500ED09CB /* errno.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E9122FA8E3400ED09CB /* errno.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EFC22FA8E3500ED09CB /* g711.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E9222FA8E3400ED09CB /* g711.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EFD22FA8E3500ED09CB /* wave.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E9322FA8E3400ED09CB /* wave.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EFE22FA8E3500ED09CB /* sdp.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E9422FA8E3400ED09CB /* sdp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1EFF22FA8E3500ED09CB /* doxygen.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E9522FA8E3400ED09CB /* doxygen.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F0022FA8E3500ED09CB /* format.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E9622FA8E3400ED09CB /* format.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F0122FA8E3500ED09CB /* sound_port.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E9722FA8E3400ED09CB /* sound_port.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F0222FA8E3500ED09CB /* config_auto.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E9822FA8E3400ED09CB /* config_auto.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F0322FA8E3500ED09CB /* jbuf.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E9922FA8E3400ED09CB /* jbuf.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F0422FA8E3500ED09CB /* clock.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E9A22FA8E3400ED09CB /* clock.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F0522FA8E3500ED09CB /* transport_adapter_sample.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E9B22FA8E3400ED09CB /* transport_adapter_sample.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F0622FA8E3500ED09CB /* master_port.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E9C22FA8E3400ED09CB /* master_port.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F0722FA8E3500ED09CB /* mem_port.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E9D22FA8E3400ED09CB /* mem_port.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F0822FA8E3500ED09CB /* transport_udp.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1E9E22FA8E3400ED09CB /* transport_udp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F0922FA8E3500ED09CB /* opencore_amr.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EA022FA8E3400ED09CB /* opencore_amr.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F0A22FA8E3500ED09CB /* opus.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EA122FA8E3400ED09CB /* opus.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F0B22FA8E3500ED09CB /* amr_sdp_match.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EA222FA8E3400ED09CB /* amr_sdp_match.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F0C22FA8E3500ED09CB /* ffmpeg_vid_codecs.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EA322FA8E3400ED09CB /* ffmpeg_vid_codecs.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F0D22FA8E3500ED09CB /* speex.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EA422FA8E3400ED09CB /* speex.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F0E22FA8E3500ED09CB /* passthrough.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EA522FA8E3400ED09CB /* passthrough.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F1022FA8E3500ED09CB /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EA722FA8E3400ED09CB /* config.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F1122FA8E3500ED09CB /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EA822FA8E3400ED09CB /* types.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F1222FA8E3500ED09CB /* silk.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EA922FA8E3400ED09CB /* silk.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F1322FA8E3500ED09CB /* ilbc.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EAA22FA8E3400ED09CB /* ilbc.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F1422FA8E3500ED09CB /* gsm.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EAB22FA8E3400ED09CB /* gsm.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F1522FA8E3500ED09CB /* g7221_sdp_match.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EAC22FA8E3400ED09CB /* g7221_sdp_match.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F1622FA8E3500ED09CB /* g722.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EAD22FA8E3400ED09CB /* g722.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F1722FA8E3500ED09CB /* bcg729.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EAE22FA8E3400ED09CB /* bcg729.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F1822FA8E3500ED09CB /* h264_packetizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EAF22FA8E3400ED09CB /* h264_packetizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F1922FA8E3500ED09CB /* h263_packetizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EB022FA8E3400ED09CB /* h263_packetizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F1A22FA8E3500ED09CB /* amr_helper.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EB122FA8E3400ED09CB /* amr_helper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F1B22FA8E3500ED09CB /* audio_codecs.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EB222FA8E3400ED09CB /* audio_codecs.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F1C22FA8E3500ED09CB /* ipp_codecs.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EB322FA8E3400ED09CB /* ipp_codecs.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F1D22FA8E3500ED09CB /* l16.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EB422FA8E3400ED09CB /* l16.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F1E22FA8E3500ED09CB /* vid_toolbox.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EB522FA8E3400ED09CB /* vid_toolbox.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F1F22FA8E3500ED09CB /* config_auto.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EB622FA8E3400ED09CB /* config_auto.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F2022FA8E3500ED09CB /* openh264.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EB722FA8E3400ED09CB /* openh264.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F2122FA8E3500ED09CB /* g7221.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1EB822FA8E3400ED09CB /* g7221.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F3222FA8E6300ED09CB /* stun_msg.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F2322FA8E6200ED09CB /* stun_msg.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F3322FA8E6300ED09CB /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F2422FA8E6200ED09CB /* config.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F3422FA8E6300ED09CB /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F2522FA8E6200ED09CB /* types.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F3522FA8E6300ED09CB /* stun_sock.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F2622FA8E6200ED09CB /* stun_sock.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F3622FA8E6300ED09CB /* turn_session.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F2722FA8E6200ED09CB /* turn_session.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F3722FA8E6300ED09CB /* nat_detect.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F2822FA8E6200ED09CB /* nat_detect.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F3822FA8E6300ED09CB /* ice_strans.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F2922FA8E6200ED09CB /* ice_strans.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F3922FA8E6300ED09CB /* stun_session.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F2A22FA8E6200ED09CB /* stun_session.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F3A22FA8E6300ED09CB /* turn_sock.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F2B22FA8E6200ED09CB /* turn_sock.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F3B22FA8E6300ED09CB /* errno.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F2C22FA8E6200ED09CB /* errno.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F3C22FA8E6300ED09CB /* stun_config.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F2D22FA8E6200ED09CB /* stun_config.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F3D22FA8E6300ED09CB /* ice_session.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F2E22FA8E6200ED09CB /* ice_session.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F3E22FA8E6300ED09CB /* stun_transaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F2F22FA8E6200ED09CB /* stun_transaction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F3F22FA8E6300ED09CB /* stun_auth.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F3022FA8E6200ED09CB /* stun_auth.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F4022FA8E6300ED09CB /* pjnath.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F3122FA8E6300ED09CB /* pjnath.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F8722FA8EA800ED09CB /* pjsua_internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F4222FA8EA600ED09CB /* pjsua_internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F8822FA8EA800ED09CB /* pjsua.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F4322FA8EA600ED09CB /* pjsua.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F8922FA8EA800ED09CB /* sip_100rel.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F4522FA8EA600ED09CB /* sip_100rel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F8A22FA8EA800ED09CB /* sip_inv.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F4622FA8EA600ED09CB /* sip_inv.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F8B22FA8EA900ED09CB /* sip_xfer.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F4722FA8EA600ED09CB /* sip_xfer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F8C22FA8EA900ED09CB /* sip_regc.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F4822FA8EA600ED09CB /* sip_regc.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F8D22FA8EA900ED09CB /* sip_replaces.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F4922FA8EA600ED09CB /* sip_replaces.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F8E22FA8EA900ED09CB /* sip_timer.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F4A22FA8EA600ED09CB /* sip_timer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F8F22FA8EA900ED09CB /* json.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F4C22FA8EA700ED09CB /* json.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F9022FA8EA900ED09CB /* persistent.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F4D22FA8EA700ED09CB /* persistent.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F9122FA8EA900ED09CB /* doxygen.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F4E22FA8EA700ED09CB /* doxygen.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F9222FA8EA900ED09CB /* config.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F4F22FA8EA700ED09CB /* config.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F9322FA8EA900ED09CB /* siptypes.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F5022FA8EA700ED09CB /* siptypes.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F9422FA8EA900ED09CB /* account.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F5122FA8EA700ED09CB /* account.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F9522FA8EA900ED09CB /* endpoint.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F5222FA8EA700ED09CB /* endpoint.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F9622FA8EA900ED09CB /* call.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F5322FA8EA700ED09CB /* call.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F9722FA8EA900ED09CB /* presence.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F5422FA8EA700ED09CB /* presence.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F9822FA8EA900ED09CB /* media.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F5522FA8EA700ED09CB /* media.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F9922FA8EA900ED09CB /* types.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F5622FA8EA700ED09CB /* types.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F9A22FA8EA900ED09CB /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F5822FA8EA700ED09CB /* types.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F9B22FA8EA900ED09CB /* presence.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F5922FA8EA700ED09CB /* presence.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F9C22FA8EA900ED09CB /* iscomposing.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F5A22FA8EA700ED09CB /* iscomposing.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F9D22FA8EA900ED09CB /* rpid.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F5B22FA8EA700ED09CB /* rpid.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F9E22FA8EA900ED09CB /* pidf.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F5C22FA8EA700ED09CB /* pidf.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1F9F22FA8EA900ED09CB /* mwi.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F5D22FA8EA700ED09CB /* mwi.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FA022FA8EA900ED09CB /* publish.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F5E22FA8EA700ED09CB /* publish.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FA122FA8EA900ED09CB /* errno.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F5F22FA8EA700ED09CB /* errno.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FA222FA8EA900ED09CB /* xpidf.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F6022FA8EA700ED09CB /* xpidf.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FA322FA8EA900ED09CB /* evsub_msg.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F6122FA8EA700ED09CB /* evsub_msg.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FA422FA8EA900ED09CB /* evsub.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F6222FA8EA700ED09CB /* evsub.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FA522FA8EA900ED09CB /* pjsua2.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F6322FA8EA700ED09CB /* pjsua2.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FA622FA8EA900ED09CB /* pjsua.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F6422FA8EA700ED09CB /* pjsua.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FA722FA8EA900ED09CB /* pjsip_auth.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F6522FA8EA700ED09CB /* pjsip_auth.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FA822FA8EA900ED09CB /* pjsip_simple.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F6622FA8EA800ED09CB /* pjsip_simple.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FA922FA8EA900ED09CB /* pjsip_ua.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F6722FA8EA800ED09CB /* pjsip_ua.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FAA22FA8EA900ED09CB /* sip_transport.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F6922FA8EA800ED09CB /* sip_transport.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FAB22FA8EA900ED09CB /* sip_module.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F6A22FA8EA800ED09CB /* sip_module.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FAC22FA8EA900ED09CB /* sip_types.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F6B22FA8EA800ED09CB /* sip_types.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FAD22FA8EA900ED09CB /* sip_tel_uri.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F6C22FA8EA800ED09CB /* sip_tel_uri.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FAE22FA8EA900ED09CB /* sip_event.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F6D22FA8EA800ED09CB /* sip_event.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FAF22FA8EA900ED09CB /* sip_auth.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F6E22FA8EA800ED09CB /* sip_auth.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FB022FA8EA900ED09CB /* sip_autoconf.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F6F22FA8EA800ED09CB /* sip_autoconf.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FB122FA8EA900ED09CB /* sip_util.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F7022FA8EA800ED09CB /* sip_util.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FB222FA8EA900ED09CB /* sip_transport_tcp.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F7122FA8EA800ED09CB /* sip_transport_tcp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FB322FA8EA900ED09CB /* sip_transport_loop.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F7222FA8EA800ED09CB /* sip_transport_loop.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FB422FA8EA900ED09CB /* sip_msg.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F7322FA8EA800ED09CB /* sip_msg.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FB522FA8EA900ED09CB /* sip_private.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F7422FA8EA800ED09CB /* sip_private.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FB622FA8EA900ED09CB /* sip_endpoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F7522FA8EA800ED09CB /* sip_endpoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FB722FA8EA900ED09CB /* sip_transport_tls.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F7622FA8EA800ED09CB /* sip_transport_tls.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FB822FA8EA900ED09CB /* sip_multipart.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F7722FA8EA800ED09CB /* sip_multipart.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FB922FA8EA900ED09CB /* sip_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F7822FA8EA800ED09CB /* sip_parser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FBB22FA8EA900ED09CB /* sip_auth_msg.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F7A22FA8EA800ED09CB /* sip_auth_msg.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FBC22FA8EA900ED09CB /* sip_uri.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F7B22FA8EA800ED09CB /* sip_uri.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FBD22FA8EA900ED09CB /* sip_ua_layer.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F7C22FA8EA800ED09CB /* sip_ua_layer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FBE22FA8EA900ED09CB /* sip_transaction.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F7D22FA8EA800ED09CB /* sip_transaction.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FBF22FA8EA900ED09CB /* sip_transport_udp.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F7E22FA8EA800ED09CB /* sip_transport_udp.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FC022FA8EA900ED09CB /* print_util.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F7F22FA8EA800ED09CB /* print_util.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FC122FA8EA900ED09CB /* sip_errno.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F8022FA8EA800ED09CB /* sip_errno.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FC222FA8EA900ED09CB /* sip_dialog.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F8122FA8EA800ED09CB /* sip_dialog.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FC322FA8EA900ED09CB /* sip_auth_parser.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F8222FA8EA800ED09CB /* sip_auth_parser.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FC422FA8EA900ED09CB /* sip_config.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F8322FA8EA800ED09CB /* sip_config.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FC522FA8EA900ED09CB /* sip_auth_aka.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F8422FA8EA800ED09CB /* sip_auth_aka.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FC622FA8EA900ED09CB /* sip_resolve.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F8522FA8EA800ED09CB /* sip_resolve.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		059C1FC722FA8EA900ED09CB /* pjsip.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C1F8622FA8EA800ED09CB /* pjsip.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		059C1FE422FA958B00ED09CB /* libpj-arm-apple-darwin_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 059C1FCE22FA958900ED09CB /* libpj-arm-apple-darwin_ios.a */; };
 		059C1FE522FA958B00ED09CB /* libpjlib-util-arm-apple-darwin_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 059C1FCF22FA958900ED09CB /* libpjlib-util-arm-apple-darwin_ios.a */; };
 		059C1FE622FA958B00ED09CB /* libopus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 059C1FD022FA958900ED09CB /* libopus.a */; };
@@ -342,6 +31,34 @@
 		059C1FF722FA958B00ED09CB /* libpjsua2-arm-apple-darwin_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 059C1FE122FA958B00ED09CB /* libpjsua2-arm-apple-darwin_ios.a */; };
 		059C1FF822FA958B00ED09CB /* libpjmedia-codec-arm-apple-darwin_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 059C1FE222FA958B00ED09CB /* libpjmedia-codec-arm-apple-darwin_ios.a */; };
 		059C1FF922FA958B00ED09CB /* libresample-arm-apple-darwin_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 059C1FE322FA958B00ED09CB /* libresample-arm-apple-darwin_ios.a */; };
+		059C215D22FA9A7000ED09CB /* pjsip-simple in Headers */ = {isa = PBXBuildFile; fileRef = 059C214122FA9A6C00ED09CB /* pjsip-simple */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C215E22FA9A7000ED09CB /* pjsip.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C214222FA9A6C00ED09CB /* pjsip.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C215F22FA9A7000ED09CB /* pjmedia-codec.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C214322FA9A6C00ED09CB /* pjmedia-codec.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C216022FA9A7000ED09CB /* pj in Headers */ = {isa = PBXBuildFile; fileRef = 059C214422FA9A6C00ED09CB /* pj */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C216122FA9A7000ED09CB /* pjmedia-audiodev in Headers */ = {isa = PBXBuildFile; fileRef = 059C214522FA9A6C00ED09CB /* pjmedia-audiodev */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C216222FA9A7000ED09CB /* pjlib++.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C214622FA9A6C00ED09CB /* pjlib++.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C216322FA9A7000ED09CB /* pjnath in Headers */ = {isa = PBXBuildFile; fileRef = 059C214722FA9A6C00ED09CB /* pjnath */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C216422FA9A7000ED09CB /* pj++ in Headers */ = {isa = PBXBuildFile; fileRef = 059C214822FA9A6D00ED09CB /* pj++ */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C216522FA9A7000ED09CB /* pjsua2 in Headers */ = {isa = PBXBuildFile; fileRef = 059C214922FA9A6D00ED09CB /* pjsua2 */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C216622FA9A7000ED09CB /* pjlib-util.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C214A22FA9A6D00ED09CB /* pjlib-util.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C216722FA9A7000ED09CB /* pjmedia.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C214B22FA9A6D00ED09CB /* pjmedia.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C216822FA9A7100ED09CB /* pjsua2.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 059C214C22FA9A6D00ED09CB /* pjsua2.hpp */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C216922FA9A7100ED09CB /* pjsip_ua.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C214D22FA9A6D00ED09CB /* pjsip_ua.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C216A22FA9A7100ED09CB /* pjsip-ua in Headers */ = {isa = PBXBuildFile; fileRef = 059C214E22FA9A6E00ED09CB /* pjsip-ua */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C216B22FA9A7100ED09CB /* pjsip_auth.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C214F22FA9A6E00ED09CB /* pjsip_auth.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C216C22FA9A7100ED09CB /* opus in Headers */ = {isa = PBXBuildFile; fileRef = 059C215022FA9A6E00ED09CB /* opus */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C216D22FA9A7100ED09CB /* pjsip in Headers */ = {isa = PBXBuildFile; fileRef = 059C215122FA9A6E00ED09CB /* pjsip */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C216E22FA9A7100ED09CB /* pjmedia in Headers */ = {isa = PBXBuildFile; fileRef = 059C215222FA9A6E00ED09CB /* pjmedia */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C216F22FA9A7100ED09CB /* pjsua-lib in Headers */ = {isa = PBXBuildFile; fileRef = 059C215322FA9A6E00ED09CB /* pjsua-lib */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C217022FA9A7100ED09CB /* pjsip_simple.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C215422FA9A6F00ED09CB /* pjsip_simple.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C217122FA9A7100ED09CB /* pjmedia-videodev in Headers */ = {isa = PBXBuildFile; fileRef = 059C215522FA9A6F00ED09CB /* pjmedia-videodev */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C217222FA9A7100ED09CB /* pjmedia-codec in Headers */ = {isa = PBXBuildFile; fileRef = 059C215622FA9A6F00ED09CB /* pjmedia-codec */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C217322FA9A7100ED09CB /* pjnath.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C215722FA9A6F00ED09CB /* pjnath.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C217422FA9A7100ED09CB /* pjsua.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C215822FA9A6F00ED09CB /* pjsua.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C217522FA9A7100ED09CB /* pjmedia_videodev.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C215922FA9A7000ED09CB /* pjmedia_videodev.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C217622FA9A7100ED09CB /* pjlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C215A22FA9A7000ED09CB /* pjlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C217722FA9A7100ED09CB /* pjlib-util in Headers */ = {isa = PBXBuildFile; fileRef = 059C215B22FA9A7000ED09CB /* pjlib-util */; settings = {ATTRIBUTES = (Public, ); }; };
+		059C217822FA9A7100ED09CB /* pjmedia_audiodev.h in Headers */ = {isa = PBXBuildFile; fileRef = 059C215C22FA9A7000ED09CB /* pjmedia_audiodev.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -710,6 +427,34 @@
 		059C1FE122FA958B00ED09CB /* libpjsua2-arm-apple-darwin_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpjsua2-arm-apple-darwin_ios.a"; path = "PJSIP/Libraries/libpjsua2-arm-apple-darwin_ios.a"; sourceTree = "<group>"; };
 		059C1FE222FA958B00ED09CB /* libpjmedia-codec-arm-apple-darwin_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpjmedia-codec-arm-apple-darwin_ios.a"; path = "PJSIP/Libraries/libpjmedia-codec-arm-apple-darwin_ios.a"; sourceTree = "<group>"; };
 		059C1FE322FA958B00ED09CB /* libresample-arm-apple-darwin_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libresample-arm-apple-darwin_ios.a"; path = "PJSIP/Libraries/libresample-arm-apple-darwin_ios.a"; sourceTree = "<group>"; };
+		059C214122FA9A6C00ED09CB /* pjsip-simple */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "pjsip-simple"; path = "PJSIP/pjsip-simple"; sourceTree = "<group>"; };
+		059C214222FA9A6C00ED09CB /* pjsip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pjsip.h; path = PJSIP/pjsip.h; sourceTree = "<group>"; };
+		059C214322FA9A6C00ED09CB /* pjmedia-codec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "pjmedia-codec.h"; path = "PJSIP/pjmedia-codec.h"; sourceTree = "<group>"; };
+		059C214422FA9A6C00ED09CB /* pj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = pj; path = PJSIP/pj; sourceTree = "<group>"; };
+		059C214522FA9A6C00ED09CB /* pjmedia-audiodev */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "pjmedia-audiodev"; path = "PJSIP/pjmedia-audiodev"; sourceTree = "<group>"; };
+		059C214622FA9A6C00ED09CB /* pjlib++.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = "pjlib++.hpp"; path = "PJSIP/pjlib++.hpp"; sourceTree = "<group>"; };
+		059C214722FA9A6C00ED09CB /* pjnath */ = {isa = PBXFileReference; lastKnownFileType = folder; name = pjnath; path = PJSIP/pjnath; sourceTree = "<group>"; };
+		059C214822FA9A6D00ED09CB /* pj++ */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "pj++"; path = "PJSIP/pj++"; sourceTree = "<group>"; };
+		059C214922FA9A6D00ED09CB /* pjsua2 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = pjsua2; path = PJSIP/pjsua2; sourceTree = "<group>"; };
+		059C214A22FA9A6D00ED09CB /* pjlib-util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "pjlib-util.h"; path = "PJSIP/pjlib-util.h"; sourceTree = "<group>"; };
+		059C214B22FA9A6D00ED09CB /* pjmedia.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pjmedia.h; path = PJSIP/pjmedia.h; sourceTree = "<group>"; };
+		059C214C22FA9A6D00ED09CB /* pjsua2.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; name = pjsua2.hpp; path = PJSIP/pjsua2.hpp; sourceTree = "<group>"; };
+		059C214D22FA9A6D00ED09CB /* pjsip_ua.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pjsip_ua.h; path = PJSIP/pjsip_ua.h; sourceTree = "<group>"; };
+		059C214E22FA9A6E00ED09CB /* pjsip-ua */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "pjsip-ua"; path = "PJSIP/pjsip-ua"; sourceTree = "<group>"; };
+		059C214F22FA9A6E00ED09CB /* pjsip_auth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pjsip_auth.h; path = PJSIP/pjsip_auth.h; sourceTree = "<group>"; };
+		059C215022FA9A6E00ED09CB /* opus */ = {isa = PBXFileReference; lastKnownFileType = folder; name = opus; path = PJSIP/opus; sourceTree = "<group>"; };
+		059C215122FA9A6E00ED09CB /* pjsip */ = {isa = PBXFileReference; lastKnownFileType = folder; name = pjsip; path = PJSIP/pjsip; sourceTree = "<group>"; };
+		059C215222FA9A6E00ED09CB /* pjmedia */ = {isa = PBXFileReference; lastKnownFileType = folder; name = pjmedia; path = PJSIP/pjmedia; sourceTree = "<group>"; };
+		059C215322FA9A6E00ED09CB /* pjsua-lib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "pjsua-lib"; path = "PJSIP/pjsua-lib"; sourceTree = "<group>"; };
+		059C215422FA9A6F00ED09CB /* pjsip_simple.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pjsip_simple.h; path = PJSIP/pjsip_simple.h; sourceTree = "<group>"; };
+		059C215522FA9A6F00ED09CB /* pjmedia-videodev */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "pjmedia-videodev"; path = "PJSIP/pjmedia-videodev"; sourceTree = "<group>"; };
+		059C215622FA9A6F00ED09CB /* pjmedia-codec */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "pjmedia-codec"; path = "PJSIP/pjmedia-codec"; sourceTree = "<group>"; };
+		059C215722FA9A6F00ED09CB /* pjnath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pjnath.h; path = PJSIP/pjnath.h; sourceTree = "<group>"; };
+		059C215822FA9A6F00ED09CB /* pjsua.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pjsua.h; path = PJSIP/pjsua.h; sourceTree = "<group>"; };
+		059C215922FA9A7000ED09CB /* pjmedia_videodev.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pjmedia_videodev.h; path = PJSIP/pjmedia_videodev.h; sourceTree = "<group>"; };
+		059C215A22FA9A7000ED09CB /* pjlib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pjlib.h; path = PJSIP/pjlib.h; sourceTree = "<group>"; };
+		059C215B22FA9A7000ED09CB /* pjlib-util */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "pjlib-util"; path = "PJSIP/pjlib-util"; sourceTree = "<group>"; };
+		059C215C22FA9A7000ED09CB /* pjmedia_audiodev.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pjmedia_audiodev.h; path = PJSIP/pjmedia_audiodev.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -769,6 +514,34 @@
 		0597EC4322F9651600300305 = {
 			isa = PBXGroup;
 			children = (
+				059C215022FA9A6E00ED09CB /* opus */,
+				059C214422FA9A6C00ED09CB /* pj */,
+				059C214822FA9A6D00ED09CB /* pj++ */,
+				059C215B22FA9A7000ED09CB /* pjlib-util */,
+				059C214A22FA9A6D00ED09CB /* pjlib-util.h */,
+				059C215A22FA9A7000ED09CB /* pjlib.h */,
+				059C214622FA9A6C00ED09CB /* pjlib++.hpp */,
+				059C215222FA9A6E00ED09CB /* pjmedia */,
+				059C215C22FA9A7000ED09CB /* pjmedia_audiodev.h */,
+				059C215922FA9A7000ED09CB /* pjmedia_videodev.h */,
+				059C214522FA9A6C00ED09CB /* pjmedia-audiodev */,
+				059C215622FA9A6F00ED09CB /* pjmedia-codec */,
+				059C214322FA9A6C00ED09CB /* pjmedia-codec.h */,
+				059C215522FA9A6F00ED09CB /* pjmedia-videodev */,
+				059C214B22FA9A6D00ED09CB /* pjmedia.h */,
+				059C214722FA9A6C00ED09CB /* pjnath */,
+				059C215722FA9A6F00ED09CB /* pjnath.h */,
+				059C215122FA9A6E00ED09CB /* pjsip */,
+				059C214F22FA9A6E00ED09CB /* pjsip_auth.h */,
+				059C215422FA9A6F00ED09CB /* pjsip_simple.h */,
+				059C214D22FA9A6D00ED09CB /* pjsip_ua.h */,
+				059C214122FA9A6C00ED09CB /* pjsip-simple */,
+				059C214E22FA9A6E00ED09CB /* pjsip-ua */,
+				059C214222FA9A6C00ED09CB /* pjsip.h */,
+				059C215322FA9A6E00ED09CB /* pjsua-lib */,
+				059C215822FA9A6F00ED09CB /* pjsua.h */,
+				059C214922FA9A6D00ED09CB /* pjsua2 */,
+				059C214C22FA9A6D00ED09CB /* pjsua2.hpp */,
 				059C1FCD22FA957E00ED09CB /* Frameworks */,
 				0597EC6D22F965F000300305 /* PJSIP */,
 				0597EC4D22F9651600300305 /* Products */,
@@ -1251,317 +1024,34 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				059C1EE422FA8E3400ED09CB /* frame.h in Headers */,
-				059C1E3F22FA8DD300ED09CB /* json.h in Headers */,
-				059C1ED822FA8E3400ED09CB /* rtcp_xr.h in Headers */,
-				059C1ED122FA8E3400ED09CB /* port.h in Headers */,
-				059C1E3622FA8DD300ED09CB /* cli_imp.h in Headers */,
-				059C1EC622FA8E3400ED09CB /* avi_dev.h in Headers */,
-				059C1E3A22FA8DD300ED09CB /* getopt.h in Headers */,
-				059C1DBE22FA8D0E00ED09CB /* cc_armcc.h in Headers */,
-				059C1FBD22FA8EA900ED09CB /* sip_ua_layer.h in Headers */,
-				0529C22C22F9BA0D00FA3E8F /* opus_custom.h in Headers */,
-				059C1EF922FA8E3500ED09CB /* plc.h in Headers */,
-				059C1FB222FA8EA900ED09CB /* sip_transport_tcp.h in Headers */,
-				059C1EE322FA8E3400ED09CB /* silencedet.h in Headers */,
-				059C1F8922FA8EA800ED09CB /* sip_100rel.h in Headers */,
-				059C1FAA22FA8EA900ED09CB /* sip_transport.h in Headers */,
-				059C1ED322FA8E3400ED09CB /* symbian_sound_aps.h in Headers */,
-				059C1F0722FA8E3500ED09CB /* mem_port.h in Headers */,
-				059C1ECF22FA8E3400ED09CB /* bidirectional.h in Headers */,
-				059C1F1022FA8E3500ED09CB /* config.h in Headers */,
-				059C1E0B22FA8D0E00ED09CB /* pool.hpp in Headers */,
-				059C1DCC22FA8D0E00ED09CB /* ctype.h in Headers */,
-				059C1DF822FA8D0E00ED09CB /* string_i.h in Headers */,
-				059C1E3022FA8DD300ED09CB /* cli_console.h in Headers */,
-				059C1F9222FA8EA900ED09CB /* config.hpp in Headers */,
-				059C1F8B22FA8EA900ED09CB /* sip_xfer.h in Headers */,
-				059C1EC322FA8E3400ED09CB /* opengl_dev.h in Headers */,
-				059C1F9022FA8EA900ED09CB /* persistent.hpp in Headers */,
-				059C1EF222FA8E3400ED09CB /* signatures.h in Headers */,
-				059C1FB522FA8EA900ED09CB /* sip_private.h in Headers */,
-				059C1EFD22FA8E3500ED09CB /* wave.h in Headers */,
-				059C1DE222FA8D0E00ED09CB /* sock_select.h in Headers */,
-				059C1F3822FA8E6300ED09CB /* ice_strans.h in Headers */,
-				059C1EBE22FA8E3400ED09CB /* audiotest.h in Headers */,
-				059C1EC422FA8E3400ED09CB /* errno.h in Headers */,
-				059C1ECB22FA8E3400ED09CB /* sound.h in Headers */,
-				059C1EC022FA8E3400ED09CB /* pjmedia-codec.h in Headers */,
-				059C1EFC22FA8E3500ED09CB /* g711.h in Headers */,
-				059C1EFB22FA8E3500ED09CB /* errno.h in Headers */,
-				059C1EDB22FA8E3400ED09CB /* types.h in Headers */,
-				059C1DD322FA8D0E00ED09CB /* size_t.h in Headers */,
-				059C1E4622FA8DD300ED09CB /* errno.h in Headers */,
-				059C1DE922FA8D0E00ED09CB /* guid.h in Headers */,
-				059C1F1222FA8E3500ED09CB /* silk.h in Headers */,
-				059C1E3222FA8DD300ED09CB /* http_client.h in Headers */,
-				059C1F9F22FA8EA900ED09CB /* mwi.h in Headers */,
-				059C1DDC22FA8D0E00ED09CB /* os_palmos.h in Headers */,
-				059C1F9C22FA8EA900ED09CB /* iscomposing.h in Headers */,
-				059C1E3C22FA8DD300ED09CB /* scanner_cis_uint.h in Headers */,
-				059C1EEF22FA8E3400ED09CB /* echo_port.h in Headers */,
-				059C1EDC22FA8E3400ED09CB /* tonegen.h in Headers */,
-				059C1DE322FA8D0E00ED09CB /* types.h in Headers */,
-				059C1ED922FA8E3400ED09CB /* config.h in Headers */,
-				059C1E4922FA8DD300ED09CB /* crc32.h in Headers */,
-				059C1EBA22FA8E3400ED09CB /* config.h in Headers */,
-				059C1DD722FA8D0E00ED09CB /* assert.h in Headers */,
-				059C1FB822FA8EA900ED09CB /* sip_multipart.h in Headers */,
-				059C1FC622FA8EA900ED09CB /* sip_resolve.h in Headers */,
-				059C1F1722FA8E3500ED09CB /* bcg729.h in Headers */,
-				059C1EEB22FA8E3400ED09CB /* wsola.h in Headers */,
-				059C1E0122FA8D0E00ED09CB /* pool_alt.h in Headers */,
-				059C1F8D22FA8EA900ED09CB /* sip_replaces.h in Headers */,
-				059C1E0322FA8D0E00ED09CB /* string.h in Headers */,
-				059C1FBB22FA8EA900ED09CB /* sip_auth_msg.h in Headers */,
-				059C1F3622FA8E6300ED09CB /* turn_session.h in Headers */,
-				059C1DCA22FA8D0E00ED09CB /* stdfileio.h in Headers */,
-				059C1F1522FA8E3500ED09CB /* g7221_sdp_match.h in Headers */,
-				059C1F3A22FA8E6300ED09CB /* turn_sock.h in Headers */,
-				059C1F8F22FA8EA900ED09CB /* json.hpp in Headers */,
-				059C1DF322FA8D0E00ED09CB /* activesock.h in Headers */,
-				0529C22F22F9BA0D00FA3E8F /* opus_projection.h in Headers */,
-				059C1DC422FA8D0E00ED09CB /* m_x86_64.h in Headers */,
-				059C1F1622FA8E3500ED09CB /* g722.h in Headers */,
-				059C1EE822FA8E3400ED09CB /* converter.h in Headers */,
-				059C1F3C22FA8E6300ED09CB /* stun_config.h in Headers */,
-				059C1F0122FA8E3500ED09CB /* sound_port.h in Headers */,
-				059C1F8822FA8EA800ED09CB /* pjsua.h in Headers */,
-				059C1DEB22FA8D0E00ED09CB /* pool_i.h in Headers */,
-				059C1EFF22FA8E3500ED09CB /* doxygen.h in Headers */,
-				059C1E3322FA8DD300ED09CB /* base64.h in Headers */,
-				059C1FB122FA8EA900ED09CB /* sip_util.h in Headers */,
-				059C1E1222FA8D0E00ED09CB /* sock.hpp in Headers */,
-				059C1F4022FA8E6300ED09CB /* pjnath.h in Headers */,
-				0529C22E22F9BA0D00FA3E8F /* opus_multistream.h in Headers */,
-				059C1F0622FA8E3500ED09CB /* master_port.h in Headers */,
-				059C1FBC22FA8EA900ED09CB /* sip_uri.h in Headers */,
-				059C1E0A22FA8D0E00ED09CB /* list.hpp in Headers */,
-				059C1F0822FA8E3500ED09CB /* transport_udp.h in Headers */,
-				059C1F0022FA8E3500ED09CB /* format.h in Headers */,
-				059C1DB622FA8D0E00ED09CB /* time.h in Headers */,
-				059C1DBF22FA8D0E00ED09CB /* m_powerpc.h in Headers */,
-				059C1F9522FA8EA900ED09CB /* endpoint.hpp in Headers */,
-				059C1EC822FA8E3400ED09CB /* vid_port.h in Headers */,
-				059C1EBD22FA8E3400ED09CB /* errno.h in Headers */,
-				059C1FB322FA8EA900ED09CB /* sip_transport_loop.h in Headers */,
-				059C1EDD22FA8E3400ED09CB /* videodev.h in Headers */,
-				059C1DC322FA8D0E00ED09CB /* cc_gcce.h in Headers */,
-				059C1E0422FA8D0E00ED09CB /* pjlib.h in Headers */,
-				059C1EC722FA8E3400ED09CB /* pjmedia.h in Headers */,
-				059C1DEA22FA8D0E00ED09CB /* fifobuf.h in Headers */,
-				059C1F3322FA8E6300ED09CB /* config.h in Headers */,
-				059C1EF422FA8E3400ED09CB /* vid_codec_util.h in Headers */,
-				059C1E0222FA8D0E00ED09CB /* pool_buf.h in Headers */,
-				059C1DE622FA8D0E00ED09CB /* lock.h in Headers */,
-				059C1F1322FA8E3500ED09CB /* ilbc.h in Headers */,
-				059C1EFE22FA8E3500ED09CB /* sdp.h in Headers */,
-				059C1F3222FA8E6300ED09CB /* stun_msg.h in Headers */,
-				0529C22D22F9BA0D00FA3E8F /* opus_defines.h in Headers */,
-				059C1ED222FA8E3400ED09CB /* vid_codec.h in Headers */,
-				059C1E4322FA8DD300ED09CB /* srv_resolver.h in Headers */,
-				059C1EF322FA8E3400ED09CB /* splitcomb.h in Headers */,
-				059C1FB922FA8EA900ED09CB /* sip_parser.h in Headers */,
-				059C1E3422FA8DD300ED09CB /* config.h in Headers */,
-				059C1E3B22FA8DD300ED09CB /* cli.h in Headers */,
-				059C1F0E22FA8E3500ED09CB /* passthrough.h in Headers */,
-				059C1EDA22FA8E3400ED09CB /* event.h in Headers */,
-				059C1DCF22FA8D0E00ED09CB /* os_symbian.h in Headers */,
-				059C1FC222FA8EA900ED09CB /* sip_dialog.h in Headers */,
-				059C1FAD22FA8EA900ED09CB /* sip_tel_uri.h in Headers */,
-				059C1F8C22FA8EA900ED09CB /* sip_regc.h in Headers */,
-				059C1F9D22FA8EA900ED09CB /* rpid.h in Headers */,
-				059C1DBB22FA8D0E00ED09CB /* m_armv4.h in Headers */,
-				059C1E1122FA8D0E00ED09CB /* os.hpp in Headers */,
-				059C1DB522FA8D0E00ED09CB /* file_io.h in Headers */,
-				059C1F0422FA8E3500ED09CB /* clock.h in Headers */,
-				059C1DC022FA8D0E00ED09CB /* os_rtems.h in Headers */,
-				059C1EC122FA8E3400ED09CB /* config.h in Headers */,
-				059C1ED022FA8E3400ED09CB /* vid_tee.h in Headers */,
-				059C1EF722FA8E3500ED09CB /* vid_stream.h in Headers */,
-				059C1FC422FA8EA900ED09CB /* sip_config.h in Headers */,
-				059C1EE722FA8E3400ED09CB /* echo.h in Headers */,
-				059C1FB022FA8EA900ED09CB /* sip_autoconf.h in Headers */,
-				059C1F8E22FA8EA900ED09CB /* sip_timer.h in Headers */,
-				059C1DFB22FA8D0E00ED09CB /* math.h in Headers */,
-				059C1DBA22FA8D0E00ED09CB /* cc_msvc.h in Headers */,
-				059C1E4222FA8DD300ED09CB /* cli_telnet.h in Headers */,
-				059C1F1E22FA8E3500ED09CB /* vid_toolbox.h in Headers */,
-				059C1DC222FA8D0E00ED09CB /* cc_codew.h in Headers */,
-				059C1F3B22FA8E6300ED09CB /* errno.h in Headers */,
-				059C1E0722FA8D0E00ED09CB /* lock.hpp in Headers */,
-				059C1DB322FA8D0E00ED09CB /* sock.h in Headers */,
-				059C1DB822FA8D0E00ED09CB /* m_m68k.h in Headers */,
-				059C1ED422FA8E3400ED09CB /* transport_srtp.h in Headers */,
-				059C1F3422FA8E6300ED09CB /* types.h in Headers */,
-				059C1E4A22FA8DD300ED09CB /* string.h in Headers */,
-				059C1F1A22FA8E3500ED09CB /* amr_helper.h in Headers */,
-				059C1DD622FA8D0E00ED09CB /* m_i386.h in Headers */,
-				059C1E0622FA8D0E00ED09CB /* hash.hpp in Headers */,
-				059C1DDE22FA8D0E00ED09CB /* m_sparc.h in Headers */,
-				059C1EFA22FA8E3500ED09CB /* stream_common.h in Headers */,
-				059C1E0C22FA8D0E00ED09CB /* timer.hpp in Headers */,
-				059C1DE422FA8D0E00ED09CB /* limits.h in Headers */,
-				059C1ECE22FA8E3400ED09CB /* wav_playlist.h in Headers */,
-				059C1E4022FA8DD300ED09CB /* resolver.h in Headers */,
-				059C1F9722FA8EA900ED09CB /* presence.hpp in Headers */,
-				059C1ECD22FA8E3400ED09CB /* endpoint.h in Headers */,
-				059C1DF622FA8D0E00ED09CB /* sock_qos.h in Headers */,
-				059C1DC822FA8D0E00ED09CB /* os_winuwp.h in Headers */,
-				059C1DD922FA8D0E00ED09CB /* socket.h in Headers */,
-				059C1EF122FA8E3400ED09CB /* session.h in Headers */,
-				059C1FC022FA8EA900ED09CB /* print_util.h in Headers */,
-				059C1F1C22FA8E3500ED09CB /* ipp_codecs.h in Headers */,
-				059C1F1122FA8E3500ED09CB /* types.h in Headers */,
-				059C1F3D22FA8E6300ED09CB /* ice_session.h in Headers */,
-				059C1DB922FA8D0E00ED09CB /* malloc.h in Headers */,
-				059C1EED22FA8E3400ED09CB /* alaw_ulaw.h in Headers */,
-				059C1DD222FA8D0E00ED09CB /* stdarg.h in Headers */,
-				059C1DF022FA8D0E00ED09CB /* unicode.h in Headers */,
-				059C1EE922FA8E3400ED09CB /* vid_conf.h in Headers */,
-				0597EC7022F965F000300305 /* PJSIP.h in Headers */,
-				059C1FA922FA8EA900ED09CB /* pjsip_ua.h in Headers */,
-				059C1DB422FA8D0E00ED09CB /* ip_helper.h in Headers */,
-				059C1EF622FA8E3500ED09CB /* rtcp.h in Headers */,
-				059C1E3522FA8DD300ED09CB /* types.h in Headers */,
-				059C1F0222FA8E3500ED09CB /* config_auto.h in Headers */,
-				059C1DEE22FA8D0E00ED09CB /* file_access.h in Headers */,
-				059C1DF222FA8D0E00ED09CB /* rbtree.h in Headers */,
-				059C1F0C22FA8E3500ED09CB /* ffmpeg_vid_codecs.h in Headers */,
-				059C1FC522FA8EA900ED09CB /* sip_auth_aka.h in Headers */,
-				059C1DFF22FA8D0E00ED09CB /* assert.h in Headers */,
-				059C1EE622FA8E3400ED09CB /* rtcp_fb.h in Headers */,
-				059C1EDE22FA8E3400ED09CB /* avi_stream.h in Headers */,
-				059C1FA522FA8EA900ED09CB /* pjsua2.hpp in Headers */,
-				059C1F1D22FA8E3500ED09CB /* l16.h in Headers */,
-				059C1F3922FA8E6300ED09CB /* stun_session.h in Headers */,
-				059C1E3D22FA8DD300ED09CB /* xml.h in Headers */,
-				059C1DD522FA8D0E00ED09CB /* os_auto.h in Headers */,
-				059C1E0D22FA8D0E00ED09CB /* string.hpp in Headers */,
-				059C1DE022FA8D0E00ED09CB /* ssl_sock.h in Headers */,
-				059C1DED22FA8D0E00ED09CB /* except.h in Headers */,
-				059C1DF422FA8D0E00ED09CB /* log.h in Headers */,
-				059C1EBC22FA8E3400ED09CB /* audiodev_imp.h in Headers */,
-				059C1EC222FA8E3400ED09CB /* videodev.h in Headers */,
-				059C1DDA22FA8D0E00ED09CB /* m_auto.h in Headers */,
-				059C1DC722FA8D0E00ED09CB /* os_darwinos.h in Headers */,
-				059C1E3E22FA8DD300ED09CB /* scanner.h in Headers */,
-				059C1DE522FA8D0E00ED09CB /* config_site_sample.h in Headers */,
-				059C1F9922FA8EA900ED09CB /* types.hpp in Headers */,
-				059C1FB422FA8EA900ED09CB /* sip_msg.h in Headers */,
-				059C1F9122FA8EA900ED09CB /* doxygen.hpp in Headers */,
-				059C1DDB22FA8D0E00ED09CB /* os_winphone8.h in Headers */,
-				059C1DF722FA8D0E00ED09CB /* array.h in Headers */,
-				059C1DD822FA8D0E00ED09CB /* cc_gcc.h in Headers */,
-				059C1DCB22FA8D0E00ED09CB /* m_alpha.h in Headers */,
-				059C1F0D22FA8E3500ED09CB /* speex.h in Headers */,
-				059C1FA022FA8EA900ED09CB /* publish.h in Headers */,
-				059C1FB722FA8EA900ED09CB /* sip_transport_tls.h in Headers */,
-				059C1DFC22FA8D0E00ED09CB /* errno.h in Headers */,
-				059C1FA822FA8EA900ED09CB /* pjsip_simple.h in Headers */,
-				059C1E3822FA8DD300ED09CB /* dns_server.h in Headers */,
-				059C1F1922FA8E3500ED09CB /* h263_packetizer.h in Headers */,
-				059C1E0022FA8D0E00ED09CB /* hash.h in Headers */,
-				059C1F1B22FA8E3500ED09CB /* audio_codecs.h in Headers */,
-				059C1EE222FA8E3400ED09CB /* audiodev.h in Headers */,
-				059C1EEA22FA8E3400ED09CB /* stream.h in Headers */,
-				059C1E4722FA8DD300ED09CB /* stun_simple.h in Headers */,
-				059C1F0322FA8E3500ED09CB /* jbuf.h in Headers */,
-				059C1DB722FA8D0E00ED09CB /* os_sunos.h in Headers */,
-				059C1F0522FA8E3500ED09CB /* transport_adapter_sample.h in Headers */,
-				059C1F9A22FA8EA900ED09CB /* types.h in Headers */,
-				059C1EC922FA8E3400ED09CB /* circbuf.h in Headers */,
-				059C1E0E22FA8D0E00ED09CB /* tree.hpp in Headers */,
-				0529C23022F9BA0D00FA3E8F /* opus_types.h in Headers */,
-				059C1F1F22FA8E3500ED09CB /* config_auto.h in Headers */,
-				059C1FC322FA8EA900ED09CB /* sip_auth_parser.h in Headers */,
-				059C1FAC22FA8EA900ED09CB /* sip_types.h in Headers */,
-				059C1DDD22FA8D0E00ED09CB /* string.h in Headers */,
-				059C1FA422FA8EA900ED09CB /* evsub.h in Headers */,
-				059C1DE722FA8D0E00ED09CB /* config_site.h in Headers */,
-				059C1F9322FA8EA900ED09CB /* siptypes.hpp in Headers */,
-				059C1E4122FA8DD300ED09CB /* hmac_sha1.h in Headers */,
-				059C1FA622FA8EA900ED09CB /* pjsua.h in Headers */,
-				059C1EF822FA8E3500ED09CB /* transport.h in Headers */,
-				059C1FA722FA8EA900ED09CB /* pjsip_auth.h in Headers */,
-				059C1EBB22FA8E3400ED09CB /* audiodev.h in Headers */,
-				059C1EE522FA8E3400ED09CB /* transport_loop.h in Headers */,
-				059C1E4422FA8DD300ED09CB /* pcap.h in Headers */,
-				059C1F3522FA8E6300ED09CB /* stun_sock.h in Headers */,
-				059C1F0922FA8E3500ED09CB /* opencore_amr.h in Headers */,
-				059C1F8A22FA8EA800ED09CB /* sip_inv.h in Headers */,
-				059C1FAB22FA8EA900ED09CB /* sip_module.h in Headers */,
-				059C1ED522FA8E3400ED09CB /* delaybuf.h in Headers */,
-				059C1DFD22FA8D0E00ED09CB /* ioqueue.h in Headers */,
-				059C1F3722FA8E6300ED09CB /* nat_detect.h in Headers */,
-				059C1E4822FA8DD300ED09CB /* dns.h in Headers */,
-				059C1DCE22FA8D0E00ED09CB /* os_win32.h in Headers */,
-				059C1FB622FA8EA900ED09CB /* sip_endpoint.h in Headers */,
-				059C1FA222FA8EA900ED09CB /* xpidf.h in Headers */,
-				059C1F1422FA8E3500ED09CB /* gsm.h in Headers */,
-				059C1DEC22FA8D0E00ED09CB /* list_i.h in Headers */,
-				059C1F3F22FA8E6300ED09CB /* stun_auth.h in Headers */,
-				059C1DDF22FA8D0E00ED09CB /* pool.h in Headers */,
-				059C1DEF22FA8D0E00ED09CB /* timer.h in Headers */,
-				059C1DF122FA8D0E00ED09CB /* list.h in Headers */,
-				059C1ED622FA8E3400ED09CB /* stereo.h in Headers */,
-				059C1ECA22FA8E3400ED09CB /* conference.h in Headers */,
-				059C1E0522FA8D0E00ED09CB /* pjlib++.hpp in Headers */,
-				059C1FBE22FA8EA900ED09CB /* sip_transaction.h in Headers */,
-				059C1EC522FA8E3400ED09CB /* videodev_imp.h in Headers */,
-				059C1DC922FA8D0E00ED09CB /* os_linux.h in Headers */,
-				059C1ECC22FA8E3400ED09CB /* resample.h in Headers */,
-				059C1E3922FA8DD300ED09CB /* hmac_md5.h in Headers */,
-				059C1DD022FA8D0E00ED09CB /* rand.h in Headers */,
-				059C1EF022FA8E3400ED09CB /* codec.h in Headers */,
-				059C1F9E22FA8EA900ED09CB /* pidf.h in Headers */,
-				059C1E3122FA8DD300ED09CB /* scanner_cis_bitwise.h in Headers */,
-				059C1EEE22FA8E3400ED09CB /* sdp_neg.h in Headers */,
-				059C1EBF22FA8E3400ED09CB /* pjmedia_audiodev.h in Headers */,
-				059C1FC122FA8EA900ED09CB /* sip_errno.h in Headers */,
-				059C1EE122FA8E3400ED09CB /* avi.h in Headers */,
-				059C1EDF22FA8E3400ED09CB /* null_port.h in Headers */,
-				059C1EB922FA8E3400ED09CB /* pjmedia_videodev.h in Headers */,
-				059C1FA322FA8EA900ED09CB /* evsub_msg.h in Headers */,
-				059C1DCD22FA8D0E00ED09CB /* cc_mwcc.h in Headers */,
-				059C1E0922FA8D0E00ED09CB /* file.hpp in Headers */,
-				059C1FAF22FA8EA900ED09CB /* sip_auth.h in Headers */,
-				059C1FBF22FA8EA900ED09CB /* sip_transport_udp.h in Headers */,
-				059C1F9422FA8EA900ED09CB /* account.hpp in Headers */,
-				059C1F2022FA8E3500ED09CB /* openh264.h in Headers */,
-				059C1DD122FA8D0E00ED09CB /* errno.h in Headers */,
-				059C1DFE22FA8D0E00ED09CB /* doxygen.h in Headers */,
-				059C1FA122FA8EA900ED09CB /* errno.h in Headers */,
-				059C1DBD22FA8D0E00ED09CB /* os_win32_wince.h in Headers */,
-				059C1DC122FA8D0E00ED09CB /* high_precision.h in Headers */,
-				059C1EE022FA8E3400ED09CB /* rtp.h in Headers */,
-				059C1E3722FA8DD300ED09CB /* md5.h in Headers */,
-				059C1F3E22FA8E6300ED09CB /* stun_transaction.h in Headers */,
-				059C1DF522FA8D0E00ED09CB /* ctype.h in Headers */,
-				059C1F8722FA8EA800ED09CB /* pjsua_internal.h in Headers */,
-				059C1F0A22FA8E3500ED09CB /* opus.h in Headers */,
-				059C1EF522FA8E3400ED09CB /* transport_ice.h in Headers */,
-				059C1DE122FA8D0E00ED09CB /* config.h in Headers */,
-				059C1FC722FA8EA900ED09CB /* pjsip.h in Headers */,
-				059C1DC622FA8D0E00ED09CB /* setjmp.h in Headers */,
-				059C1E4B22FA8DD300ED09CB /* pjlib-util.h in Headers */,
-				059C1E0822FA8D0E00ED09CB /* proactor.hpp in Headers */,
-				059C1E4522FA8DD300ED09CB /* sha1.h in Headers */,
-				059C1DE822FA8D0E00ED09CB /* os.h in Headers */,
-				059C1F9822FA8EA900ED09CB /* media.hpp in Headers */,
-				059C1DFA22FA8D0E00ED09CB /* addr_resolv.h in Headers */,
-				059C1F0B22FA8E3500ED09CB /* amr_sdp_match.h in Headers */,
-				059C1F2122FA8E3500ED09CB /* g7221.h in Headers */,
-				059C1DF922FA8D0E00ED09CB /* rand.h in Headers */,
-				059C1F1822FA8E3500ED09CB /* h264_packetizer.h in Headers */,
-				059C1F9B22FA8EA900ED09CB /* presence.h in Headers */,
-				059C1F9622FA8EA900ED09CB /* call.hpp in Headers */,
-				059C1DBC22FA8D0E00ED09CB /* limits.h in Headers */,
-				0529C23122F9BA0D00FA3E8F /* opus.h in Headers */,
-				059C1E0F22FA8D0E00ED09CB /* scanner.hpp in Headers */,
-				059C1EEC22FA8E3400ED09CB /* wav_port.h in Headers */,
-				059C1E1022FA8D0E00ED09CB /* types.hpp in Headers */,
-				059C1FAE22FA8EA900ED09CB /* sip_event.h in Headers */,
+				059C215D22FA9A7000ED09CB /* pjsip-simple in Headers */,
+				059C215E22FA9A7000ED09CB /* pjsip.h in Headers */,
+				059C215F22FA9A7000ED09CB /* pjmedia-codec.h in Headers */,
+				059C216022FA9A7000ED09CB /* pj in Headers */,
+				059C216122FA9A7000ED09CB /* pjmedia-audiodev in Headers */,
+				059C216222FA9A7000ED09CB /* pjlib++.hpp in Headers */,
+				059C216322FA9A7000ED09CB /* pjnath in Headers */,
+				059C216422FA9A7000ED09CB /* pj++ in Headers */,
+				059C216522FA9A7000ED09CB /* pjsua2 in Headers */,
+				059C216622FA9A7000ED09CB /* pjlib-util.h in Headers */,
+				059C216722FA9A7000ED09CB /* pjmedia.h in Headers */,
+				059C216822FA9A7100ED09CB /* pjsua2.hpp in Headers */,
+				059C216922FA9A7100ED09CB /* pjsip_ua.h in Headers */,
+				059C216A22FA9A7100ED09CB /* pjsip-ua in Headers */,
+				059C216B22FA9A7100ED09CB /* pjsip_auth.h in Headers */,
+				059C216C22FA9A7100ED09CB /* opus in Headers */,
+				059C216D22FA9A7100ED09CB /* pjsip in Headers */,
+				059C216E22FA9A7100ED09CB /* pjmedia in Headers */,
+				059C216F22FA9A7100ED09CB /* pjsua-lib in Headers */,
+				059C217022FA9A7100ED09CB /* pjsip_simple.h in Headers */,
+				059C217122FA9A7100ED09CB /* pjmedia-videodev in Headers */,
+				059C217222FA9A7100ED09CB /* pjmedia-codec in Headers */,
+				059C217322FA9A7100ED09CB /* pjnath.h in Headers */,
+				059C217422FA9A7100ED09CB /* pjsua.h in Headers */,
+				059C217522FA9A7100ED09CB /* pjmedia_videodev.h in Headers */,
+				059C217622FA9A7100ED09CB /* pjlib.h in Headers */,
+				059C217722FA9A7100ED09CB /* pjlib-util in Headers */,
+				059C217822FA9A7100ED09CB /* pjmedia_audiodev.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
