@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "0597EC6B22F965F000300305"
-               BuildableName = "PJSIP.framework"
-               BlueprintName = "PJSIP"
+               BuildableName = "PJSIP_Carthage.framework"
+               BlueprintName = "PJSIP-Carthage"
                ReferencedContainer = "container:PJSIP-Carthage.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,8 +46,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0597EC6B22F965F000300305"
-            BuildableName = "PJSIP.framework"
-            BlueprintName = "PJSIP"
+            BuildableName = "PJSIP_Carthage.framework"
+            BlueprintName = "PJSIP-Carthage"
             ReferencedContainer = "container:PJSIP-Carthage.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,8 +64,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "0597EC6B22F965F000300305"
-            BuildableName = "PJSIP.framework"
-            BlueprintName = "PJSIP"
+            BuildableName = "PJSIP_Carthage.framework"
+            BlueprintName = "PJSIP-Carthage"
             ReferencedContainer = "container:PJSIP-Carthage.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
