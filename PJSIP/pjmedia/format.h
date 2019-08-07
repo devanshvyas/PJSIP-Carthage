@@ -24,7 +24,7 @@
  * @file pjmedia/format.h Media format
  * @brief Media format
  */
-#include <pjmedia/types.h>
+#include <PJSIPCarthage/pjmedia/types.h>
 
 /**
  * @defgroup PJMEDIA_FORMAT Media format

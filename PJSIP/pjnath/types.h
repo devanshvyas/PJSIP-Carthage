@@ -25,8 +25,8 @@
  * @brief PJNATH types.
  */
 
-#include <pj/types.h>
-#include <pjnath/config.h>
+#include <PJSIPCarthage/pj/types.h>
+#include <PJSIPCarthage/pjnath/config.h>
 
 /**
  * @defgroup PJNATH NAT Traversal Helper Library

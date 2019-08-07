@@ -25,7 +25,7 @@
  * @brief Random Number Generator.
  */
 
-#include <pj/config.h>
+#include <PJSIPCarthage/pj/config.h>
 
 PJ_BEGIN_DECL
 

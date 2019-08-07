@@ -26,8 +26,8 @@
  * @file resample.h
  * @brief Sample rate converter.
  */
-#include <pjmedia/types.h>
-#include <pjmedia/port.h>
+#include <PJSIPCarthage/pjmedia/types.h>
+#include <PJSIPCarthage/pjmedia/port.h>
 
 /**
  * @defgroup PJMEDIA_RESAMPLE Resampling Algorithm

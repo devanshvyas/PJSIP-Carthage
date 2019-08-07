@@ -26,7 +26,7 @@
  * @brief Loopback transport
  */
 
-#include <pjmedia/stream.h>
+#include <PJSIPCarthage/pjmedia/stream.h>
 
 
 /**

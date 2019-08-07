@@ -23,8 +23,8 @@
  * @file pjsua2/types.hpp
  * @brief PJSUA2 Base Types
  */
-#include <pjsua2/types.hpp>
-#include <pjsua2/persistent.hpp>
+#include <PJSIPCarthage/pjsua2/types.hpp>
+#include <PJSIPCarthage/pjsua2/persistent.hpp>
 
 #include <string>
 #include <vector>

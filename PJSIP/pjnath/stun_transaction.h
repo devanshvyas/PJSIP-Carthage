@@ -25,9 +25,9 @@
  * @brief STUN transaction
  */
 
-#include <pjnath/stun_msg.h>
-#include <pjnath/stun_config.h>
-#include <pj/lock.h>
+#include <PJSIPCarthage/pjnath/stun_msg.h>
+#include <PJSIPCarthage/pjnath/stun_config.h>
+#include <PJSIPCarthage/pj/lock.h>
 
 
 PJ_BEGIN_DECL

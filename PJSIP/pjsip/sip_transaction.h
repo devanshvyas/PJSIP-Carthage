@@ -25,10 +25,10 @@
  * @brief SIP Transaction
  */
 
-#include <pjsip/sip_msg.h>
-#include <pjsip/sip_util.h>
-#include <pjsip/sip_transport.h>
-#include <pj/timer.h>
+#include <PJSIPCarthage/pjsip/sip_msg.h>
+#include <PJSIPCarthage/pjsip/sip_util.h>
+#include <PJSIPCarthage/pjsip/sip_transport.h>
+#include <PJSIPCarthage/pj/timer.h>
 
 PJ_BEGIN_DECL
 

@@ -23,9 +23,9 @@
  * @file pjsua2/persistent.hpp
  * @brief PJSUA2 Persistent Services
  */
-#include <pjsua2/persistent.hpp>
-#include <pjlib-util/json.h>
-#include <pj/pool.h>
+#include <PJSIPCarthage/pjsua2/persistent.hpp>
+#include <PJSIPCarthage/pjlib-util/json.h>
+#include <PJSIPCarthage/pj/pool.h>
 #include <string>
 
 /** PJSUA2 API is inside pj namespace */

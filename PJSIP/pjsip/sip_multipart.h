@@ -24,7 +24,7 @@
  * @brief Multipart support.
  */
 
-#include <pjsip/sip_msg.h>
+#include <PJSIPCarthage/pjsip/sip_msg.h>
 
 PJ_BEGIN_DECL
 

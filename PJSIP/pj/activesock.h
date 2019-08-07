@@ -25,8 +25,8 @@
  * @brief Active socket
  */
 
-#include <pj/ioqueue.h>
-#include <pj/sock.h>
+#include <PJSIPCarthage/pj/ioqueue.h>
+#include <PJSIPCarthage/pj/sock.h>
 
 
 PJ_BEGIN_DECL

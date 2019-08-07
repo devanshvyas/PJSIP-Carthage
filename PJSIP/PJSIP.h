@@ -17,45 +17,45 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA 
  */
-#ifndef __PJSIP_H__
-#define __PJSIP_H__
+#ifndef __PJSIPCarthage_H__
+#define __PJSIPCarthage_H__
 
 /* Base types. */
-#include <PJSIP/pjsip/sip_types.h>
-#include <PJSIP/pjsip/sip_errno.h>
+#include <PJSIPCarthage/pjsip/sip_types.h>
+#include <PJSIPCarthage/pjsip/sip_errno.h>
 
 /* Messaging and parsing. */
-#include <PJSIP/pjsip/sip_uri.h>
-#include <PJSIP/pjsip/sip_tel_uri.h>
-#include <PJSIP/pjsip/sip_msg.h>
-#include <PJSIP/pjsip/sip_multipart.h>
-#include <PJSIP/pjsip/sip_parser.h>
+#include <PJSIPCarthage/pjsip/sip_uri.h>
+#include <PJSIPCarthage/pjsip/sip_tel_uri.h>
+#include <PJSIPCarthage/pjsip/sip_msg.h>
+#include <PJSIPCarthage/pjsip/sip_multipart.h>
+#include <PJSIPCarthage/pjsip/sip_parser.h>
 
 /* Core */
-#include <PJSIP/pjsip/sip_event.h>
-#include <PJSIP/pjsip/sip_module.h>
-#include <PJSIP/pjsip/sip_endpoint.h>
-#include <PJSIP/pjsip/sip_util.h>
+#include <PJSIPCarthage/pjsip/sip_event.h>
+#include <PJSIPCarthage/pjsip/sip_module.h>
+#include <PJSIPCarthage/pjsip/sip_endpoint.h>
+#include <PJSIPCarthage/pjsip/sip_util.h>
 
 /* Transport layer */
-#include <PJSIP/pjsip/sip_transport.h>
-#include <PJSIP/pjsip/sip_transport_udp.h>
-#include <PJSIP/pjsip/sip_transport_loop.h>
-#include <PJSIP/pjsip/sip_transport_tcp.h>
-#include <PJSIP/pjsip/sip_transport_tls.h>
-#include <PJSIP/pjsip/sip_resolve.h>
+#include <PJSIPCarthage/pjsip/sip_transport.h>
+#include <PJSIPCarthage/pjsip/sip_transport_udp.h>
+#include <PJSIPCarthage/pjsip/sip_transport_loop.h>
+#include <PJSIPCarthage/pjsip/sip_transport_tcp.h>
+#include <PJSIPCarthage/pjsip/sip_transport_tls.h>
+#include <PJSIPCarthage/pjsip/sip_resolve.h>
 
 /* Authentication. */
-#include <PJSIP/pjsip/sip_auth.h>
-#include <PJSIP/pjsip/sip_auth_aka.h>
+#include <PJSIPCarthage/pjsip/sip_auth.h>
+#include <PJSIPCarthage/pjsip/sip_auth_aka.h>
 
 /* Transaction layer. */
-#include <PJSIP/pjsip/sip_transaction.h>
+#include <PJSIPCarthage/pjsip/sip_transaction.h>
 
 /* UA Layer. */
-#include <PJSIP/pjsip/sip_ua_layer.h>
-#include <PJSIP/pjsip/sip_dialog.h>
+#include <PJSIPCarthage/pjsip/sip_ua_layer.h>
+#include <PJSIPCarthage/pjsip/sip_dialog.h>
 
 
-#endif	/* __PJSIP_H__ */
+#endif	/* __PJSIPCarthage_H__ */
 

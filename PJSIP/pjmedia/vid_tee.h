@@ -23,7 +23,7 @@
  * @file vid_tee.h
  * @brief Video tee (source duplicator).
  */
-#include <pjmedia/port.h>
+#include <PJSIPCarthage/pjmedia/port.h>
 
 /**
  * @addtogroup PJMEDIA_VID_TEE Video source duplicator

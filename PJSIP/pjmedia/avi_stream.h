@@ -23,7 +23,7 @@
  * @file avi_stream.h
  * @brief AVI file player.
  */
-#include <pjmedia/port.h>
+#include <PJSIPCarthage/pjmedia/port.h>
 
 
 

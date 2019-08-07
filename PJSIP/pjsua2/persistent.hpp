@@ -23,7 +23,7 @@
  * @file pjsua2/persistent.hpp
  * @brief PJSUA2 Persistent Services
  */
-#include <pjsua2/types.hpp>
+#include <PJSIPCarthage/pjsua2/types.hpp>
 
 #include <string>
 #include <vector>

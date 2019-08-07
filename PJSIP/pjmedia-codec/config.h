@@ -32,7 +32,7 @@
  * @{
  */
 
-#include <pjmedia/types.h>
+#include <PJSIPCarthage/pjmedia/types.h>
 
 /*
  * Include config_auto.h if autoconf is used (PJ_AUTOCONF is set)

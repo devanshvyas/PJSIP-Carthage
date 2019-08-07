@@ -25,8 +25,8 @@
  * @brief PJLIB String Operations.
  */
 
-#include <pj/types.h>
-#include <pj/compat/string.h>
+#include <PJSIPCarthage/pj/types.h>
+#include <PJSIPCarthage/pj/compat/string.h>
 
 PJ_BEGIN_DECL
 
@@ -834,7 +834,7 @@ PJ_INLINE(void*) pj_memchr(const void *buf, int c, pj_size_t size)
  */
 
 #if PJ_FUNCTIONS_ARE_INLINED
-#  include <pj/string_i.h>
+#  include <PJSIPCarthage/pj/string_i.h>
 #endif
 
 PJ_END_DECL

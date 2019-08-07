@@ -24,12 +24,12 @@
  * @file stun_sock.h
  * @brief STUN aware socket transport
  */
-#include <pjnath/stun_config.h>
-#include <pjlib-util/resolver.h>
-#include <pj/ioqueue.h>
-#include <pj/lock.h>
-#include <pj/sock.h>
-#include <pj/sock_qos.h>
+#include <PJSIPCarthage/pjnath/stun_config.h>
+#include <PJSIPCarthage/pjlib-util/resolver.h>
+#include <PJSIPCarthage/pj/ioqueue.h>
+#include <PJSIPCarthage/pj/lock.h>
+#include <PJSIPCarthage/pj/sock.h>
+#include <PJSIPCarthage/pj/sock_qos.h>
 
 
 PJ_BEGIN_DECL

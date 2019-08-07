@@ -23,7 +23,7 @@
  * @file videodev.h
  * @brief Video device API.
  */
-#include <pjmedia/videodev.h>
+#include <PJSIPCarthage/pjmedia/videodev.h>
 
 
 PJ_BEGIN_DECL

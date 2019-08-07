@@ -19,11 +19,11 @@
 #ifndef __PJSUA2_HPP__
 #define __PJSUA2_HPP__
 
-#include <pjsua2/endpoint.hpp>
-#include <pjsua2/account.hpp>
-#include <pjsua2/call.hpp>
-#include <pjsua2/presence.hpp>
-#include <pjsua2/media.hpp>
-#include <pjsua2/json.hpp>
+#include <PJSIPCarthage/pjsua2/endpoint.hpp>
+#include <PJSIPCarthage/pjsua2/account.hpp>
+#include <PJSIPCarthage/pjsua2/call.hpp>
+#include <PJSIPCarthage/pjsua2/presence.hpp>
+#include <PJSIPCarthage/pjsua2/media.hpp>
+#include <PJSIPCarthage/pjsua2/json.hpp>
 
 #endif

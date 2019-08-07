@@ -25,7 +25,7 @@
  * @brief Common min and max values
  */
 
-#include <pj/compat/limits.h>
+#include <PJSIPCarthage/pj/compat/limits.h>
 
 /** Maximum value for signed 32-bit integer. */
 #define PJ_MAXINT32	0x7fffffff

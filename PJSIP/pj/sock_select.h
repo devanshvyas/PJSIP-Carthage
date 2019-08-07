@@ -25,7 +25,7 @@
  * @brief Socket select().
  */
 
-#include <pj/types.h>
+#include <PJSIPCarthage/pj/types.h>
 
 PJ_BEGIN_DECL 
 

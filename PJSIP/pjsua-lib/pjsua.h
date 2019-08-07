@@ -27,31 +27,31 @@
 
 
 /* Include all PJSIP core headers. */
-#include <pjsip.h>
+#include <PJSIPCarthage/pjsip.h>
 
 /* Include all PJMEDIA headers. */
-#include <pjmedia.h>
+#include <PJSIPCarthage/pjmedia.h>
 
 /* Include all PJMEDIA-CODEC headers. */
-#include <pjmedia-codec.h>
+#include <PJSIPCarthage/pjmedia-codec.h>
 
 /* Videodev too */
-#include <pjmedia_videodev.h>
+#include <PJSIPCarthage/pjmedia_videodev.h>
 
 /* Include all PJSIP-UA headers */
-#include <pjsip_ua.h>
+#include <PJSIPCarthage/pjsip_ua.h>
 
 /* Include all PJSIP-SIMPLE headers */
-#include <pjsip_simple.h>
+#include <PJSIPCarthage/pjsip_simple.h>
 
 /* Include all PJNATH headers */
-#include <pjnath.h>
+#include <PJSIPCarthage/pjnath.h>
 
 /* Include all PJLIB-UTIL headers. */
-#include <pjlib-util.h>
+#include <PJSIPCarthage/pjlib-util.h>
 
 /* Include all PJLIB headers. */
-#include <pjlib.h>
+#include <PJSIPCarthage/pjlib.h>
 
 
 PJ_BEGIN_DECL

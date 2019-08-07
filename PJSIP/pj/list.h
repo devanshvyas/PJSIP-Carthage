@@ -25,7 +25,7 @@
  * @brief Linked List data structure.
  */
 
-#include <pj/types.h>
+#include <PJSIPCarthage/pj/types.h>
 
 PJ_BEGIN_DECL
 

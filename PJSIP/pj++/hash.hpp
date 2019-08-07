@@ -20,9 +20,9 @@
 #ifndef __PJPP_HASH_HPP__
 #define __PJPP_HASH_HPP__
 
-#include <pj++/types.hpp>
-#include <pj++/pool.hpp>
-#include <pj/hash.h>
+#include <PJSIPCarthage/pj++/types.hpp>
+#include <PJSIPCarthage/pj++/pool.hpp>
+#include <PJSIPCarthage/pj/hash.h>
 
 //
 // Hash table.

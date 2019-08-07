@@ -25,8 +25,8 @@
  * @brief STUN message components.
  */
 
-#include <pjnath/types.h>
-#include <pj/sock.h>
+#include <PJSIPCarthage/pjnath/types.h>
+#include <PJSIPCarthage/pj/sock.h>
 
 
 PJ_BEGIN_DECL

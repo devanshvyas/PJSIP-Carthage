@@ -32,7 +32,7 @@
 #if defined(_MSC_VER)
 #  include <pj/compat/cc_msvc.h>
 #elif defined(__GNUC__)
-#  include <pj/compat/cc_gcc.h>
+#  include <PJSIPCarthage/pj/compat/cc_gcc.h>
 #elif defined(__CW32__)
 #  include <pj/compat/cc_mwcc.h>
 #elif defined(__MWERKS__)
@@ -144,7 +144,7 @@
      */
 #   undef PJ_DARWINOS
 #   define PJ_DARWINOS	    1
-#   include <pj/compat/os_darwinos.h>
+#   include <PJSIPCarthage/pj/compat/os_darwinos.h>
 
 #elif defined(PJ_RTEMS) && PJ_RTEMS!=0
     /*
@@ -304,12 +304,12 @@
 #endif
 
 /* Include size_t definition. */
-#include <pj/compat/size_t.h>
+#include <PJSIPCarthage/pj/compat/size_t.h>
 
 /* Include site/user specific configuration to control PJLIB features.
  * YOU MUST CREATE THIS FILE YOURSELF!!
  */
-#include <pj/config_site.h>
+#include <PJSIPCarthage/pj/config_site.h>
 
 /********************************************************************
  * PJLIB Features.

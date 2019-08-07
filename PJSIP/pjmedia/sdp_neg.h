@@ -258,7 +258,7 @@
  *
  */
 
-#include <pjmedia/sdp.h>
+#include <PJSIPCarthage/pjmedia/sdp.h>
 
 PJ_BEGIN_DECL
 

@@ -25,7 +25,7 @@
  * @brief Text Scanning.
  */
 
-#include <pjlib-util/types.h>
+#include <PJSIPCarthage/pjlib-util/types.h>
 
 PJ_BEGIN_DECL
 
@@ -39,9 +39,9 @@ PJ_BEGIN_DECL
  * @{
  */
 #if defined(PJ_SCANNER_USE_BITWISE) && PJ_SCANNER_USE_BITWISE != 0
-#  include <pjlib-util/scanner_cis_bitwise.h>
+#  include <PJSIPCarthage/pjlib-util/scanner_cis_bitwise.h>
 #else
-#  include <pjlib-util/scanner_cis_uint.h>
+#  include <PJSIPCarthage/pjlib-util/scanner_cis_uint.h>
 #endif
 
 /**

@@ -23,7 +23,7 @@
  * @file vid_conf.h
  * @brief Video conference bridge.
  */
-#include <pjmedia/port.h>
+#include <PJSIPCarthage/pjmedia/port.h>
 
 /**
  * @addtogroup PJMEDIA_VID_CONF Video conference bridge

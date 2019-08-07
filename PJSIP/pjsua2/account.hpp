@@ -23,10 +23,10 @@
  * @file pjsua2/account.hpp
  * @brief PJSUA2 Account operations
  */
-#include <pjsua-lib/pjsua.h>
-#include <pjsua2/persistent.hpp>
-#include <pjsua2/presence.hpp>
-#include <pjsua2/siptypes.hpp>
+#include <PJSIPCarthage/pjsua-lib/pjsua.h>
+#include <PJSIPCarthage/pjsua2/persistent.hpp>
+#include <PJSIPCarthage/pjsua2/presence.hpp>
+#include <PJSIPCarthage/pjsua2/siptypes.hpp>
 
 /** PJSUA2 API is inside pj namespace */
 namespace pj

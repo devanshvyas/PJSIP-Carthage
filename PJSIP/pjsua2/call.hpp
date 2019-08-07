@@ -23,8 +23,8 @@
  * @file pjsua2/call.hpp
  * @brief PJSUA2 Call manipulation
  */
-#include <pjsua-lib/pjsua.h>
-#include <pjsua2/media.hpp>
+#include <PJSIPCarthage/pjsua-lib/pjsua.h>
+#include <PJSIPCarthage/pjsua2/media.hpp>
 
 /** PJSUA2 API is inside pj namespace */
 namespace pj

@@ -61,6 +61,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		054389D422FAEF0A00C839F5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		054389DA22FAEF6C00C839F5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		059C1FCE22FA958900ED09CB /* libpj-arm-apple-darwin_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpj-arm-apple-darwin_ios.a"; path = "PJSIP/Libraries/libpj-arm-apple-darwin_ios.a"; sourceTree = "<group>"; };
 		059C1FCF22FA958900ED09CB /* libpjlib-util-arm-apple-darwin_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpjlib-util-arm-apple-darwin_ios.a"; path = "PJSIP/Libraries/libpjlib-util-arm-apple-darwin_ios.a"; sourceTree = "<group>"; };
 		059C1FD022FA958900ED09CB /* libopus.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libopus.a; path = PJSIP/Libraries/libopus.a; sourceTree = "<group>"; };
@@ -197,6 +199,8 @@
 		059C1FCD22FA957E00ED09CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				054389DA22FAEF6C00C839F5 /* Foundation.framework */,
+				054389D422FAEF0A00C839F5 /* UIKit.framework */,
 				059C1FD322FA958A00ED09CB /* libg7221codec-arm-apple-darwin_ios.a */,
 				059C1FD822FA958A00ED09CB /* libgsmcodec-arm-apple-darwin_ios.a */,
 				059C1FD522FA958A00ED09CB /* libilbccodec-arm-apple-darwin_ios.a */,
@@ -304,6 +308,7 @@
 				TargetAttributes = {
 					05D97ACE22FAA9DF0094F86C = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -465,6 +470,7 @@
 		05D97AD522FAA9DF0094F86C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -485,11 +491,14 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/PJSIP/Libraries",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onusrides.ONUS-stage";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -498,6 +507,7 @@
 		05D97AD622FAA9DF0094F86C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -518,11 +528,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/PJSIP/Libraries",
 				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onusrides.ONUS-stage";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};

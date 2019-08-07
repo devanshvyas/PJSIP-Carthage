@@ -25,8 +25,8 @@
  * @brief SIP Session Timers support (RFC 4028 - Session Timer in SIP)
  */
 
-#include <pjsip-ua/sip_inv.h>
-#include <pjsip/sip_msg.h>
+#include <PJSIPCarthage/pjsip-ua/sip_inv.h>
+#include <PJSIPCarthage/pjsip/sip_msg.h>
 
 /**
  * @defgroup PJSIP_TIMER SIP Session Timers support (RFC 4028 - Session Timers in SIP)

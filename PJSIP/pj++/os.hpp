@@ -20,10 +20,10 @@
 #ifndef __PJPP_OS_HPP__
 #define __PJPP_OS_HPP__
 
-#include <pj/os.h>
-#include <pj/string.h>
-#include <pj++/types.hpp>
-#include <pj++/pool.hpp>
+#include <PJSIPCarthage/pj/os.h>
+#include <PJSIPCarthage/pj/string.h>
+#include <PJSIPCarthage/pj++/types.hpp>
+#include <PJSIPCarthage/pj++/pool.hpp>
 
 class Pj_Thread;
 

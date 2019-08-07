@@ -317,13 +317,13 @@
  *
  * To include all PJLIB headers:
  * \verbatim
-    #include <pjlib.h>
+    #include <PJSIPCarthage/pjlib.h>
    \endverbatim
  *
  * Alternatively, you can include individual PJLIB headers like this:
  * \verbatim
-     #include <pj/log.h>
-     #include <pj/os.h>
+     #include <PJSIPCarthage/pj/log.h>
+     #include <PJSIPCarthage/pj/os.h>
   \endverbatim
  *
  *

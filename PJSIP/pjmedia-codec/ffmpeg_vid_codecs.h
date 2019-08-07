@@ -21,8 +21,8 @@
 #define __PJMEDIA_CODECS_FFMPEG_VID_H__
 
 
-#include <pjmedia-codec/types.h>
-#include <pjmedia/vid_codec.h>
+#include <PJSIPCarthage/pjmedia-codec/types.h>
+#include <PJSIPCarthage/pjmedia/vid_codec.h>
 
 PJ_BEGIN_DECL
 

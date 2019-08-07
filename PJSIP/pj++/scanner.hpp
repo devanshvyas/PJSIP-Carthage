@@ -20,8 +20,8 @@
 #ifndef __PJPP_SCANNER_HPP__
 #define __PJPP_SCANNER_HPP__
 
-#include <pjlib-util/scanner.h>
-#include <pj++/string.hpp>
+#include <PJSIPCarthage/pjlib-util/scanner.h>
+#include <PJSIPCarthage/pj++/string.hpp>
 
 class Pj_Cis;
 class Pj_Cis_Buffer;

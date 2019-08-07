@@ -20,7 +20,7 @@
 #ifndef __PJPP_POOL_HPP__
 #define __PJPP_POOL_HPP__
 
-#include <pj/pool.h>
+#include <PJSIPCarthage/pj/pool.h>
 
 class Pj_Pool;
 class Pj_Caching_Pool;

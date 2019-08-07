@@ -25,12 +25,12 @@
  * @file ice_strans.h
  * @brief ICE Stream Transport
  */
-#include <pjnath/ice_session.h>
-#include <pjnath/stun_sock.h>
-#include <pjnath/turn_sock.h>
-#include <pjlib-util/resolver.h>
-#include <pj/ioqueue.h>
-#include <pj/timer.h>
+#include <PJSIPCarthage/pjnath/ice_session.h>
+#include <PJSIPCarthage/pjnath/stun_sock.h>
+#include <PJSIPCarthage/pjnath/turn_sock.h>
+#include <PJSIPCarthage/pjlib-util/resolver.h>
+#include <PJSIPCarthage/pj/ioqueue.h>
+#include <PJSIPCarthage/pj/timer.h>
 
 
 PJ_BEGIN_DECL

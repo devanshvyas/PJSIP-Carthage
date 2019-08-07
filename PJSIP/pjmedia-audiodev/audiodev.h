@@ -24,8 +24,8 @@
  * @file audiodev.h
  * @brief Audio subsystem API.
  */
-#include <pj/pool.h>
-#include <pjmedia/audiodev.h>
+#include <PJSIPCarthage/pj/pool.h>
+#include <PJSIPCarthage/pjmedia/audiodev.h>
 
 
 PJ_BEGIN_DECL

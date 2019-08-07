@@ -25,10 +25,10 @@
  * @brief Stream common functions.
  */
 
-#include <pjmedia/codec.h>
-#include <pjmedia/sdp.h>
-#include <pjmedia/rtp.h>
-#include <pjmedia/rtcp.h>
+#include <PJSIPCarthage/pjmedia/codec.h>
+#include <PJSIPCarthage/pjmedia/sdp.h>
+#include <PJSIPCarthage/pjmedia/rtp.h>
+#include <PJSIPCarthage/pjmedia/rtcp.h>
 
 
 PJ_BEGIN_DECL

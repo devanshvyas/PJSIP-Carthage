@@ -24,12 +24,12 @@
  * @file audiodev.h
  * @brief Audio device API.
  */
-#include <pjmedia-audiodev/config.h>
-#include <pjmedia-audiodev/errno.h>
-#include <pjmedia/format.h>
-#include <pjmedia/frame.h>
-#include <pjmedia/types.h>
-#include <pj/pool.h>
+#include <PJSIPCarthage/pjmedia-audiodev/config.h>
+#include <PJSIPCarthage/pjmedia-audiodev/errno.h>
+#include <PJSIPCarthage/pjmedia/format.h>
+#include <PJSIPCarthage/pjmedia/frame.h>
+#include <PJSIPCarthage/pjmedia/types.h>
+#include <PJSIPCarthage/pj/pool.h>
 
 
 PJ_BEGIN_DECL

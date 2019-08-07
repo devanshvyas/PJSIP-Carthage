@@ -24,8 +24,8 @@
  * @file errno.h
  * @brief PJLIB Error Subsystem
  */
-#include <pj/types.h>
-#include <pj/compat/errno.h>
+#include <PJSIPCarthage/pj/types.h>
+#include <PJSIPCarthage/pj/compat/errno.h>
 #include <stdarg.h>
 
 PJ_BEGIN_DECL

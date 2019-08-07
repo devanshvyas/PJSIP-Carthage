@@ -20,7 +20,7 @@
 #ifndef __PJPP_TREE_HPP__
 #define __PJPP_TREE_HPP__
 
-#include <pj/rbtree.h>
+#include <PJSIPCarthage/pj/rbtree.h>
 
 //
 // Tree.

@@ -33,8 +33,8 @@ PJ_BEGIN_DECL
  * @brief Representation of events as they are distributed among modules.
  * @{
  */
-#include <pj/types.h>
-#include <pj/timer.h>
+#include <PJSIPCarthage/pj/types.h>
+#include <PJSIPCarthage/pj/timer.h>
 
 
 /** 

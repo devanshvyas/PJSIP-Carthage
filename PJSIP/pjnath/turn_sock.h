@@ -24,9 +24,9 @@
  * @file turn_sock.h
  * @brief TURN relay using UDP client as transport protocol
  */
-#include <pjnath/turn_session.h>
-#include <pj/sock_qos.h>
-#include <pj/ssl_sock.h>
+#include <PJSIPCarthage/pjnath/turn_session.h>
+#include <PJSIPCarthage/pj/sock_qos.h>
+#include <PJSIPCarthage/pj/ssl_sock.h>
 
 
 PJ_BEGIN_DECL

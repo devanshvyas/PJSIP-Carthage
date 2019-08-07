@@ -27,7 +27,7 @@
  * @brief Delay Buffer.
  */
 
-#include <pjmedia/types.h>
+#include <PJSIPCarthage/pjmedia/types.h>
 
 /**
  * @defgroup PJMED_DELAYBUF Adaptive Delay Buffer

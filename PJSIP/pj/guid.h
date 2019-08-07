@@ -25,7 +25,7 @@
  * @file guid.h
  * @brief GUID Globally Unique Identifier.
  */
-#include <pj/types.h>
+#include <PJSIPCarthage/pj/types.h>
 
 
 PJ_BEGIN_DECL

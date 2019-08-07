@@ -20,8 +20,8 @@
 #ifndef __PJPP_LIST_HPP__
 #define __PJPP_LIST_HPP__
 
-#include <pj/list.h>
-#include <pj++/pool.hpp>
+#include <PJSIPCarthage/pj/list.h>
+#include <PJSIPCarthage/pj++/pool.hpp>
 
 
 //

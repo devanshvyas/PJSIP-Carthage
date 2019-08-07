@@ -26,16 +26,16 @@
  * @brief Media Stream.
  */
 
-#include <pjmedia/codec.h>
-#include <pjmedia/endpoint.h>
-#include <pjmedia/jbuf.h>
-#include <pjmedia/port.h>
-#include <pjmedia/rtcp.h>
-#include <pjmedia/rtcp_fb.h>
-#include <pjmedia/transport.h>
-#include <pjmedia/vid_codec.h>
-#include <pjmedia/stream_common.h>
-#include <pj/sock.h>
+#include <PJSIPCarthage/pjmedia/codec.h>
+#include <PJSIPCarthage/pjmedia/endpoint.h>
+#include <PJSIPCarthage/pjmedia/jbuf.h>
+#include <PJSIPCarthage/pjmedia/port.h>
+#include <PJSIPCarthage/pjmedia/rtcp.h>
+#include <PJSIPCarthage/pjmedia/rtcp_fb.h>
+#include <PJSIPCarthage/pjmedia/transport.h>
+#include <PJSIPCarthage/pjmedia/vid_codec.h>
+#include <PJSIPCarthage/pjmedia/stream_common.h>
+#include <PJSIPCarthage/pj/sock.h>
 
 PJ_BEGIN_DECL
 

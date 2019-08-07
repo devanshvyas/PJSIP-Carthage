@@ -20,10 +20,10 @@
 #ifndef __PJPP_TIMER_HPP__
 #define __PJPP_TIMER_HPP__
 
-#include <pj/timer.h>
-#include <pj++/types.hpp>
-#include <pj/assert.h>
-#include <pj++/lock.hpp>
+#include <PJSIPCarthage/pj/timer.h>
+#include <PJSIPCarthage/pj++/types.hpp>
+#include <PJSIPCarthage/pj/assert.h>
+#include <PJSIPCarthage/pj++/lock.hpp>
 
 class Pj_Timer_Heap;
 

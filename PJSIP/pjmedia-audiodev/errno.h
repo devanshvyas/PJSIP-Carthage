@@ -24,8 +24,8 @@
  * @brief Audiodev specific error codes.
  */
 
-#include <pjmedia-audiodev/config.h>
-#include <pj/errno.h>
+#include <PJSIPCarthage/pjmedia-audiodev/config.h>
+#include <PJSIPCarthage/pj/errno.h>
 
 /**
  * @defgroup error_codes Error Codes

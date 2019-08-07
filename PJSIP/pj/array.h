@@ -24,7 +24,7 @@
  * @file array.h
  * @brief PJLIB Array helper.
  */
-#include <pj/types.h>
+#include <PJSIPCarthage/pj/types.h>
 
 PJ_BEGIN_DECL
 

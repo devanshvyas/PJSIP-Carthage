@@ -25,7 +25,7 @@
  * @brief IP helper API
  */
 
-#include <pj/sock.h>
+#include <PJSIPCarthage/pj/sock.h>
 
 PJ_BEGIN_DECL
 

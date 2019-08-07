@@ -25,7 +25,7 @@
  * @brief SIP Specific Event Notification Extension (RFC 3265)
  */
 
-#include <pjsip-simple/types.h>
+#include <PJSIPCarthage/pjsip-simple/types.h>
 
 
 /**

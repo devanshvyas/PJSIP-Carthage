@@ -20,7 +20,7 @@
 #ifndef __PJ_FIFOBUF_H__
 #define __PJ_FIFOBUF_H__
 
-#include <pj/types.h>
+#include <PJSIPCarthage/pj/types.h>
 
 PJ_BEGIN_DECL
 

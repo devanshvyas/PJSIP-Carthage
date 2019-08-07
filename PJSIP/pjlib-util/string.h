@@ -25,8 +25,8 @@
  * @brief More string functions.
  */
 
-#include <pj/types.h>
-#include <pjlib-util/scanner.h>
+#include <PJSIPCarthage/pj/types.h>
+#include <PJSIPCarthage/pjlib-util/scanner.h>
 
 /**
  * @defgroup PJLIB_UTIL_STRING String Escaping Utilities

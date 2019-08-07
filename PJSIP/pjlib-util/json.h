@@ -25,9 +25,9 @@
  * @brief PJLIB JSON Implementation
  */
 
-#include <pj/types.h>
-#include <pj/list.h>
-#include <pj/pool.h>
+#include <PJSIPCarthage/pj/types.h>
+#include <PJSIPCarthage/pj/list.h>
+#include <PJSIPCarthage/pj/pool.h>
 
 PJ_BEGIN_DECL
 

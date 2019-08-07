@@ -26,9 +26,9 @@
  * @brief Transport interface.
  */
 
-#include <pjmedia/types.h>
-#include <pjmedia/errno.h>
-#include <pj/string.h>
+#include <PJSIPCarthage/pjmedia/types.h>
+#include <PJSIPCarthage/pjmedia/errno.h>
+#include <PJSIPCarthage/pj/string.h>
 
 /**
  * @defgroup PJMEDIA_TRANSPORT Media Transport
@@ -225,7 +225,7 @@
  */
 
 
-#include <pjmedia/sdp.h>
+#include <PJSIPCarthage/pjmedia/sdp.h>
 
 PJ_BEGIN_DECL
 

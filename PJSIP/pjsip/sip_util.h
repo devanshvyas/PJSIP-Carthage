@@ -20,9 +20,9 @@
 #ifndef __PJSIP_SIP_MISC_H__
 #define __PJSIP_SIP_MISC_H__
 
-#include <pjsip/sip_msg.h>
-#include <pjsip/sip_transport.h>
-#include <pjsip/sip_resolve.h>
+#include <PJSIPCarthage/pjsip/sip_msg.h>
+#include <PJSIPCarthage/pjsip/sip_transport.h>
+#include <PJSIPCarthage/pjsip/sip_resolve.h>
 
 PJ_BEGIN_DECL
 

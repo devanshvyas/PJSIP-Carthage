@@ -25,8 +25,8 @@
  * @brief Assertion macro pj_assert().
  */
 
-#include <pj/config.h>
-#include <pj/compat/assert.h>
+#include <PJSIPCarthage/pj/config.h>
+#include <PJSIPCarthage/pj/compat/assert.h>
 
 /**
  * @defgroup pj_assert Assertion Macro

@@ -25,9 +25,9 @@
  * @brief RTCP implementation.
  */
 
-#include <pjmedia/types.h>
-#include <pjmedia/rtcp_xr.h>
-#include <pjmedia/rtp.h>
+#include <PJSIPCarthage/pjmedia/types.h>
+#include <PJSIPCarthage/pjmedia/rtcp_xr.h>
+#include <PJSIPCarthage/pjmedia/rtp.h>
 
 PJ_BEGIN_DECL
 

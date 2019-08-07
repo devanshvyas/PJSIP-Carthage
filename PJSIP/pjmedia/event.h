@@ -23,9 +23,9 @@
  * @file pjmedia/event.h
  * @brief Event framework
  */
-#include <pjmedia/audiodev.h>
-#include <pjmedia/format.h>
-#include <pjmedia/signatures.h>
+#include <PJSIPCarthage/pjmedia/audiodev.h>
+#include <PJSIPCarthage/pjmedia/format.h>
+#include <PJSIPCarthage/pjmedia/signatures.h>
 
 PJ_BEGIN_DECL
 

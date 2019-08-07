@@ -25,7 +25,7 @@
  * @file silencedet.h
  * @brief Adaptive silence detector.
  */
-#include <pjmedia/types.h>
+#include <PJSIPCarthage/pjmedia/types.h>
 
 
 /**

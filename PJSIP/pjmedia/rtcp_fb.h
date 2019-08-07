@@ -24,8 +24,8 @@
  * @brief RTCP Feedback implementation.
  */
 
-#include <pjmedia/rtcp.h>
-#include <pjmedia/sdp.h>
+#include <PJSIPCarthage/pjmedia/rtcp.h>
+#include <PJSIPCarthage/pjmedia/sdp.h>
 
 
 PJ_BEGIN_DECL

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <PJSIPCarthage/pjsua.h>
+#import <PJSIPCarthage/pjsua-lib/pjsua.h>
 //! Project version number for PJSIPCarthage.
 FOUNDATION_EXPORT double PJSIPCarthageVersionNumber;
 

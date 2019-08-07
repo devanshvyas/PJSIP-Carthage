@@ -25,8 +25,8 @@
  * @brief PJLIB XML Parser/Helper.
  */
 
-#include <pj/types.h>
-#include <pj/list.h>
+#include <PJSIPCarthage/pj/types.h>
+#include <PJSIPCarthage/pj/list.h>
 
 PJ_BEGIN_DECL
 

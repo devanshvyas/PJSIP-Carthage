@@ -25,8 +25,8 @@
  * @brief SIP UDP Transport.
  */
 
-#include <pjsip/sip_transport.h>
-#include <pj/sock_qos.h>
+#include <PJSIPCarthage/pjsip/sip_transport.h>
+#include <PJSIPCarthage/pj/sock_qos.h>
 
 PJ_BEGIN_DECL
 

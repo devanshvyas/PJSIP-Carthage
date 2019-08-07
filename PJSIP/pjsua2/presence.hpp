@@ -23,8 +23,8 @@
  * @file pjsua2/presence.hpp
  * @brief PJSUA2 Presence Operations
  */
-#include <pjsua2/persistent.hpp>
-#include <pjsua2/siptypes.hpp>
+#include <PJSIPCarthage/pjsua2/persistent.hpp>
+#include <PJSIPCarthage/pjsua2/siptypes.hpp>
 
 /** PJSUA2 API is inside pj namespace */
 namespace pj

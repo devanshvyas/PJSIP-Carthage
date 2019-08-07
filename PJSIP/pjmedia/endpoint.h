@@ -37,10 +37,10 @@
  * to create a media session (#pjmedia_session_create()).
  */
 
-#include <pjmedia/codec.h>
-#include <pjmedia/sdp.h>
-#include <pjmedia/transport.h>
-#include <pjmedia-audiodev/audiodev.h>
+#include <PJSIPCarthage/pjmedia/codec.h>
+#include <PJSIPCarthage/pjmedia/sdp.h>
+#include <PJSIPCarthage/pjmedia/transport.h>
+#include <PJSIPCarthage/pjmedia-audiodev/audiodev.h>
 
 
 PJ_BEGIN_DECL

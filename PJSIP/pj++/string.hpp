@@ -20,9 +20,9 @@
 #ifndef __PJPP_STRING_HPP__
 #define __PJPP_STRING_HPP__
 
-#include <pj/string.h>
-#include <pj++/pool.hpp>
-#include <pj/assert.h>
+#include <PJSIPCarthage/pj/string.h>
+#include <PJSIPCarthage/pj++/pool.hpp>
+#include <PJSIPCarthage/pj/assert.h>
 
 //
 // String wrapper class for pj_str_t.

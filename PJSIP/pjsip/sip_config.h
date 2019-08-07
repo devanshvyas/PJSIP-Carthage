@@ -24,7 +24,7 @@
  * @file sip_config.h
  * @brief Compile time configuration.
  */
-#include <pj/types.h>
+#include <PJSIPCarthage/pj/types.h>
 
 /**
  * @defgroup PJSIP_CORE Core SIP Library
@@ -56,7 +56,7 @@
  * Include sip_autoconf.h if autoconf is used (PJ_AUTOCONF is set)
  */
 #if defined(PJ_AUTOCONF)
-#   include <pjsip/sip_autoconf.h>
+#   include <PJSIPCarthage/pjsip/sip_autoconf.h>
 #endif
 
 PJ_BEGIN_DECL
@@ -1375,7 +1375,7 @@ PJ_END_DECL
  */
 
 
-#include <pj/config.h>
+#include <PJSIPCarthage/pj/config.h>
 
 
 #endif	/* __PJSIP_SIP_CONFIG_H__ */

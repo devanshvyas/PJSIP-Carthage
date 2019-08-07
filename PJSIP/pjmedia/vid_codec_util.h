@@ -26,8 +26,8 @@
  * @brief Video codec utilities.
  */
 
-#include <pjmedia/vid_codec.h>
-#include <pjmedia/sdp_neg.h>
+#include <PJSIPCarthage/pjmedia/vid_codec.h>
+#include <PJSIPCarthage/pjmedia/sdp_neg.h>
 
 PJ_BEGIN_DECL
 

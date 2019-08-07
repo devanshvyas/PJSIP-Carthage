@@ -24,8 +24,8 @@
  * @file sip_module.h
  * @brief Module helpers
  */
-#include <pjsip/sip_types.h>
-#include <pj/list.h>
+#include <PJSIPCarthage/pjsip/sip_types.h>
+#include <PJSIPCarthage/pj/list.h>
 
 PJ_BEGIN_DECL
 

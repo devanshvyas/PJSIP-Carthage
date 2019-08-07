@@ -20,9 +20,9 @@
 #ifndef __PJPP_LOCK_HPP__
 #define __PJPP_LOCK_HPP__
 
-#include <pj++/types.hpp>
-#include <pj/lock.h>
-#include <pj++/pool.hpp>
+#include <PJSIPCarthage/pj++/types.hpp>
+#include <PJSIPCarthage/pj/lock.h>
+#include <PJSIPCarthage/pj++/pool.hpp>
 
 //////////////////////////////////////////////////////////////////////////////
 // Lock object.

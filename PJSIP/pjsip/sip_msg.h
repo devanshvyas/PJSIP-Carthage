@@ -25,9 +25,9 @@
  * @brief SIP Message Structure.
  */
 
-#include <pjsip/sip_types.h>
-#include <pjsip/sip_uri.h>
-#include <pj/list.h>
+#include <PJSIPCarthage/pjsip/sip_types.h>
+#include <PJSIPCarthage/pjsip/sip_uri.h>
+#include <PJSIPCarthage/pj/list.h>
 
 PJ_BEGIN_DECL
 

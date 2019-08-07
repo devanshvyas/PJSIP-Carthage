@@ -25,9 +25,9 @@
  * @brief Basic PJMEDIA types.
  */
 
-#include <pjmedia/config.h>
-#include <pj/sock.h>
-#include <pj/types.h>
+#include <PJSIPCarthage/pjmedia/config.h>
+#include <PJSIPCarthage/pj/sock.h>
+#include <PJSIPCarthage/pj/types.h>
 
 
 /**

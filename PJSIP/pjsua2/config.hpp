@@ -23,7 +23,7 @@
  * @file pjsua2/config.hpp
  * @brief PJSUA2 Base Agent Operation
  */
-#include <pjsua-lib/pjsua.h>
+#include <PJSIPCarthage/pjsua-lib/pjsua.h>
 
 /**
  * @defgroup PJSUA2_CFG_Compile Compile time settings

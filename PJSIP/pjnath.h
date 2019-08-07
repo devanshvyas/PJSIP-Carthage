@@ -25,20 +25,20 @@
  * @file pjnath.h
  * @brief PJNATH main header file.
  */
-#include <pjnath/config.h>
-#include <pjnath/errno.h>
-#include <pjnath/ice_session.h>
-#include <pjnath/ice_strans.h>
-#include <pjnath/nat_detect.h>
-#include <pjnath/stun_auth.h>
-#include <pjnath/stun_config.h>
-#include <pjnath/stun_msg.h>
-#include <pjnath/stun_session.h>
-#include <pjnath/stun_sock.h>
-#include <pjnath/stun_transaction.h>
-#include <pjnath/turn_session.h>
-#include <pjnath/turn_sock.h>
-#include <pjnath/types.h>
+#include <PJSIPCarthage/pjnath/config.h>
+#include <PJSIPCarthage/pjnath/errno.h>
+#include <PJSIPCarthage/pjnath/ice_session.h>
+#include <PJSIPCarthage/pjnath/ice_strans.h>
+#include <PJSIPCarthage/pjnath/nat_detect.h>
+#include <PJSIPCarthage/pjnath/stun_auth.h>
+#include <PJSIPCarthage/pjnath/stun_config.h>
+#include <PJSIPCarthage/pjnath/stun_msg.h>
+#include <PJSIPCarthage/pjnath/stun_session.h>
+#include <PJSIPCarthage/pjnath/stun_sock.h>
+#include <PJSIPCarthage/pjnath/stun_transaction.h>
+#include <PJSIPCarthage/pjnath/turn_session.h>
+#include <PJSIPCarthage/pjnath/turn_sock.h>
+#include <PJSIPCarthage/pjnath/types.h>
 
 #endif
 

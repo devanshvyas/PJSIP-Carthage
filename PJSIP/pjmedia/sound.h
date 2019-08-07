@@ -25,8 +25,8 @@
  * @file sound.h
  * @brief Legacy sound device API
  */
-#include <pjmedia-audiodev/audiodev.h>
-#include <pjmedia/types.h>
+#include <PJSIPCarthage/pjmedia-audiodev/audiodev.h>
+#include <PJSIPCarthage/pjmedia/types.h>
 
 
 PJ_BEGIN_DECL

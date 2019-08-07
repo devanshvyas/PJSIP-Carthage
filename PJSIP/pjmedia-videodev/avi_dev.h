@@ -23,8 +23,8 @@
  * @file avi_dev.h
  * @brief AVI player virtual device
  */
-#include <pjmedia-videodev/videodev.h>
-#include <pjmedia/avi_stream.h>
+#include <PJSIPCarthage/pjmedia-videodev/videodev.h>
+#include <PJSIPCarthage/pjmedia/avi_stream.h>
 
 PJ_BEGIN_DECL
 

@@ -26,10 +26,10 @@
  * @brief Codec framework.
  */
 
-#include <pjmedia/port.h>
-#include <pj/errno.h>
-#include <pj/list.h>
-#include <pj/pool.h>
+#include <PJSIPCarthage/pjmedia/port.h>
+#include <PJSIPCarthage/pj/errno.h>
+#include <PJSIPCarthage/pj/list.h>
+#include <PJSIPCarthage/pj/pool.h>
 
 PJ_BEGIN_DECL
 

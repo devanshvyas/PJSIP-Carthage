@@ -25,9 +25,9 @@
  * @brief SIP Registration Client
  */
 
-#include <pjsip/sip_types.h>
-#include <pjsip/sip_auth.h>
-#include <pjsip/sip_transport.h>
+#include <PJSIPCarthage/pjsip/sip_types.h>
+#include <PJSIPCarthage/pjsip/sip_auth.h>
+#include <PJSIPCarthage/pjsip/sip_transport.h>
 
 
 /**

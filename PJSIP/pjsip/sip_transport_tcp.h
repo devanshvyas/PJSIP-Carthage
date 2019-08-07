@@ -25,8 +25,8 @@
  * @brief SIP TCP Transport.
  */
 
-#include <pjsip/sip_transport.h>
-#include <pj/sock_qos.h>
+#include <PJSIPCarthage/pjsip/sip_transport.h>
+#include <PJSIPCarthage/pj/sock_qos.h>
 
 
 /* Only declare the API if PJ_HAS_TCP is true */

@@ -19,8 +19,8 @@
 #ifndef __PJMEDIA_CODEC_VID_TOOLBOX_H__
 #define __PJMEDIA_CODEC_VID_TOOLBOX_H__
 
-#include <pjmedia-codec/types.h>
-#include <pjmedia/vid_codec.h>
+#include <PJSIPCarthage/pjmedia-codec/types.h>
+#include <PJSIPCarthage/pjmedia/vid_codec.h>
 
 /**
  * @file pjmedia-codec/vid_toolbox.h

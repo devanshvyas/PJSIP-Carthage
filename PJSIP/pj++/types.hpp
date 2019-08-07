@@ -20,7 +20,7 @@
 #ifndef __PJPP_TYPES_HPP__
 #define __PJPP_TYPES_HPP__
 
-#include <pj/types.h>
+#include <PJSIPCarthage/pj/types.h>
 
 class Pj_Pool;
 class Pj_Socket ;

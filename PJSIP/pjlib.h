@@ -26,38 +26,38 @@
  * @brief Include all PJLIB header files.
  */
 
-#include <pj/activesock.h>
-#include <pj/addr_resolv.h>
-#include <pj/array.h>
-#include <pj/assert.h>
-#include <pj/ctype.h>
-#include <pj/errno.h>
-#include <pj/except.h>
-#include <pj/fifobuf.h>
-#include <pj/file_access.h>
-#include <pj/file_io.h>
-#include <pj/guid.h>
-#include <pj/hash.h>
-#include <pj/ioqueue.h>
-#include <pj/ip_helper.h>
-#include <pj/list.h>
-#include <pj/lock.h>
-#include <pj/log.h>
-#include <pj/math.h>
-#include <pj/os.h>
-#include <pj/pool.h>
-#include <pj/pool_buf.h>
-#include <pj/rand.h>
-#include <pj/rbtree.h>
-#include <pj/sock.h>
-#include <pj/sock_qos.h>
-#include <pj/sock_select.h>
-#include <pj/ssl_sock.h>
-#include <pj/string.h>
-#include <pj/timer.h>
-#include <pj/unicode.h>
+#include <PJSIPCarthage/pj/activesock.h>
+#include <PJSIPCarthage/pj/addr_resolv.h>
+#include <PJSIPCarthage/pj/array.h>
+#include <PJSIPCarthage/pj/assert.h>
+#include <PJSIPCarthage/pj/ctype.h>
+#include <PJSIPCarthage/pj/errno.h>
+#include <PJSIPCarthage/pj/except.h>
+#include <PJSIPCarthage/pj/fifobuf.h>
+#include <PJSIPCarthage/pj/file_access.h>
+#include <PJSIPCarthage/pj/file_io.h>
+#include <PJSIPCarthage/pj/guid.h>
+#include <PJSIPCarthage/pj/hash.h>
+#include <PJSIPCarthage/pj/ioqueue.h>
+#include <PJSIPCarthage/pj/ip_helper.h>
+#include <PJSIPCarthage/pj/list.h>
+#include <PJSIPCarthage/pj/lock.h>
+#include <PJSIPCarthage/pj/log.h>
+#include <PJSIPCarthage/pj/math.h>
+#include <PJSIPCarthage/pj/os.h>
+#include <PJSIPCarthage/pj/pool.h>
+#include <PJSIPCarthage/pj/pool_buf.h>
+#include <PJSIPCarthage/pj/rand.h>
+#include <PJSIPCarthage/pj/rbtree.h>
+#include <PJSIPCarthage/pj/sock.h>
+#include <PJSIPCarthage/pj/sock_qos.h>
+#include <PJSIPCarthage/pj/sock_select.h>
+#include <PJSIPCarthage/pj/ssl_sock.h>
+#include <PJSIPCarthage/pj/string.h>
+#include <PJSIPCarthage/pj/timer.h>
+#include <PJSIPCarthage/pj/unicode.h>
 
-#include <pj/compat/high_precision.h>
+#include <PJSIPCarthage/pj/compat/high_precision.h>
 
 #endif  /* __PJLIB_H__ */
 

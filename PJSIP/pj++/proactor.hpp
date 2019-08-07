@@ -20,11 +20,11 @@
 #ifndef __PJPP_PROACTOR_HPP__
 #define __PJPP_PROACTOR_HPP__
 
-#include <pj/ioqueue.h>
-#include <pj++/pool.hpp>
-#include <pj++/sock.hpp>
-#include <pj++/timer.hpp>
-#include <pj/errno.h>
+#include <PJSIPCarthage/pj/ioqueue.h>
+#include <PJSIPCarthage/pj++/pool.hpp>
+#include <PJSIPCarthage/pj++/sock.hpp>
+#include <PJSIPCarthage/pj++/timer.hpp>
+#include <PJSIPCarthage/pj/errno.h>
 
 class Pj_Proactor;
 class Pj_Event_Handler;

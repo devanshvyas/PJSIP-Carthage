@@ -28,7 +28,7 @@
  * @file pjsua2/types.hpp
  * @brief PJSUA2 Base Types
  */
-#include <pjsua2/config.hpp>
+#include <PJSIPCarthage/pjsua2/config.hpp>
 
 #include <string>
 #include <vector>

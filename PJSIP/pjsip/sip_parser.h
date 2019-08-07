@@ -25,9 +25,9 @@
  * @brief SIP Message Parser
  */
 
-#include <pjsip/sip_msg.h>
-#include <pjlib-util/scanner.h>
-#include <pj/list.h>
+#include <PJSIPCarthage/pjsip/sip_msg.h>
+#include <PJSIPCarthage/pjlib-util/scanner.h>
+#include <PJSIPCarthage/pj/list.h>
 
 PJ_BEGIN_DECL
 

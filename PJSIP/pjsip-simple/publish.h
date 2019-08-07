@@ -25,8 +25,8 @@
  * @brief SIP Extension for Event State Publication (PUBLISH, RFC 3903)
  */
 
-#include <pjsip/sip_util.h>
-#include <pjsip/sip_auth.h>
+#include <PJSIPCarthage/pjsip/sip_util.h>
+#include <PJSIPCarthage/pjsip/sip_auth.h>
 
 
 PJ_BEGIN_DECL

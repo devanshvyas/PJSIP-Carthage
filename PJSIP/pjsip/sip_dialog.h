@@ -26,13 +26,13 @@
  * @brief SIP Dialog abstraction
  */
 
-#include <pjsip/sip_msg.h>
-#include <pjsip/sip_auth.h>
-#include <pjsip/sip_errno.h>
-#include <pjsip/sip_transport.h>
-#include <pjsip/sip_util.h>
-#include <pj/sock.h>
-#include <pj/assert.h>
+#include <PJSIPCarthage/pjsip/sip_msg.h>
+#include <PJSIPCarthage/pjsip/sip_auth.h>
+#include <PJSIPCarthage/pjsip/sip_errno.h>
+#include <PJSIPCarthage/pjsip/sip_transport.h>
+#include <PJSIPCarthage/pjsip/sip_util.h>
+#include <PJSIPCarthage/pj/sock.h>
+#include <PJSIPCarthage/pj/assert.h>
 
 
 /**

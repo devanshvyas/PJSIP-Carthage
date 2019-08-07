@@ -25,8 +25,8 @@
  * @brief C type helper macros.
  */
 
-#include <pj/types.h>
-#include <pj/compat/ctype.h>
+#include <PJSIPCarthage/pj/types.h>
+#include <PJSIPCarthage/pj/compat/ctype.h>
 
 PJ_BEGIN_DECL
 

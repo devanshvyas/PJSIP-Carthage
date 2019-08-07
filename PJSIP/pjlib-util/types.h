@@ -25,8 +25,8 @@
  * @brief PJLIB-UTIL types.
  */
 
-#include <pj/types.h>
-#include <pjlib-util/config.h>
+#include <PJSIPCarthage/pj/types.h>
+#include <PJSIPCarthage/pjlib-util/config.h>
 
 /**
  * @defgroup PJLIB_UTIL_BASE Base

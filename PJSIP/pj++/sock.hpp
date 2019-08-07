@@ -20,8 +20,8 @@
 #ifndef __PJPP_SOCK_HPP__
 #define __PJPP_SOCK_HPP__
 
-#include <pj/sock.h>
-#include <pj/string.h>
+#include <PJSIPCarthage/pj/sock.h>
+#include <PJSIPCarthage/pj/string.h>
 
 class Pj_Event_Handler;
 

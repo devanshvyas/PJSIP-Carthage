@@ -25,7 +25,7 @@
  * @brief Passthrough codecs.
  */
 
-#include <pjmedia-codec/types.h>
+#include <PJSIPCarthage/pjmedia-codec/types.h>
 
 /**
  * @defgroup PJMED_PASSTHROUGH_CODEC Passthrough Codecs

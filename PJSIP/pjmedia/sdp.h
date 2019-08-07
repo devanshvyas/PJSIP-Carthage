@@ -24,8 +24,8 @@
  * @file sdp.h
  * @brief SDP header file.
  */
-#include <pjmedia/types.h>
-#include <pj/sock.h>
+#include <PJSIPCarthage/pjmedia/types.h>
+#include <PJSIPCarthage/pj/sock.h>
 
 /**
  * @defgroup PJMEDIA_SDP SDP Parsing and Data Structure

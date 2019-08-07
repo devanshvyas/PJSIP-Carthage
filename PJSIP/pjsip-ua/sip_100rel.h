@@ -26,7 +26,7 @@
  */
 
 
-#include <pjsip-ua/sip_inv.h>
+#include <PJSIPCarthage/pjsip-ua/sip_inv.h>
 
 
 /**

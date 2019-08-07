@@ -26,9 +26,9 @@
  * @brief Media Session.
  */
 
-#include <pjmedia/endpoint.h>
-#include <pjmedia/stream.h>
-#include <pjmedia/sdp.h>
+#include <PJSIPCarthage/pjmedia/endpoint.h>
+#include <PJSIPCarthage/pjmedia/stream.h>
+#include <PJSIPCarthage/pjmedia/sdp.h>
 
 PJ_BEGIN_DECL 
 

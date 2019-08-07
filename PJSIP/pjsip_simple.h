@@ -34,13 +34,13 @@
 #ifndef __PJSIP_SIMPLE_H__
 #define __PJSIP_SIMPLE_H__
 
-#include <pjsip-simple/evsub.h>
-#include <pjsip-simple/evsub_msg.h>
-#include <pjsip-simple/iscomposing.h>
-#include <pjsip-simple/mwi.h>
-#include <pjsip-simple/presence.h>
-#include <pjsip-simple/pidf.h>
-#include <pjsip-simple/publish.h>
-#include <pjsip-simple/xpidf.h>
+#include <PJSIPCarthage/pjsip-simple/evsub.h>
+#include <PJSIPCarthage/pjsip-simple/evsub_msg.h>
+#include <PJSIPCarthage/pjsip-simple/iscomposing.h>
+#include <PJSIPCarthage/pjsip-simple/mwi.h>
+#include <PJSIPCarthage/pjsip-simple/presence.h>
+#include <PJSIPCarthage/pjsip-simple/pidf.h>
+#include <PJSIPCarthage/pjsip-simple/publish.h>
+#include <PJSIPCarthage/pjsip-simple/xpidf.h>
 
 #endif	/* __PJSIP_SIMPLE_H__ */

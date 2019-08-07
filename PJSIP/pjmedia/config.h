@@ -24,7 +24,7 @@
  * @file pjmedia/config.h Compile time config
  * @brief Contains some compile time constants.
  */
-#include <pj/config.h>
+#include <PJSIPCarthage/pj/config.h>
 
 /**
  * @defgroup PJMEDIA_BASE Base Types and Configurations
@@ -41,7 +41,7 @@
  * Include config_auto.h if autoconf is used (PJ_AUTOCONF is set)
  */
 #if defined(PJ_AUTOCONF)
-#   include <pjmedia/config_auto.h>
+#   include <PJSIPCarthage/pjmedia/config_auto.h>
 #endif
 
 /**

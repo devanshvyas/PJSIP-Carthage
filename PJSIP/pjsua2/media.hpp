@@ -24,8 +24,8 @@
  * @file pjsua2/media.hpp
  * @brief PJSUA2 media operations
  */
-#include <pjsua-lib/pjsua.h>
-#include <pjsua2/types.hpp>
+#include <PJSIPCarthage/pjsua-lib/pjsua.h>
+#include <PJSIPCarthage/pjsua2/types.hpp>
 
 /** PJSUA2 API is inside pj namespace */
 namespace pj

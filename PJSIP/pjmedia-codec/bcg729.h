@@ -24,7 +24,7 @@
  * @brief BCG729 codec.
  */
 
-#include <pjmedia-codec/types.h>
+#include <PJSIPCarthage/pjmedia-codec/types.h>
 
 /**
  * @defgroup PJMED_BCG729 BCG729 Codec

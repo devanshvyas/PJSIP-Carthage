@@ -23,8 +23,8 @@
  * @file mwi.h
  * @brief SIP Extension for MWI (RFC 3842)
  */
-#include <pjsip-simple/evsub.h>
-#include <pjsip/sip_msg.h>
+#include <PJSIPCarthage/pjsip-simple/evsub.h>
+#include <PJSIPCarthage/pjsip/sip_msg.h>
 
 
 PJ_BEGIN_DECL

@@ -26,7 +26,7 @@
  * @brief Sample Media Transport Adapter
  */
 
-#include <pjmedia/transport.h>
+#include <PJSIPCarthage/pjmedia/transport.h>
 
 
 /**

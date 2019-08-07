@@ -25,7 +25,7 @@
  * @brief Logging Utility.
  */
 
-#include <pj/types.h>
+#include <PJSIPCarthage/pj/types.h>
 #include <stdarg.h>
 
 PJ_BEGIN_DECL

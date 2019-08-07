@@ -26,12 +26,12 @@
  * @brief Video codec framework.
  */
 
-#include <pjmedia/codec.h>
-#include <pjmedia/event.h>
-#include <pjmedia/format.h>
-#include <pjmedia/types.h>
-#include <pj/list.h>
-#include <pj/pool.h>
+#include <PJSIPCarthage/pjmedia/codec.h>
+#include <PJSIPCarthage/pjmedia/event.h>
+#include <PJSIPCarthage/pjmedia/format.h>
+#include <PJSIPCarthage/pjmedia/types.h>
+#include <PJSIPCarthage/pj/list.h>
+#include <PJSIPCarthage/pj/pool.h>
 
 PJ_BEGIN_DECL
 

@@ -23,9 +23,9 @@
  * @file pjsua2/endpoint.hpp
  * @brief PJSUA2 Base Agent Operation
  */
-#include <pjsua2/persistent.hpp>
-#include <pjsua2/media.hpp>
-#include <pjsua2/siptypes.hpp>
+#include <PJSIPCarthage/pjsua2/persistent.hpp>
+#include <PJSIPCarthage/pjsua2/media.hpp>
+#include <PJSIPCarthage/pjsua2/siptypes.hpp>
 #include <list>
 #include <map>
 

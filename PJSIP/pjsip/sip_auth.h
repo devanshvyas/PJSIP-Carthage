@@ -25,8 +25,8 @@
  * @brief SIP Authorization Module.
  */
 
-#include <pjsip/sip_config.h>
-#include <pjsip/sip_auth_msg.h>
+#include <PJSIPCarthage/pjsip/sip_config.h>
+#include <PJSIPCarthage/pjsip/sip_auth_msg.h>
 
 PJ_BEGIN_DECL
 

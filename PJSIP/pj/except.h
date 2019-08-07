@@ -25,9 +25,9 @@
  * @brief Exception Handling in C.
  */
 
-#include <pj/types.h>
-#include <pj/compat/setjmp.h>
-#include <pj/log.h>
+#include <PJSIPCarthage/pj/types.h>
+#include <PJSIPCarthage/pj/compat/setjmp.h>
+#include <PJSIPCarthage/pj/log.h>
 
 
 PJ_BEGIN_DECL

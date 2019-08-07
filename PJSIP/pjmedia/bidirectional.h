@@ -24,7 +24,7 @@
  * @file bidirectional.h
  * @brief Bidirectional media port.
  */
-#include <pjmedia/port.h>
+#include <PJSIPCarthage/pjmedia/port.h>
 
 
 /**

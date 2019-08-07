@@ -20,16 +20,16 @@
 #ifndef __PJLIBPP_H__
 #define __PJLIBPP_H__
 
-#include <pj++/file.hpp>
-#include <pj++/pool.hpp>
-#include <pj++/hash.hpp>
-#include <pj++/list.hpp>
-#include <pj++/os.hpp>
-#include <pj++/proactor.hpp>
-#include <pj++/scanner.hpp>
-#include <pj++/sock.hpp>
-#include <pj++/string.hpp>
-#include <pj++/timer.hpp>
-#include <pj++/tree.hpp>
+#include <PJSIPCarthage/pj++/file.hpp>
+#include <PJSIPCarthage/pj++/pool.hpp>
+#include <PJSIPCarthage/pj++/hash.hpp>
+#include <PJSIPCarthage/pj++/list.hpp>
+#include <PJSIPCarthage/pj++/os.hpp>
+#include <PJSIPCarthage/pj++/proactor.hpp>
+#include <PJSIPCarthage/pj++/scanner.hpp>
+#include <PJSIPCarthage/pj++/sock.hpp>
+#include <PJSIPCarthage/pj++/string.hpp>
+#include <PJSIPCarthage/pj++/timer.hpp>
+#include <PJSIPCarthage/pj++/tree.hpp>
 
 #endif	/* __PJLIBPP_H__ */

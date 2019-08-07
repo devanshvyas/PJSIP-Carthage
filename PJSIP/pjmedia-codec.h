@@ -25,22 +25,22 @@
  * @brief Include all codecs API in PJMEDIA-CODEC
  */
 
-#include <pjmedia-codec/audio_codecs.h>
-#include <pjmedia-codec/l16.h>
-#include <pjmedia-codec/ffmpeg_vid_codecs.h>
-#include <pjmedia-codec/gsm.h>
-#include <pjmedia-codec/speex.h>
-#include <pjmedia-codec/ilbc.h>
-#include <pjmedia-codec/g722.h>
-#include <pjmedia-codec/g7221.h>
-#include <pjmedia-codec/ipp_codecs.h>
-#include <pjmedia-codec/opencore_amr.h>
-#include <pjmedia-codec/vid_toolbox.h>
-#include <pjmedia-codec/openh264.h>
-#include <pjmedia-codec/passthrough.h>
-#include <pjmedia-codec/silk.h>
-#include <pjmedia-codec/opus.h>
-#include <pjmedia-codec/bcg729.h>
+#include <PJSIPCarthage/pjmedia-codec/audio_codecs.h>
+#include <PJSIPCarthage/pjmedia-codec/l16.h>
+#include <PJSIPCarthage/pjmedia-codec/ffmpeg_vid_codecs.h>
+#include <PJSIPCarthage/pjmedia-codec/gsm.h>
+#include <PJSIPCarthage/pjmedia-codec/speex.h>
+#include <PJSIPCarthage/pjmedia-codec/ilbc.h>
+#include <PJSIPCarthage/pjmedia-codec/g722.h>
+#include <PJSIPCarthage/pjmedia-codec/g7221.h>
+#include <PJSIPCarthage/pjmedia-codec/ipp_codecs.h>
+#include <PJSIPCarthage/pjmedia-codec/opencore_amr.h>
+#include <PJSIPCarthage/pjmedia-codec/vid_toolbox.h>
+#include <PJSIPCarthage/pjmedia-codec/openh264.h>
+#include <PJSIPCarthage/pjmedia-codec/passthrough.h>
+#include <PJSIPCarthage/pjmedia-codec/silk.h>
+#include <PJSIPCarthage/pjmedia-codec/opus.h>
+#include <PJSIPCarthage/pjmedia-codec/bcg729.h>
 
 
 #endif	/* __PJMEDIA_CODEC_PJMEDIA_CODEC_H__ */

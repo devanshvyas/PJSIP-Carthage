@@ -20,10 +20,10 @@
 #ifndef __PJPP_FILE_HPP__
 #define __PJPP_FILE_HPP__
 
-#include <pj/file_io.h>
-#include <pj/file_access.h>
-#include <pj++/types.hpp>
-#include <pj++/pool.hpp>
+#include <PJSIPCarthage/pj/file_io.h>
+#include <PJSIPCarthage/pj/file_access.h>
+#include <PJSIPCarthage/pj++/types.hpp>
+#include <PJSIPCarthage/pj++/pool.hpp>
 
 //
 // File API.

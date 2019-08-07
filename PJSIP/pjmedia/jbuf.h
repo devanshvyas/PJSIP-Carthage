@@ -28,7 +28,7 @@
  * @file jbuf.h
  * @brief Adaptive jitter buffer implementation.
  */
-#include <pjmedia/types.h>
+#include <PJSIPCarthage/pjmedia/types.h>
 
 /**
  * @defgroup PJMED_JBUF Adaptive jitter buffer

@@ -24,8 +24,8 @@
  * @brief Command Line Interface
  */
 
-#include <pjlib-util/types.h>
-#include <pj/list.h>
+#include <PJSIPCarthage/pjlib-util/types.h>
+#include <PJSIPCarthage/pj/list.h>
 
 
 PJ_BEGIN_DECL

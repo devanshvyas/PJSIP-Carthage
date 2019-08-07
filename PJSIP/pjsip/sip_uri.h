@@ -25,10 +25,10 @@
  * @brief SIP URL Structures and Manipulations
  */
 
-#include <pjsip/sip_types.h>
-#include <pjsip/sip_config.h>
-#include <pj/list.h>
-#include <pjlib-util/scanner.h>
+#include <PJSIPCarthage/pjsip/sip_types.h>
+#include <PJSIPCarthage/pjsip/sip_config.h>
+#include <PJSIPCarthage/pj/list.h>
+#include <PJSIPCarthage/pjlib-util/scanner.h>
 
 PJ_BEGIN_DECL
 
