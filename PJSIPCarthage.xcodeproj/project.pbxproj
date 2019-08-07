@@ -307,7 +307,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0597EC4722F9651600300305 /* Build configuration list for PBXProject "PJSIP-Carthage" */;
+			buildConfigurationList = 0597EC4722F9651600300305 /* Build configuration list for PBXProject "PJSIPCarthage" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -531,7 +531,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0597EC4722F9651600300305 /* Build configuration list for PBXProject "PJSIP-Carthage" */ = {
+		0597EC4722F9651600300305 /* Build configuration list for PBXProject "PJSIPCarthage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0597EC5C22F9651800300305 /* Debug */,
