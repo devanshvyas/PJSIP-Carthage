@@ -608,6 +608,8 @@ static void on_incoming_call(pjsua_acc_id acc_id, pjsua_call_id call_id,
     PJ_LOG(3,(THIS_FILE, "Incoming call from %.*s!!",
               (int)ci.remote_info.slen,
               ci.remote_info.ptr));
+    BOOL isVideo;
+    isVideo = ci.setting.vid_cnt;
     
     NSString *contactID = [NSString stringWithFormat:@"%s" , ci.remote_info.ptr];
     
@@ -615,7 +617,10 @@ static void on_incoming_call(pjsua_acc_id acc_id, pjsua_call_id call_id,
     if (!showNotification(call_id))
         return;
 #endif
-    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc]initWithObjects:[NSArray arrayWithObjects:@"hfkgjhf", nil] forKeys:[NSArray arrayWithObjects:@"", nil]];
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc]init];
+    [dictionary setObject:[NSString stringWithFormat:@"%d", call_id] forKey:@"callid"];
+    [dictionary setObject:contactID forKey:@"caller"];
+    [dictionary setObject:[NSNumber numberWithBool:isVideo] forKey:@"isVideo"];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"on_incoming_call" object:NULL userInfo:dictionary];
 }
@@ -969,7 +974,7 @@ void endCall()
     
 }
 
-void answerCall(int acc_identity)
+void answerCall(int call_identity)
 {
     static pj_thread_desc a_thread_desc;
     static pj_thread_t *a_thread;
@@ -980,7 +985,7 @@ void answerCall(int acc_identity)
     pjsua_call_setting_default(&call_opt);
     call_opt.aud_cnt = 1;
     call_opt.vid_cnt = 0;
-    status = pjsua_call_answer2(acc_identity, &call_opt, 200, NULL, NULL);
+    status = pjsua_call_answer2(call_identity, &call_opt, 200, NULL, NULL);
     //    status = pjsua_call_answer(acc_identity,200, NULL, NULL);
     
     if (status != PJ_SUCCESS) error_exit("Error receiving call", status);
