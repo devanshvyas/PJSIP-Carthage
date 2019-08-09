@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <PJSIPCarthage/pjsua.h>
 #import <PJSIPCarthage/pjsua-lib/pjsua.h>
+#import "pjsua_app_config.h"
+#import "pjsua_app_common.h"
+#import "pjsua_internal.h"
+
 //! Project version number for PJSIPCarthage.
 FOUNDATION_EXPORT double PJSIPCarthageVersionNumber;
 

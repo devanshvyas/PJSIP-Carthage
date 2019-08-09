@@ -30,17 +30,17 @@
  * Include compiler specific configuration.
  */
 #if defined(_MSC_VER)
-#  include <pj/compat/cc_msvc.h>
+#  include <PJSIPCarthage/pj/compat/cc_msvc.h>
 #elif defined(__GNUC__)
 #  include <PJSIPCarthage/pj/compat/cc_gcc.h>
 #elif defined(__CW32__)
-#  include <pj/compat/cc_mwcc.h>
+#  include <PJSIPCarthage/pj/compat/cc_mwcc.h>
 #elif defined(__MWERKS__)
-#  include <pj/compat/cc_codew.h>
+#  include <PJSIPCarthage/pj/compat/cc_codew.h>
 #elif defined(__GCCE__)
-#  include <pj/compat/cc_gcce.h>
+#  include <PJSIPCarthage/pj/compat/cc_gcce.h>
 #elif defined(__ARMCC__)
-#  include <pj/compat/cc_armcc.h>
+#  include <PJSIPCarthage/pj/compat/cc_armcc.h>
 #else
 #  error "Unknown compiler."
 #endif
@@ -57,13 +57,13 @@
     /*
      * Autoconf
      */
-#   include <pj/compat/os_auto.h>
+#   include <PJSIPCarthage/pj/compat/os_auto.h>
 
 #elif defined(PJ_SYMBIAN) && PJ_SYMBIAN!=0
     /*
      * SymbianOS
      */
-#  include <pj/compat/os_symbian.h>
+#  include <PJSIPCarthage/pj/compat/os_symbian.h>
 
 #elif defined(PJ_WIN32_WINCE) || defined(_WIN32_WCE) || defined(UNDER_CE)
     /*
@@ -71,7 +71,7 @@
      */
 #   undef PJ_WIN32_WINCE
 #   define PJ_WIN32_WINCE   1
-#   include <pj/compat/os_win32_wince.h>
+#   include <PJSIPCarthage/pj/compat/os_win32_wince.h>
 
     /* Also define Win32 */
 #   define PJ_WIN32 1
@@ -82,7 +82,7 @@
      */
 #   undef PJ_WIN32_WINPHONE8
 #   define PJ_WIN32_WINPHONE8   1
-#   include <pj/compat/os_winphone8.h>
+#   include <PJSIPCarthage/pj/compat/os_winphone8.h>
 
     /* Also define Win32 */
 #   define PJ_WIN32 1
@@ -93,7 +93,7 @@
      */
 #   undef PJ_WIN32_UWP
 #   define PJ_WIN32_UWP   1
-#   include <pj/compat/os_winuwp.h>
+#   include <PJSIPCarthage/pj/compat/os_winuwp.h>
 
     /* Define Windows phone */
 #   define PJ_WIN32_WINPHONE8 1
@@ -113,7 +113,7 @@
 #   endif
 #   undef PJ_WIN32
 #   define PJ_WIN32 1
-#   include <pj/compat/os_win32.h>
+#   include <PJSIPCarthage/pj/compat/os_win32.h>
 
 #elif defined(PJ_LINUX) || defined(linux) || defined(__linux)
     /*
@@ -121,13 +121,13 @@
      */
 #   undef PJ_LINUX
 #   define PJ_LINUX	    1
-#   include <pj/compat/os_linux.h>
+#   include <PJSIPCarthage/pj/compat/os_linux.h>
 
 #elif defined(PJ_PALMOS) && PJ_PALMOS!=0
     /*
      * Palm
      */
-#  include <pj/compat/os_palmos.h>
+#  include <PJSIPCarthage/pj/compat/os_palmos.h>
 
 #elif defined(PJ_SUNOS) || defined(sun) || defined(__sun)
     /*
@@ -135,7 +135,7 @@
      */
 #   undef PJ_SUNOS
 #   define PJ_SUNOS	    1
-#   include <pj/compat/os_sunos.h>
+#   include <PJSIPCarthage/pj/compat/os_sunos.h>
 
 #elif defined(PJ_DARWINOS) || defined(__MACOSX__) || \
       defined (__APPLE__) || defined (__MACH__)
@@ -150,7 +150,7 @@
     /*
      * RTEMS
      */
-#  include <pj/compat/os_rtems.h>
+#  include <PJSIPCarthage/pj/compat/os_rtems.h>
 #else
 #   error "Please specify target os."
 #endif
@@ -163,7 +163,7 @@
     /*
      * Autoconf configured
      */
-#include <pj/compat/m_auto.h>
+#include <PJSIPCarthage/pj/compat/m_auto.h>
 
 #elif defined (PJ_M_I386) || defined(_i386_) || defined(i_386_) || \
 	defined(_X86_) || defined(x86) || defined(__i386__) || \
