@@ -12,7 +12,7 @@
 #import "pjsua_app_config.h"
 #import "pjsua_app_common.h"
 #import "pjsua_internal.h"
-
+#import "Client.h"
 //! Project version number for PJSIPCarthage.
 FOUNDATION_EXPORT double PJSIPCarthageVersionNumber;
 
