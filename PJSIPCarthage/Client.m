@@ -181,8 +181,7 @@ typedef struct _ringtone_port_info {
 int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NSString* realm, NSString* username, int passwordType, NSString* passwd, NSString* proxy, int port)
 {
     pj_status_t status;
-    sipDomain = @"192.168.2.99";
-    sipUser = @"201";
+    
     // Create pjsua first
     status = pjsua_create();
     if (status != PJ_SUCCESS) error_exit("Error in pjsua_create()", status);
