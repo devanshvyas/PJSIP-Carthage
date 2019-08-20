@@ -178,7 +178,7 @@ typedef struct _ringtone_port_info {
  *
  * @return When successful, returns 0.
  */
-int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NSString* realm, NSString* username, int passwordType, NSString* passwd, NSString* proxy, int port)
+int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NSString* realm, NSString* username, int passwordType, NSString* passwd, NSString* proxy, int port, int maxCalls)
 {
     pj_status_t status;
     
@@ -191,7 +191,7 @@ int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NS
         pjsua_config        cfg;
         pjsua_config_default (&cfg);
         
-        cfg.max_calls = 3;
+        cfg.max_calls = maxCalls;
         cfg.cb.on_reg_state = &on_reg_state;
         cfg.cb.on_pager2 = &on_pager2;
         cfg.cb.on_pager_status = &on_pager_status;
@@ -909,7 +909,7 @@ static void on_call_state(pjsua_call_id call_id, pjsip_event *e)
     [dictionary setObject:[NSString stringWithFormat:@"%s",ci.state_text.ptr] forKey:@"state"];
     [dictionary setObject:[NSString stringWithFormat:@"%s",ci.remote_info.ptr] forKey:@"contactId"];
     [dictionary setObject:[NSString stringWithFormat:@"%d", call_id] forKey:@"callId"];
-    
+    [dictionary setObject:[NSNumber numberWithInt:code] forKey:@"statusCode"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"on_call_state" object:NULL userInfo:dictionary];
 }
 
