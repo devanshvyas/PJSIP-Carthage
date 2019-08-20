@@ -875,30 +875,31 @@ static void on_call_state(pjsua_call_id call_id, pjsip_event *e)
         // [wrapper stopringtoneOnIncomingCall];
     }
     else{
-        if (ci .state == PJSIP_INV_STATE_EARLY) {
-            //            int code;
-            //            pj_str_t reason;
-            //            pjsip_msg *msg;
-            //
-            //            /* This can only occur because of TX or RX message */
-            //            pj_assert(e->type == PJSIP_EVENT_TSX_STATE);
-            //
-            //            if (e->body.tsx_state.type == PJSIP_EVENT_RX_MSG) {
-            //                msg = e->body.tsx_state.src.rdata->msg_info.msg;
-            //            } else {
-            //                msg = e->body.tsx_state.src.tdata->msg;
-            //            }
-            //
-            //            code = msg->line.status.code;
-            //            reason = msg->line.status.reason;
-            //
-            //            if (ci.role==PJSIP_ROLE_UAC && code==180 &&
-            //                msg->body == NULL &&
-            //                ci.media_status==PJSUA_CALL_MEDIA_NONE)
-            //            {
-            //              //  ringback_start(call_id);
-            //            }
-        }
+//        if (ci .state == PJSIP_INV_STATE_EARLY) {
+            int code;
+            pj_str_t reason;
+            pjsip_msg *msg;
+            
+            /* This can only occur because of TX or RX message */
+            pj_assert(e->type == PJSIP_EVENT_TSX_STATE);
+            
+            if (e->body.tsx_state.type == PJSIP_EVENT_RX_MSG) {
+                msg = e->body.tsx_state.src.rdata->msg_info.msg;
+            } else {
+                msg = e->body.tsx_state.src.tdata->msg;
+            }
+            
+            code = msg->line.status.code;
+            reason = msg->line.status.reason;
+            printf("StatusCode : %d description : %s \n",code, reason);
+            
+//            if (ci.role==PJSIP_ROLE_UAC && code==180 &&
+//                msg->body == NULL &&
+//                ci.media_status==PJSUA_CALL_MEDIA_NONE)
+//            {
+////                ringback_start(call_id);
+//            }
+//        }
     }
     
     
