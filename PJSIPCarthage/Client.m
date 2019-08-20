@@ -881,13 +881,13 @@ static void on_call_state(pjsua_call_id call_id, pjsip_event *e)
             pjsip_msg *msg;
             
             /* This can only occur because of TX or RX message */
-            pj_assert(e->type == PJSIP_EVENT_TSX_STATE);
-            
-            if (e->body.tsx_state.type == PJSIP_EVENT_RX_MSG) {
-                msg = e->body.tsx_state.src.rdata->msg_info.msg;
-            } else {
-                msg = e->body.tsx_state.src.tdata->msg;
-            }
+//            pj_assert(e->type == PJSIP_EVENT_TSX_STATE);
+//            
+//            if (e->body.tsx_state.type == PJSIP_EVENT_RX_MSG) {
+//                msg = e->body.tsx_state.src.rdata->msg_info.msg;
+//            } else {
+//                msg = e->body.tsx_state.src.tdata->msg;
+//            }
             
             code = msg->line.status.code;
             reason = msg->line.status.reason;
