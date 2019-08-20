@@ -21,7 +21,7 @@ int isRegisteredUser(void);
 int sendMessage(char* to, char* message, int account_id);
 void makeCall(NSString* destUri, int acc_identity);
 void endCall(void);
-void declineCall(int callId);
+void declineCall(int call_id, int code);
 void answerCall(int call_identity);
 void muteCall(BOOL status);
 void onSpeaker(BOOL status);

@@ -978,16 +978,12 @@ void endCall()
     
 }
 
-void declineCall(int callId) {
-    pjsua_call_id call_id;
-    call_id = callId;
-    pj_str_t str;
-    pjsip_status_code cd;
-    cd = 603;
-    str.ptr = getstate(cd);
-    pjsua_msg_data data;
-    data.content_type.ptr = getstate(cd);
-    pjsua_call_hangup(call_id, cd, &str, &data);
+void declineCall(int call_id, int code){
+    
+    pjsua_msg_data msg_data;
+    pjsua_msg_data_init(&msg_data);
+    pjsua_call_hangup(call_id, code, NULL, &msg_data);
+    
 }
 
 void answerCall(int call_identity)
