@@ -985,7 +985,9 @@ void declineCall(int callId) {
     pjsip_status_code cd;
     cd = 603;
     str.ptr = getstate(cd);
-    pjsua_call_hangup(call_id, cd, &str, "decline");
+    pjsua_msg_data data;
+    data.content_type.ptr = getstate(cd);
+    pjsua_call_hangup(call_id, cd, &str, &data);
 }
 
 void answerCall(int call_identity)
