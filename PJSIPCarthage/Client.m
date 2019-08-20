@@ -904,8 +904,12 @@ static void on_call_state(pjsua_call_id call_id, pjsip_event *e)
     
     //    [Wrapper onRegisterUserState];
     //  [SIPWrapper notifyUserCallStateChange:[NSString stringWithFormat:@"%s",ci.state_text.ptr] andContactId:[NSString stringWithFormat:@"%s",ci.remote_info.ptr] callId:call_id];
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc]init];
+    [dictionary setObject:[NSString stringWithFormat:@"%s",ci.state_text.ptr] forKey:@"state"];
+    [dictionary setObject:[NSString stringWithFormat:@"%s",ci.remote_info.ptr] forKey:@"contactId"];
+    [dictionary setObject:[NSString stringWithFormat:@"%d", call_id] forKey:@"callId"];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"on_call_state" object:NULL userInfo:NULL];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"on_call_state" object:NULL userInfo:dictionary];
 }
 
 static void on_trasport_call_State(pjsip_transport *transport, pjsip_transport_state state, const pjsip_transport_state_info *info)
@@ -999,18 +1003,3 @@ void muteCall(BOOL status)
         pjsua_conf_adjust_rx_level (0,1);
     }
 }
-
-//void onSpeaker(BOOL status)
-//{
-//    AVAudioSession *session = [AVAudioSession sharedInstance];
-//    NSError *error = nil;
-//    if (status) {
-//        BOOL speakerMode = [session overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:&error];
-//        speakerMode = [session setActive:YES error:&error];
-//    }
-//    else
-//    {
-//        BOOL normalMode = [session overrideOutputAudioPort:AVAudioSessionPortOverrideNone error:&error];
-//        normalMode = [session setActive:YES error:&error];
-//    }
-//}
