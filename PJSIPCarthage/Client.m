@@ -869,12 +869,12 @@ static void on_call_state(pjsua_call_id call_id, pjsip_event *e)
     data = pjsua_call_get_user_data(call_id);
     
     current_call = call_id;
-    if (ci.state != PJSIP_INV_STATE_INCOMING) {
-        // ring_stop(call_id);
-        // SIPWrapper *wrapper = [SIPWrapper sharedManager];
-        // [wrapper stopringtoneOnIncomingCall];
-    }
-    else{
+//    if (ci.state != PJSIP_INV_STATE_INCOMING) {
+//        // ring_stop(call_id);
+//        // SIPWrapper *wrapper = [SIPWrapper sharedManager];
+//        // [wrapper stopringtoneOnIncomingCall];
+//    }
+//    else{
 //        if (ci .state == PJSIP_INV_STATE_EARLY) {
             int code;
             pj_str_t reason;
@@ -900,7 +900,7 @@ static void on_call_state(pjsua_call_id call_id, pjsip_event *e)
 ////                ringback_start(call_id);
 //            }
 //        }
-    }
+//    }
     
     
     //    [Wrapper onRegisterUserState];
