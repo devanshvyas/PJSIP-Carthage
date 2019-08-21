@@ -951,7 +951,7 @@ static void on_call_media_state(pjsua_call_id call_id)
 
 
 /* Make a sip call */
-void makeCall(NSString* destUri, int acc_identity)
+int makeCall(NSString* destUri, int acc_identity)
 {
     
     // Append any required default headers
@@ -965,9 +965,10 @@ void makeCall(NSString* destUri, int acc_identity)
     pjsua_acc_info info;
     status = pjsua_acc_get_info(acc_identity, &info);
     status = pjsua_call_make_call(acc_identity, &uri, 0, NULL,NULL, &cid);
-    if (status != PJ_SUCCESS)
+    if (status != PJ_SUCCESS) {
         error_exit("Error making call", status);
-    
+    }
+    return cid;
     
 }
 

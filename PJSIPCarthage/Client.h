@@ -19,7 +19,7 @@ void unregisterSupportAccount(int acc_id);
 int sendCommand(char* to, char* command);
 int isRegisteredUser(void);
 int sendMessage(char* to, char* message, int account_id);
-void makeCall(NSString* destUri, int acc_identity);
+int makeCall(NSString* destUri, int acc_identity);
 void endCall(void);
 void declineCall(int call_id, int code);
 void answerCall(int call_identity);
