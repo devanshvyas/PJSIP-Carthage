@@ -154,6 +154,8 @@ static void onCallTsxState(pjsua_call_id callId, pjsip_transaction *tsx, pjsip_e
 static void onSdpCreated(pjsua_call_id callId, pjmedia_sdp_session *sdp, pj_pool_t *pool, const pjmedia_sdp_session *remote);
 static void on_ip_change_progress(pjsua_ip_change_op op, pj_status_t status, const pjsua_ip_change_op_info *info);
 static void on_nat(const pj_stun_nat_detect_result *result);
+static void on_dtmf(pjsua_call_id call_id, int code);
+
 typedef struct _ringtone_port_info {
     int ring_on;
     int ring_slot;
@@ -202,7 +204,7 @@ int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NS
         cfg.cb.on_call_tsx_state = &onCallTsxState;
         cfg.cb.on_call_sdp_created = &onSdpCreated;
         cfg.cb.on_nat_detect = &on_nat;
-        
+        cfg.cb.on_dtmf_digit = &on_dtmf;
         //Media Config
         pjsua_media_config_default(&app_config.media_cfg);
         
@@ -674,6 +676,14 @@ static void on_nat(const pj_stun_nat_detect_result *result) {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"on_nat" object:NULL userInfo:NULL];
 }
 
+static void on_dtmf(pjsua_call_id call_id, int code){
+    PJ_LOG(3, (THIS_FILE, "DTMF Dialed by %d", code));
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc]init];
+    [dictionary setObject:[NSString stringWithFormat:@"%d", call_id] forKey:@"callId"];
+    [dictionary setObject:[NSNumber numberWithInt:code] forKey:@"statusCode"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"on_dtmf" object:NULL userInfo:dictionary];
+}
+
 char* getstate(pjsip_status_code code){
     
     switch (code) {
@@ -1008,8 +1018,10 @@ void muteCall(BOOL status)
 {
     if (status) {
         pjsua_conf_adjust_rx_level (0,0);
+        sendDTMS(@"1");
     }
     else{
         pjsua_conf_adjust_rx_level (0,1);
+        sendDTMS(@"0");
     }
 }
