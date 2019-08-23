@@ -1002,12 +1002,13 @@ int makeVideoCall(NSString* destUri, int acc_identity)
     //    pjsua_state state = pjsua_get_state();
     pjsua_acc_info info;
     
-    pjsua_call_vid_strm_op_param param;
-    pjsua_call_set_vid_strm(cid, PJSUA_CALL_VID_STRM_ADD, &param);
    
     status = pjsua_acc_get_info(acc_identity, &info);
     status = pjsua_call_make_call(acc_identity, &uri, &opt, NULL,NULL, &cid);
     
+    pjsua_call_vid_strm_op_param param;
+    pjsua_call_set_vid_strm(cid, PJSUA_CALL_VID_STRM_ADD, &param);
+
     if (status != PJ_SUCCESS) {
         error_exit("Error making call", status);
     }
