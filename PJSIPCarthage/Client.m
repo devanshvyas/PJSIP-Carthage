@@ -989,6 +989,9 @@ int makeVideoCall(NSString* destUri, int acc_identity)
     opt.aud_cnt = 1;
     opt.vid_cnt = 1;
     
+    pjsua_acc_config config;
+    config.vid_out_auto_transmit = PJ_TRUE;
+    
     pjsua_msg_data msg_data;
     pjsua_msg_data_init(&msg_data);
     
@@ -998,6 +1001,10 @@ int makeVideoCall(NSString* destUri, int acc_identity)
     pj_str_t uri = pj_str(uriChar);
     //    pjsua_state state = pjsua_get_state();
     pjsua_acc_info info;
+    
+    pjsua_call_vid_strm_op_param param;
+    pjsua_call_set_vid_strm(cid, PJSUA_CALL_VID_STRM_ADD, &param);
+   
     status = pjsua_acc_get_info(acc_identity, &info);
     status = pjsua_call_make_call(acc_identity, &uri, &opt, NULL,NULL, &cid);
     
