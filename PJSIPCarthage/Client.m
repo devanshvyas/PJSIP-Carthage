@@ -982,6 +982,32 @@ int makeCall(NSString* destUri, int acc_identity)
     
 }
 
+int makeVideoCall(NSString* destUri, int acc_identity)
+{
+    pjsua_call_setting opt;
+    pjsua_call_setting_default(&opt);
+    opt.aud_cnt = 1;
+    opt.vid_cnt = 1;
+    
+    pjsua_msg_data msg_data;
+    pjsua_msg_data_init(&msg_data);
+    
+    pjsua_call_id cid;
+    pj_status_t status;
+    const char *uriChar = [destUri UTF8String];
+    pj_str_t uri = pj_str(uriChar);
+    //    pjsua_state state = pjsua_get_state();
+    pjsua_acc_info info;
+    status = pjsua_acc_get_info(acc_identity, &info);
+    status = pjsua_call_make_call(acc_identity, &uri, &opt, NULL,NULL, &cid);
+    
+    if (status != PJ_SUCCESS) {
+        error_exit("Error making call", status);
+    }
+    return cid;
+    
+}
+
 /* End sip call */
 void endCall()
 {
@@ -1007,7 +1033,7 @@ void answerCall(int call_identity)
     }
     pjsua_call_setting_default(&call_opt);
     call_opt.aud_cnt = 1;
-    call_opt.vid_cnt = 0;
+    call_opt.vid_cnt = 1;
     status = pjsua_call_answer2(call_identity, &call_opt, 200, NULL, NULL);
     //    status = pjsua_call_answer(acc_identity,200, NULL, NULL);
     
