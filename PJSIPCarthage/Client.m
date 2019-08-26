@@ -980,31 +980,39 @@ static void on_call_media_state(pjsua_call_id call_id)
     pjsua_call_info ci;
     
     pjsua_call_get_info(call_id, &ci);
-    //------ video call
-    ci.setting.vid_cnt = 1;
-    printf("videocall: media State:", ci.state);
+    pjsua_call_info call_info;
     
-    pjsua_call_set_vid_strm(ci.id, PJSUA_CALL_VID_STRM_ADD, NULL);
+    unsigned mi;
+    pj_bool_t has_error = PJ_FALSE;
     
-    //------
-    if (ci.media_status == PJSUA_CALL_MEDIA_ACTIVE) {
-        // When media is active, connect call to sound device.
-        pjsua_conf_connect(ci.conf_slot, 0);
-        pjsua_conf_connect(0, ci.conf_slot);
+    pjsua_call_get_info(call_id, &call_info);
+    
+    
+    for (mi=0; mi<call_info.media_cnt; ++mi) {
+        printf("MyLogger: looping ");
+//        on_call_generic_media_state(&call_info, mi, &has_error);
         
-        //
-        //        pjmedia_conf_connect_port(pjsua_var.mconf, 0,ci.conf_slot, 0);
-        //        pjmedia_conf_connect_port(pjsua_var.mconf,ci.conf_slot,0, 0);
-        
-        
-        // Note:- Experimental Code to increase audio level and force route calls to desred device.
-        //        pjsua_conf_adjust_rx_level(0, 1);
-        //        pjsua_conf_adjust_tx_level(0, 1);
-        //
-        //        [AudioRouter initAudioSessionRouting];
-        //
-        //        [AudioRouter switchToDefaultHardware];
-        
+        switch (call_info.media[mi].type) {
+            case PJMEDIA_TYPE_AUDIO:
+                printf("MyLogger: case audio ");
+//                on_call_audio_state(&call_info, mi, &has_error);
+                break;
+            case PJMEDIA_TYPE_VIDEO:
+                printf("MyLogger: case video ");
+//                on_call_video_state(&call_info, mi, &has_error);
+                NSLog(@"windows id : %d",ci.media[mi].stream.vid.win_in);
+                NSLog(@"media id : %d",mi);
+                if (ci.media_status != PJSUA_CALL_MEDIA_ACTIVE)
+                    return;
+                
+                PJ_UNUSED_ARG(has_error);
+                
+                break;
+            default:
+                /* Make gcc happy about enum not handled by switch/case */
+                printf("MyLogger: default case ");
+                break;
+        }
     }
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"on_call_media_state" object:NULL userInfo:NULL];
@@ -1114,6 +1122,11 @@ void answerCall(int call_identity)
 //    pjsua_call_setting_default(&call_opt);
     call_opt.aud_cnt = 1;
     call_opt.vid_cnt = 1;
+    
+    pjsua_vid_preview_param p_param;
+    pjsua_vid_preview_param_default(&p_param);
+    p_param.show = PJ_TRUE;
+    
     status = pjsua_call_answer2(call_identity, &call_opt, 200, NULL, NULL);
     //    status = pjsua_call_answer(acc_identity,200, NULL, NULL);
     
