@@ -1114,6 +1114,8 @@ int makeVideoCall(NSString* destUri, int acc_identity)
     //    pjsua_state state = pjsua_get_state();
     pjsua_acc_info info;
     
+    current_call_video_dir = PJMEDIA_DIR_ENCODING_DECODING;
+    current_call_remote_video_dir = PJMEDIA_DIR_ENCODING_DECODING;
    
     status = pjsua_acc_get_info(acc_identity, &info);
     status = pjsua_call_make_call(acc_identity, &uri, &opt, NULL,NULL, &cid);
@@ -1232,6 +1234,7 @@ static bool is_video_active(pjsua_call_id call_id)
     if(index<callInfo.media_cnt) {
         result = (callInfo.media[index].status == PJSUA_CALL_MEDIA_ACTIVE);
     }
+    printf("MyLogger: isVideoActive:", result);
     return result;
 }
 
@@ -1239,6 +1242,7 @@ static bool is_remote_video_active(pjsua_call_id call_id)
 {
     pjsua_call_info callInfo;
     pjsua_call_get_info(call_id, &callInfo);
+    printf("MyLogger: isRemoteVideoActive:", (callInfo.rem_vid_cnt>0));
     return (callInfo.rem_vid_cnt>0);
 }
 
@@ -1335,6 +1339,6 @@ static pj_status_t set_video_stream(pjsua_call_id call_id, pjsua_call_vid_strm_o
     param.med_idx = pjsua_call_get_vid_stream_idx(call_id);
     param.dir = dir;
     param.cap_dev = PJMEDIA_VID_DEFAULT_CAPTURE_DEV;
-    
+    printf("MyLogger: In set video stream:");
     return pjsua_call_set_vid_strm(call_id, op, &param);
 }
