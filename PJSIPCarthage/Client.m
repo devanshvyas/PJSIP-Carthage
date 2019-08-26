@@ -614,6 +614,7 @@ static void on_incoming_call(pjsua_acc_id acc_id, pjsua_call_id call_id,
     
     NSString *contactID = [NSString stringWithFormat:@"%s" , ci.remote_info.ptr];
     
+    //----- video call method
     pjsua_acc_config cfg;
     pjsua_acc_config_default(&cfg);
     cfg.vid_in_auto_show = PJ_TRUE;
@@ -633,12 +634,14 @@ static void on_incoming_call(pjsua_acc_id acc_id, pjsua_call_id call_id,
     }
     
     pjsua_vid_win_info info;
-    info.is_native = true;
+    info.is_native = false;
     info.show = true;
     
     status = pjsua_vid_win_get_info(wid, &info);
     printf("videoCall: status:", status);
     
+    pjsua_vid_win_set_show(wid, true);
+    //-------
     
 #ifdef USE_GUI
     if (!showNotification(call_id))
@@ -1035,7 +1038,8 @@ int makeVideoCall(NSString* destUri, int acc_identity)
     dev_info.fmt_cnt = 1;
 //    info.fmt = ;
     pj_status_t video_status;
-    video_status = pjsua_vid_enum_devs(&dev_info, 0);
+//    video_status = pjsua_vid_enum_devs(&dev_info, 0);
+    
     printf("videoStatus:", video_status);
     
     pjsua_msg_data msg_data;
