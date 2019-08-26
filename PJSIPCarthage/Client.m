@@ -1005,8 +1005,9 @@ static void on_call_media_state(pjsua_call_id call_id)
 //                on_call_video_state(&call_info, mi, &has_error);
                 NSLog(@"windows id : %d",ci.media[mi].stream.vid.win_in);
                 NSLog(@"media id : %d",mi);
-                if (ci.media_status != PJSUA_CALL_MEDIA_ACTIVE)
-                    return;
+                printf("MyLogger: mediastatus", ci.media_status);
+//                if (ci.media_status != PJSUA_CALL_MEDIA_ACTIVE)
+//                    return;
                 int i, last;
                 pjsua_vid_win_id wid = ci.media[mi].stream.vid.win_in;
                 i = (wid == PJSUA_INVALID_ID) ? 0 : wid;
