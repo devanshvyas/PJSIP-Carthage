@@ -1060,6 +1060,7 @@ int makeVideoCall(NSString* destUri, int acc_identity)
     pjsua_call_setting_default(&opt);
     opt.aud_cnt = 1;
     opt.vid_cnt = 1;
+    opt.flag = PJSUA_CALL_INCLUDE_DISABLED_MEDIA;
     
     pjsua_acc_config config;
     config.vid_out_auto_transmit = PJ_TRUE;
@@ -1135,6 +1136,7 @@ void answerCall(int call_identity)
 //    pjsua_call_setting_default(&call_opt);
     call_opt.aud_cnt = 1;
     call_opt.vid_cnt = 1;
+    call_opt.flag = PJSUA_CALL_INCLUDE_DISABLED_MEDIA;
     
     pjsua_vid_preview_param p_param;
     pjsua_vid_preview_param_default(&p_param);
