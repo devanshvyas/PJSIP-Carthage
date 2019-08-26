@@ -1101,7 +1101,8 @@ int makeVideoCall(NSString* destUri, int acc_identity)
     status = pjsua_call_make_call(acc_identity, &uri, &opt, NULL,NULL, &cid);
     
     pjsua_call_vid_strm_op_param param;
-    pjsua_call_set_vid_strm(cid, PJSUA_CALL_VID_STRM_ADD, &param);
+    param.dir = PJMEDIA_DIR_NONE;
+    pjsua_call_set_vid_strm(cid, PJSUA_CALL_VID_STRM_START_TRANSMIT, &param);
 
     if (status != PJ_SUCCESS) {
         error_exit("Error making call", status);
