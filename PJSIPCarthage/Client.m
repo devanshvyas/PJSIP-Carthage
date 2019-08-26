@@ -322,7 +322,23 @@ int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NS
     {
         pjsua_acc_config cfg;
         pjsua_acc_config_default(&cfg);
+        
+//        // Account cred info
+//        cfg.cred_count = 1;
+//        cfg.cred_info[0].scheme = pj_str("digest");
+//        cfg.cred_info[0].realm = pj_str("*");
+//        cfg.cred_info[0].username = pj_str(sipUser);
+//        cfg.cred_info[0].data_type = PJSIP_CRED_DATA_PLAIN_PASSWD;
+//        cfg.cred_info[0].data = pj_str(password);
+        
+        //Normal Video Setup For Account
         cfg.vid_in_auto_show = PJ_TRUE;
+        cfg.vid_out_auto_transmit = PJ_TRUE;
+        cfg.vid_wnd_flags = PJMEDIA_VID_DEV_WND_BORDER | PJMEDIA_VID_DEV_WND_RESIZABLE;
+        cfg.vid_cap_dev = PJMEDIA_VID_DEFAULT_CAPTURE_DEV;
+        cfg.vid_rend_dev = PJMEDIA_VID_DEFAULT_RENDER_DEV;
+        cfg.reg_retry_interval = 300;
+        cfg.reg_first_retry_interval = 30;
         
         //        cfg.reg_timeout          = 110;
         //        cfg.ka_interval           = 5;
@@ -1095,7 +1111,7 @@ void answerCall(int call_identity)
     if (!pj_thread_is_registered()) {
         pj_thread_register("ipjsua", a_thread_desc, &a_thread);
     }
-    pjsua_call_setting_default(&call_opt);
+//    pjsua_call_setting_default(&call_opt);
     call_opt.aud_cnt = 1;
     call_opt.vid_cnt = 1;
     status = pjsua_call_answer2(call_identity, &call_opt, 200, NULL, NULL);
