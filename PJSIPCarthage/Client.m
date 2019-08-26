@@ -334,7 +334,7 @@ int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NS
 //    }
     
     // Initialization is done, now start pjsua
-    status = pjsua_start();
+    //status = pjsua_start();
     if (status != PJ_SUCCESS) error_exit("Error starting pjsua", status);
     
     // Register the account on local sip server
@@ -359,10 +359,9 @@ int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NS
         cfg.reg_retry_interval = 300;
         cfg.reg_first_retry_interval = 30;
         
-        //        cfg.reg_timeout          = 110;
-        //        cfg.ka_interval           = 5;
-        //        cfg.allow_contact_rewrite = 1;
-        
+        pj_str_t h263_codec_id = {"H263-1998/96", 12};
+        pjsua_vid_codec_set_priority(&h263_codec_id, 2);
+        setup_video_codec_params();
         
         char sipId[MAX_SIP_ID_LENGTH];
         const char *user = [sipUser UTF8String];
@@ -392,6 +391,7 @@ int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NS
             error_exit("Error adding account", status);
         app_config.acc_cfg[0]  = cfg;
     }
+    status = pjsua_start();
     
     if (!pj_thread_is_registered()) {
         static pj_thread_desc   thread_desc;
