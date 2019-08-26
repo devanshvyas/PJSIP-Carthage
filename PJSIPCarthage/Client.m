@@ -614,6 +614,32 @@ static void on_incoming_call(pjsua_acc_id acc_id, pjsua_call_id call_id,
     
     NSString *contactID = [NSString stringWithFormat:@"%s" , ci.remote_info.ptr];
     
+    pjsua_acc_config cfg;
+    pjsua_acc_config_default(&cfg);
+    cfg.vid_in_auto_show = PJ_TRUE;
+    
+    int vid_idx;
+    pjsua_vid_win_id wid;
+    pj_status_t status;
+    
+    vid_idx = pjsua_call_get_vid_stream_idx(call_id);
+    if (vid_idx >= 0) {
+        pjsua_call_info ci;
+        
+        pjsua_call_get_info(call_id, &ci);
+        wid = ci.media[vid_idx].stream.vid.win_in;
+        printf("videoCall: wid:", wid);
+        printf("videoCall: idx:", vid_idx);
+    }
+    
+    pjsua_vid_win_info info;
+    info.is_native = true;
+    info.show = true;
+    
+    status = pjsua_vid_win_get_info(wid, &info);
+    printf("videoCall: status:", status);
+    
+    
 #ifdef USE_GUI
     if (!showNotification(call_id))
         return;
