@@ -230,8 +230,12 @@ int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NS
         pjsua_logging_config_default(&log_cfg);
         log_cfg.console_level = 4;
         
+        // Init PJ Media
+        pjsua_media_config me_cfg;
+        pjsua_media_config_default(&me_cfg);
+        
         // Init the pjsua
-        status = pjsua_init(&cfg, &log_cfg,NULL);
+        status = pjsua_init(&cfg, &log_cfg, &me_cfg);
         
         
         if (status != PJ_SUCCESS)
@@ -998,12 +1002,20 @@ static void on_call_media_state(pjsua_call_id call_id)
 //                on_call_audio_state(&call_info, mi, &has_error);
                 break;
             case PJMEDIA_TYPE_VIDEO:
-                printf("MyLogger: case video ");
 //                on_call_video_state(&call_info, mi, &has_error);
                 NSLog(@"windows id : %d",ci.media[mi].stream.vid.win_in);
                 NSLog(@"media id : %d",mi);
                 if (ci.media_status != PJSUA_CALL_MEDIA_ACTIVE)
                     return;
+                int i, last;
+                pjsua_vid_win_id wid = ci.media[mi].stream.vid.win_in;
+                i = (wid == PJSUA_INVALID_ID) ? 0 : wid;
+                last = (wid == PJSUA_INVALID_ID) ? PJSUA_MAX_VID_WINS : wid+1;
+                if(wid == PJSUA_INVALID_ID){
+                    printf("MyLogger: displayWindow failed\n");
+                }else{
+                    printf("MyLogger: displayWindow success\n");
+                }
                 
                 PJ_UNUSED_ARG(has_error);
                 
