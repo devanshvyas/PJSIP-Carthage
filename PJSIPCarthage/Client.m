@@ -321,8 +321,8 @@ int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NS
     // Register the account on local sip server
     {
         pjsua_acc_config cfg;
-        
         pjsua_acc_config_default(&cfg);
+        cfg.vid_in_auto_show = PJ_TRUE;
         
         //        cfg.reg_timeout          = 110;
         //        cfg.ka_interval           = 5;
@@ -640,7 +640,7 @@ static void on_incoming_call(pjsua_acc_id acc_id, pjsua_call_id call_id,
     status = pjsua_vid_win_get_info(wid, &info);
     printf("videoCall: status:", status);
     
-    pjsua_vid_win_set_show(wid, true);
+//    pjsua_vid_win_set_show(wid, true);
     //-------
     
 #ifdef USE_GUI
@@ -964,7 +964,13 @@ static void on_call_media_state(pjsua_call_id call_id)
     pjsua_call_info ci;
     
     pjsua_call_get_info(call_id, &ci);
+    //------ video call
+    ci.setting.vid_cnt = 1;
+    printf("videocall: media State:", ci.state);
     
+    pjsua_call_set_vid_strm(ci.id, PJSUA_CALL_VID_STRM_ADD, NULL);
+    
+    //------
     if (ci.media_status == PJSUA_CALL_MEDIA_ACTIVE) {
         // When media is active, connect call to sound device.
         pjsua_conf_connect(ci.conf_slot, 0);
