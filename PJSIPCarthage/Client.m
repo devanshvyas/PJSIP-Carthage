@@ -1013,19 +1013,19 @@ static void on_call_media_state(pjsua_call_id call_id)
         pjsua_conf_connect(0, call_info.conf_slot);
     }
  
-    if(is_video_active(call_id) || is_remote_video_active(call_id))
-    {
+//    if(is_video_active(call_id) || is_remote_video_active(call_id))
+//    {
         // Setup the current h.263+ configuration
         setup_video_codec_params();
         
         // Start video stream
         set_video_stream(call_id, PJSUA_CALL_VID_STRM_START_TRANSMIT, PJMEDIA_DIR_NONE);
         
-    }
-    else
-    {
-        stop_all_vid_previews();
-    }
+//    }
+//    else
+//    {
+//        stop_all_vid_previews();
+//    }
     
     /*
     unsigned mi;
