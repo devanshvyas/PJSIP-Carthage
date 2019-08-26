@@ -1035,7 +1035,7 @@ int makeVideoCall(NSString* destUri, int acc_identity)
     dev_info.fmt_cnt = 1;
 //    info.fmt = ;
     pj_status_t video_status;
-    video_status = pjsua_vid_enum_devs(&dev_info, 1);
+    video_status = pjsua_vid_enum_devs(&dev_info, 0);
     printf("videoStatus:", video_status);
     
     pjsua_msg_data msg_data;
