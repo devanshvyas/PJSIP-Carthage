@@ -992,6 +992,26 @@ int makeVideoCall(NSString* destUri, int acc_identity)
     pjsua_acc_config config;
     config.vid_out_auto_transmit = PJ_TRUE;
     
+    int devices = pjsua_vid_dev_count();
+    pjmedia_vid_dev_info dev_info;
+    dev_info.has_callback = true;
+    dev_info.id = 0;
+    
+//    pjmedia_format format[64];
+//    format[0].detail_type = PJMEDIA_FORMAT_DETAIL_VIDEO;
+//    pjmedia_format_id format_id = PJMEDIA_FORMAT_I420JPEG;
+//    format[0].id = format_id;
+//    format[0].type = PJMEDIA_TYPE_VIDEO;
+//    NSArray *formats = [[NSArray alloc] init];
+//    [formats arrayByAddingObject:format];
+//    info.fmt = format[0];
+    
+    dev_info.fmt_cnt = 1;
+//    info.fmt = ;
+    pj_status_t video_status;
+    video_status = pjsua_vid_enum_devs(&dev_info, 1);
+    printf("videoStatus:", video_status);
+    
     pjsua_msg_data msg_data;
     pjsua_msg_data_init(&msg_data);
     
