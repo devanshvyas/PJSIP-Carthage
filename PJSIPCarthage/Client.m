@@ -1013,19 +1013,19 @@ static void on_call_media_state(pjsua_call_id call_id)
         pjsua_conf_connect(0, call_info.conf_slot);
     }
  
-//    if(is_video_active(call_id) || is_remote_video_active(call_id))
-//    {
+    if(is_video_active(call_id) || is_remote_video_active(call_id))
+    {
         // Setup the current h.263+ configuration
         setup_video_codec_params();
         
         // Start video stream
         set_video_stream(call_id, PJSUA_CALL_VID_STRM_START_TRANSMIT, PJMEDIA_DIR_NONE);
         
-//    }
-//    else
-//    {
-//        stop_all_vid_previews();
-//    }
+    }
+    else
+    {
+        stop_all_vid_previews();
+    }
     
     /*
     unsigned mi;
@@ -1234,7 +1234,8 @@ static bool is_video_active(pjsua_call_id call_id)
     if(index<callInfo.media_cnt) {
         result = (callInfo.media[index].status == PJSUA_CALL_MEDIA_ACTIVE);
     }
-    printf("MyLogger: isVideoActive:", result);
+    NSLog(@"MyLogger: videoActive: %s", result ? "true" : "false");
+
     return result;
 }
 
@@ -1242,7 +1243,7 @@ static bool is_remote_video_active(pjsua_call_id call_id)
 {
     pjsua_call_info callInfo;
     pjsua_call_get_info(call_id, &callInfo);
-    printf("MyLogger: isRemoteVideoActive:", (callInfo.rem_vid_cnt>0));
+    NSLog(@"MyLogger: remoteVideoActive: %s", (callInfo.rem_vid_cnt>0) ? "true" : "false");
     return (callInfo.rem_vid_cnt>0);
 }
 
@@ -1250,7 +1251,7 @@ void setup_video_codec_params(void)
 {
     //Set Video Codec Parameters before this starts transmitting
     
-    pj_str_t h263_codec_id = {"H263-1998/96", 12};      //pj_str("H263-1998/96");
+    pj_str_t h263_codec_id = {"H264/90000", 12};      //pj_str("H263-1998/96");
     pjsua_vid_codec_set_priority(&h263_codec_id, 2);
     
     pjsua_codec_info vid_codec_ids[32];
