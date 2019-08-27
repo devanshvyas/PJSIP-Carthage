@@ -1367,8 +1367,8 @@ void setup_video_codec_params(void)
 {
     //Set Video Codec Parameters before this starts transmitting
     
-    pj_str_t h263_codec_id = {"H264/90000", 12};      //pj_str("H263-1998/96");
-    pjsua_vid_codec_set_priority(&h263_codec_id, 2);
+    pj_str_t h264_codec_id = {"H264", 12};      //pj_str("H263-1998/96");
+//    pjsua_vid_codec_set_priority(&h264_codec_id, 2);
     
     pjsua_codec_info vid_codec_ids[32];
     unsigned int vid_codec_count=PJ_ARRAY_SIZE(vid_codec_ids);
@@ -1391,33 +1391,35 @@ void setup_video_codec_params(void)
         codec_param.enc_mtu=1200;
         
         //Set Size
-        codec_param.enc_fmt.det.vid.size.w = 352; //176; //352;
-        codec_param.enc_fmt.det.vid.size.h = 288; //144; //288;
+        codec_param.enc_fmt.det.vid.size.w = 1280; //176; //352;
+        codec_param.enc_fmt.det.vid.size.h = 720; //144; //288;
         
-        codec_param.dec_fmt.det.vid.size.w = 352; //176; //352;
-        codec_param.dec_fmt.det.vid.size.h = 288; //144; //288;
+        codec_param.dec_fmt.det.vid.size.w = 1280; //176; //352;
+        codec_param.dec_fmt.det.vid.size.h = 720; //144; //288;
         
         codec_param.dec_fmtp.cnt = 2;
-        codec_param.dec_fmtp.param[0].name = pj_str("CIF");     //pj_str("QCIF");    // 1st preference: 176 x 144 (QCIF)
-        codec_param.dec_fmtp.param[0].val = pj_str("2");        // 30000/(1.001*3) fps for QCIF
+        codec_param.dec_fmtp.param[0].name = pj_str("profile-level-id") //pj_str("CIF");     //pj_str("QCIF");    // 1st preference: 176 x 144 (QCIF)
+        codec_param.dec_fmtp.param[0].val = pj_str("xxxx1f")//pj_str("2");        // 30000/(1.001*3) fps for QCIF
         
-        codec_param.dec_fmtp.param[1].name = pj_str("MaxBR");
-        codec_param.dec_fmtp.param[1].val = pj_str("5120");     //5120 // 2560 //1920 // = max_bps / 100
+        codec_param.dec_fmtp.param[1].name = pj_str("profile-level-id");
+        codec_param.dec_fmtp.param[1].val = pj_str("xxxx1f");
+//        codec_param.dec_fmtp.param[1].name = pj_str("MaxBR");
+//        codec_param.dec_fmtp.param[1].val = pj_str("5120");     //5120 // 2560 //1920 // = max_bps / 100
         
         /*        codec_param.dec_fmtp.param[2].name = pj_str("BPP");
          codec_param.dec_fmtp.param[2].val = pj_str("6554");     //65536*/
         
         // Set FPS.
-        codec_param.enc_fmt.det.vid.fps.num   = 15000; //15000;
-        codec_param.enc_fmt.det.vid.fps.denum = 1001; //1001;
-        codec_param.dec_fmt.det.vid.fps.num   = 15000; //15000;
-        codec_param.dec_fmt.det.vid.fps.denum = 1001; //1001;
+        codec_param.enc_fmt.det.vid.fps.num   = 30; //15000;
+        codec_param.enc_fmt.det.vid.fps.denum = 1; //1001;
+        codec_param.dec_fmt.det.vid.fps.num   = 30; //15000;
+        codec_param.dec_fmt.det.vid.fps.denum = 1; //1001;
         
         // Set Bandwidth.
-        codec_param.enc_fmt.det.vid.avg_bps = 256000; //144000; //192000; //144000
-        codec_param.enc_fmt.det.vid.max_bps = 512000; //256000; //192000
-        codec_param.dec_fmt.det.vid.avg_bps = 256000; //144000; //192000; //144000
-        codec_param.dec_fmt.det.vid.max_bps = 512000; //192000; //X256000; //192000
+        codec_param.enc_fmt.det.vid.avg_bps = 512000; //144000; //192000; //144000
+        codec_param.enc_fmt.det.vid.max_bps = 1024000; //256000; //192000
+        codec_param.dec_fmt.det.vid.avg_bps = 512000; //144000; //192000; //144000
+        codec_param.dec_fmt.det.vid.max_bps = 1024000; //192000; //X256000; //192000
         
         // Set Configuration to codec in codecs list.
         pj_status_t status_codec_set_params = pjsua_vid_codec_set_param(&(vid_codec_ids[i].codec_id), &codec_param);
