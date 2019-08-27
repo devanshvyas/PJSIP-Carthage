@@ -217,7 +217,7 @@ int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NS
         cfg.cb.on_call_media_state = &on_call_media_state;
         cfg.cb.on_call_state = &on_call_state;
         cfg.cb.on_transport_state = &on_trasport_call_State;
-        cfg.cb.on_call_rx_offer = &on_call_rx_offer;
+//        cfg.cb.on_call_rx_offer = &on_call_rx_offer;
         cfg.cb.on_call_tsx_state = &onCallTsxState;
         cfg.cb.on_call_sdp_created = &onSdpCreated;
         cfg.cb.on_nat_detect = &on_nat;
@@ -364,7 +364,7 @@ int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NS
         pj_str_t h264_codec_id = {"H264", 4};      //pj_str("H263-1998/96");
         pjsua_vid_codec_set_priority(&h264_codec_id, 2);
         
-        setup_video_codec_params();
+//        setup_video_codec_params();
         
         char sipId[MAX_SIP_ID_LENGTH];
         const char *user = [sipUser UTF8String];
@@ -1019,7 +1019,7 @@ static void on_call_media_state(pjsua_call_id call_id)
     if(is_video_active(call_id) || is_remote_video_active(call_id))
     {
         // Setup the current h.263+ configuration
-        setup_video_codec_params();
+//        setup_video_codec_params();
         
         // Start video stream
         set_video_stream(call_id, PJSUA_CALL_VID_STRM_START_TRANSMIT, PJMEDIA_DIR_NONE);
