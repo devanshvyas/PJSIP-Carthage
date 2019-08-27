@@ -1398,8 +1398,8 @@ void setup_video_codec_params(void)
         codec_param.dec_fmt.det.vid.size.h = 720; //144; //288;
         
         codec_param.dec_fmtp.cnt = 2;
-        codec_param.dec_fmtp.param[0].name = pj_str("profile-level-id") //pj_str("CIF");     //pj_str("QCIF");    // 1st preference: 176 x 144 (QCIF)
-        codec_param.dec_fmtp.param[0].val = pj_str("xxxx1f")//pj_str("2");        // 30000/(1.001*3) fps for QCIF
+        codec_param.dec_fmtp.param[0].name = pj_str("profile-level-id"); //pj_str("CIF");     //pj_str("QCIF");    // 1st preference: 176 x 144 (QCIF)
+        codec_param.dec_fmtp.param[0].val = pj_str("xxxx1f");//pj_str("2");        // 30000/(1.001*3) fps for QCIF
         
         codec_param.dec_fmtp.param[1].name = pj_str("profile-level-id");
         codec_param.dec_fmtp.param[1].val = pj_str("xxxx1f");
