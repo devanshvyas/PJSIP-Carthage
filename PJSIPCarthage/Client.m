@@ -361,8 +361,9 @@ int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NS
         cfg.reg_retry_interval = 300;
         cfg.reg_first_retry_interval = 30;
         
-        pj_str_t h263_codec_id = {"H263-1998/96", 12};
-        pjsua_vid_codec_set_priority(&h263_codec_id, 2);
+        pj_str_t h264_codec_id = {"H264", 4};      //pj_str("H263-1998/96");
+        pjsua_vid_codec_set_priority(&h264_codec_id, 2);
+        
         setup_video_codec_params();
         
         char sipId[MAX_SIP_ID_LENGTH];
@@ -1410,10 +1411,10 @@ void setup_video_codec_params(void)
          codec_param.dec_fmtp.param[2].val = pj_str("6554");     //65536*/
         
         // Set FPS.
-        codec_param.enc_fmt.det.vid.fps.num   = 30; //15000;
-        codec_param.enc_fmt.det.vid.fps.denum = 1; //1001;
-        codec_param.dec_fmt.det.vid.fps.num   = 30; //15000;
-        codec_param.dec_fmt.det.vid.fps.denum = 1; //1001;
+        codec_param.enc_fmt.det.vid.fps.num   = 15000;
+        codec_param.enc_fmt.det.vid.fps.denum = 1001;
+        codec_param.dec_fmt.det.vid.fps.num   = 15000;
+        codec_param.dec_fmt.det.vid.fps.denum = 1001;
         
         // Set Bandwidth.
         codec_param.enc_fmt.det.vid.avg_bps = 512000; //144000; //192000; //144000
