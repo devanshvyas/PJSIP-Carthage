@@ -1398,12 +1398,12 @@ void setup_video_codec_params(void)
         codec_param.dec_fmt.det.vid.size.w = 640; //176; //352;
         codec_param.dec_fmt.det.vid.size.h = 480; //144; //288;
         
-        codec_param.dec_fmtp.cnt = 2;
+        codec_param.dec_fmtp.cnt = 1;
         codec_param.dec_fmtp.param[0].name = pj_str("profile-level-id"); //pj_str("CIF");     //pj_str("QCIF");    // 1st preference: 176 x 144 (QCIF)
         codec_param.dec_fmtp.param[0].val = pj_str("xxxx1f");//pj_str("2");        // 30000/(1.001*3) fps for QCIF
         
-        codec_param.dec_fmtp.param[1].name = pj_str("profile-level-id");
-        codec_param.dec_fmtp.param[1].val = pj_str("xxxx1f");
+//        codec_param.dec_fmtp.param[1].name = pj_str("profile-level-id");
+//        codec_param.dec_fmtp.param[1].val = pj_str("xxxx1f");
 //        codec_param.dec_fmtp.param[1].name = pj_str("MaxBR");
 //        codec_param.dec_fmtp.param[1].val = pj_str("5120");     //5120 // 2560 //1920 // = max_bps / 100
         
@@ -1417,13 +1417,20 @@ void setup_video_codec_params(void)
         codec_param.dec_fmt.det.vid.fps.denum = 1001;
         
         // Set Bandwidth.
-        codec_param.enc_fmt.det.vid.avg_bps = 512000; //144000; //192000; //144000
-        codec_param.enc_fmt.det.vid.max_bps = 1024000; //256000; //192000
-        codec_param.dec_fmt.det.vid.avg_bps = 512000; //144000; //192000; //144000
-        codec_param.dec_fmt.det.vid.max_bps = 1024000; //192000; //X256000; //192000
+        codec_param.enc_fmt.det.vid.avg_bps = 256000; //144000; //192000; //144000
+        codec_param.enc_fmt.det.vid.max_bps = 512000; //256000; //192000
+        codec_param.dec_fmt.det.vid.avg_bps = 256000; //144000; //192000; //144000
+        codec_param.dec_fmt.det.vid.max_bps = 512000; //192000; //X256000; //192000
         
         // Set Configuration to codec in codecs list.
         pj_status_t status_codec_set_params = pjsua_vid_codec_set_param(&(vid_codec_ids[i].codec_id), &codec_param);
+        
+        NSLog(@"Codec name is %s", vid_codec_ids[i].desc.ptr);
+        NSLog(@"MTU VALUE for codec #%d is %d", i, codec_param.enc_mtu);
+        NSLog(@"FrameSize for codec #%d is w:%d h:%d", i, codec_param.enc_fmt.det.vid.size.w, codec_param.enc_fmt.det.vid.size.h);
+        NSLog(@"FPS for codec #%d is %d/%d", i, codec_param.enc_fmt.det.vid.fps.num, codec_param.enc_fmt.det.vid.fps.denum);
+        NSLog(@"BandWidth VALUE for codec #%d is avg:%d max:%d", i, codec_param.enc_fmt.det.vid.avg_bps, codec_param.enc_fmt.det.vid.max_bps);
+        
         if(status_codec_set_params != PJ_SUCCESS)
         {
             NSLog(@"pjsua_vid_codec_set_param Failed!");
