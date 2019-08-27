@@ -1391,11 +1391,11 @@ void setup_video_codec_params(void)
         codec_param.enc_mtu=1200;
         
         //Set Size
-        codec_param.enc_fmt.det.vid.size.w = 1280; //176; //352;
-        codec_param.enc_fmt.det.vid.size.h = 720; //144; //288;
+        codec_param.enc_fmt.det.vid.size.w = 640; //176; //352;
+        codec_param.enc_fmt.det.vid.size.h = 480; //144; //288;
         
-        codec_param.dec_fmt.det.vid.size.w = 1280; //176; //352;
-        codec_param.dec_fmt.det.vid.size.h = 720; //144; //288;
+        codec_param.dec_fmt.det.vid.size.w = 640; //176; //352;
+        codec_param.dec_fmt.det.vid.size.h = 480; //144; //288;
         
         codec_param.dec_fmtp.cnt = 2;
         codec_param.dec_fmtp.param[0].name = pj_str("profile-level-id"); //pj_str("CIF");     //pj_str("QCIF");    // 1st preference: 176 x 144 (QCIF)
