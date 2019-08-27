@@ -248,12 +248,12 @@ int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NS
         log_cfg.console_level = 4;
         
         // Init PJ Media
-        pjsua_media_config me_cfg;
-        pjsua_media_config_default(&me_cfg);
+//        pjsua_media_config me_cfg;
+//        pjsua_media_config_default(&me_cfg);
         
         // Init the pjsua
-        status = pjsua_init(&cfg, &log_cfg, &me_cfg);
-        
+//        status = pjsua_init(&cfg, &log_cfg, &me_cfg);
+        status = pjsua_init(&cfg, &log_cfg,NULL);
         
         if (status != PJ_SUCCESS)
             error_exit("Error in pjsua_init()", status);
@@ -336,7 +336,7 @@ int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NS
 //    }
     
     // Initialization is done, now start pjsua
-    //status = pjsua_start();
+    status = pjsua_start();
     if (status != PJ_SUCCESS) error_exit("Error starting pjsua", status);
     
     // Register the account on local sip server
@@ -361,8 +361,8 @@ int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NS
         cfg.reg_retry_interval = 300;
         cfg.reg_first_retry_interval = 30;
         
-        pj_str_t h264_codec_id = {"H264", 4};      //pj_str("H263-1998/96");
-        pjsua_vid_codec_set_priority(&h264_codec_id, 2);
+//        pj_str_t h264_codec_id = {"H264", 4};      //pj_str("H263-1998/96");
+//        pjsua_vid_codec_set_priority(&h264_codec_id, 2);
         
 //        setup_video_codec_params();
         
@@ -394,7 +394,7 @@ int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NS
             error_exit("Error adding account", status);
         app_config.acc_cfg[0]  = cfg;
     }
-    status = pjsua_start();
+    
     
     if (!pj_thread_is_registered()) {
         static pj_thread_desc   thread_desc;
@@ -1000,35 +1000,36 @@ static void on_trasport_call_State(pjsip_transport *transport, pjsip_transport_s
 /* Callback called by the library when call's media state has changed */
 static void on_call_media_state(pjsua_call_id call_id)
 {
-    pjsua_call_info ci;
-    pjsua_call_get_info(call_id, &ci);
     pjsua_call_info call_info;
+    pjsua_call_get_info(call_id, &call_info);
     
-    pjsua_call_id current_call_id;
-    pj_status_t status = search_first_active_call(&current_call_id);
-    if(status != PJ_SUCCESS) {
-        NSLog(@"Error searching first active call!");
-        return;
+    if (call_info.media_status == PJSUA_CALL_MEDIA_ACTIVE) {
+        printf("MyLogger: media: active");
+        pjsua_conf_connect(call_info.conf_slot, 0);
+        pjsua_conf_connect(0, call_info.conf_slot);
     }
     
-//    if (call_info.media_status == PJSUA_CALL_MEDIA_ACTIVE) {
-//        pjsua_conf_connect(call_info.conf_slot, 0);
-//        pjsua_conf_connect(0, call_info.conf_slot);
+//    pjsua_call_id current_call_id;
+//    pj_status_t status = search_first_active_call(&current_call_id);
+//    if(status != PJ_SUCCESS) {
+//        NSLog(@"Error searching first active call!");
+//        return;
 //    }
- 
-    if(is_video_active(call_id) || is_remote_video_active(call_id))
-    {
-        // Setup the current h.263+ configuration
-//        setup_video_codec_params();
-        
-        // Start video stream
-        set_video_stream(call_id, PJSUA_CALL_VID_STRM_START_TRANSMIT, PJMEDIA_DIR_NONE);
-        
-    }
-    else
-    {
-        stop_all_vid_previews();
-    }
+//
+//
+//    if(is_video_active(call_id) || is_remote_video_active(call_id))
+//    {
+//        // Setup the current h.263+ configuration
+////        setup_video_codec_params();
+//
+//        // Start video stream
+//        set_video_stream(call_id, PJSUA_CALL_VID_STRM_START_TRANSMIT, PJMEDIA_DIR_NONE);
+//
+//    }
+//    else
+//    {
+//        stop_all_vid_previews();
+//    }
     
     
     unsigned mi;
@@ -1039,27 +1040,30 @@ static void on_call_media_state(pjsua_call_id call_id)
     
     for (mi=0; mi<call_info.media_cnt; ++mi) {
         printf("MyLogger: looping ");
-//        on_call_generic_media_state(&call_info, mi, &has_error);
+        //        on_call_generic_media_state(&call_info, mi, &has_error);
         
         switch (call_info.media[mi].type) {
             case PJMEDIA_TYPE_AUDIO:
                 printf("MyLogger: case audio ");
-//                on_call_audio_state(&call_info, mi, &has_error);
+                //                on_call_audio_state(&call_info, mi, &has_error);
                 break;
             case PJMEDIA_TYPE_VIDEO:
-//                on_call_video_state(&call_info, mi, &has_error);
-                NSLog(@"windows id : %d",ci.media[mi].stream.vid.win_in);
+                //                on_call_video_state(&call_info, mi, &has_error);
+                NSLog(@"windows id : %d",call_info.media[mi].stream.vid.win_in);
                 NSLog(@"media id : %d",mi);
-                printf("MyLogger: mediastatus", ci.media_status);
-//                if (ci.media_status != PJSUA_CALL_MEDIA_ACTIVE)
-//                    return;
+                printf("MyLogger: mediastatus", call_info.media_status);
+                //                if (ci.media_status != PJSUA_CALL_MEDIA_ACTIVE)
+                //                    return;
                 int i, last;
-                pjsua_vid_win_id wid = ci.media[mi].stream.vid.win_in;
+                pjsua_vid_win_id wid = call_info.media[mi].stream.vid.win_in;
                 i = (wid == PJSUA_INVALID_ID) ? 0 : wid;
                 last = (wid == PJSUA_INVALID_ID) ? PJSUA_MAX_VID_WINS : wid+1;
                 if(wid == PJSUA_INVALID_ID){
                     printf("MyLogger: displayWindow failed\n");
                 }else{
+                    pjsua_vid_win_info info;
+                    
+                    pjsua_vid_win_get_info(wid, pjsua_vid_win_info *wi)
                     printf("MyLogger: displayWindow success\n");
                 }
                 
@@ -1195,6 +1199,10 @@ static void on_call_rx_offer(pjsua_call_id call_id, const pjmedia_sdp_session *o
 /* Make a sip call */
 int makeCall(NSString* destUri, int acc_identity)
 {
+    pjsua_call_setting opt;
+    pjsua_call_setting_default(&opt);
+    opt.aud_cnt = 1;
+    opt.vid_cnt = 0;
     
     // Append any required default headers
     pjsua_msg_data msg_data;
@@ -1206,7 +1214,7 @@ int makeCall(NSString* destUri, int acc_identity)
     //    pjsua_state state = pjsua_get_state();
     pjsua_acc_info info;
     status = pjsua_acc_get_info(acc_identity, &info);
-    status = pjsua_call_make_call(acc_identity, &uri, 0, NULL,NULL, &cid);
+    status = pjsua_call_make_call(acc_identity, &uri, &opt, NULL,NULL, &cid);
     if (status != PJ_SUCCESS) {
         error_exit("Error making call", status);
     }
@@ -1267,14 +1275,14 @@ void answerCall(int call_identity)
     if (!pj_thread_is_registered()) {
         pj_thread_register("ipjsua", a_thread_desc, &a_thread);
     }
-//    pjsua_call_setting_default(&call_opt);
+    pjsua_call_setting_default(&call_opt);
     call_opt.aud_cnt = 1;
-    call_opt.vid_cnt = 1;
-    call_opt.flag = PJSUA_CALL_INCLUDE_DISABLED_MEDIA;
-    
-    pjsua_vid_preview_param p_param;
-    pjsua_vid_preview_param_default(&p_param);
-    p_param.show = PJ_TRUE;
+    call_opt.vid_cnt = is_video_possible(call_identity) ? 1 : 0;
+//    call_opt.flag = PJSUA_CALL_INCLUDE_DISABLED_MEDIA;
+//
+//    pjsua_vid_preview_param p_param;
+//    pjsua_vid_preview_param_default(&p_param);
+//    p_param.show = PJ_TRUE;
     
     status = pjsua_call_answer2(call_identity, &call_opt, 200, NULL, NULL);
     //    status = pjsua_call_answer(acc_identity,200, NULL, NULL);
@@ -1286,11 +1294,11 @@ void muteCall(BOOL status)
 {
     if (status) {
         pjsua_conf_adjust_rx_level (0,0);
-        sendDTMS(@"1");
+//        sendDTMS(@"1");
     }
     else{
         pjsua_conf_adjust_rx_level (0,1);
-        sendDTMS(@"0");
+//        sendDTMS(@"0");
     }
 }
 
