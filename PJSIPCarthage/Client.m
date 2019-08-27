@@ -1011,10 +1011,10 @@ static void on_call_media_state(pjsua_call_id call_id)
         return;
     }
     
-    if (call_info.media_status == PJSUA_CALL_MEDIA_ACTIVE) {
-        pjsua_conf_connect(call_info.conf_slot, 0);
-        pjsua_conf_connect(0, call_info.conf_slot);
-    }
+//    if (call_info.media_status == PJSUA_CALL_MEDIA_ACTIVE) {
+//        pjsua_conf_connect(call_info.conf_slot, 0);
+//        pjsua_conf_connect(0, call_info.conf_slot);
+//    }
  
     if(is_video_active(call_id) || is_remote_video_active(call_id))
     {
@@ -1030,7 +1030,7 @@ static void on_call_media_state(pjsua_call_id call_id)
         stop_all_vid_previews();
     }
     
-    /*
+    
     unsigned mi;
     pj_bool_t has_error = PJ_FALSE;
     
@@ -1072,7 +1072,7 @@ static void on_call_media_state(pjsua_call_id call_id)
                 break;
         }
     }
-    */
+
 
     [[NSNotificationCenter defaultCenter] postNotificationName:@"on_call_media_state" object:NULL userInfo:NULL];
 }
