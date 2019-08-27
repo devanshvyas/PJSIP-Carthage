@@ -155,6 +155,7 @@ static void on_pager_status(pjsua_call_id call_id,
 static void on_incoming_call(pjsua_acc_id acc_id, pjsua_call_id call_id, pjsip_rx_data *rdata);
 static void on_call_state(pjsua_call_id call_id, pjsip_event *e);
 static void on_call_media_state(pjsua_call_id call_id);
+static void on_call_rx_offer(pjsua_call_id call_id, const pjmedia_sdp_session *offer, void *reserved, pjsip_status_code *code, pjsua_call_setting *opt);
 static void on_trasport_call_State(pjsip_transport *transport, pjsip_transport_state state, const pjsip_transport_state_info *info);
 static void onCallTsxState(pjsua_call_id callId, pjsip_transaction *tsx, pjsip_event *event);
 static void onSdpCreated(pjsua_call_id callId, pjmedia_sdp_session *sdp, pj_pool_t *pool, const pjmedia_sdp_session *remote);
@@ -216,6 +217,7 @@ int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NS
         cfg.cb.on_call_media_state = &on_call_media_state;
         cfg.cb.on_call_state = &on_call_state;
         cfg.cb.on_transport_state = &on_trasport_call_State;
+        cfg.cb.on_call_rx_offer = &on_call_rx_offer;
         cfg.cb.on_call_tsx_state = &onCallTsxState;
         cfg.cb.on_call_sdp_created = &onSdpCreated;
         cfg.cb.on_nat_detect = &on_nat;
@@ -1074,6 +1076,120 @@ static void on_call_media_state(pjsua_call_id call_id)
     [[NSNotificationCenter defaultCenter] postNotificationName:@"on_call_media_state" object:NULL userInfo:NULL];
 }
 
+static void on_call_rx_offer(pjsua_call_id call_id, const pjmedia_sdp_session *offer, void *reserved, pjsip_status_code *code, pjsua_call_setting *opt)
+{
+    bool sdp_video_offer_accepted = false;
+    
+    // We will accept only video codec H263+
+    int accepted_fmt_video_codec_id = 96; // Accepted video codec | 96 => H263-1998/90000
+    
+    //By default video media is disabled
+    opt->vid_cnt = 0; //Video must be disabled until the offer received is accepted
+    opt->aud_cnt = 1; //Audio is allways enabled
+    
+    pj_str_t video_media_type = {"video", 5};
+    pj_str_t video_transport_type = {"RTP/AVP", 7};
+    
+    // At this point we received an sdp offer from the remote call endpoint
+    // So, we have to check every media in the sdp and determine if we are able to run the media with the apropiate specs
+    int i=0;
+    for(i=0; i<offer->media_count; i++)
+    {
+        pjmedia_sdp_media *media = offer->media[i];
+        
+        // If media offer has video
+        if((pj_strcmp(&media->desc.media, &video_media_type) == 0) && (media->desc.port > 0) && (pj_strcmp(&media->desc.transport, &video_transport_type) == 0))
+        {
+            //At this point we have to check if the video media specs in the offer are compatible with our specs
+            int fmt_index=0;
+            char fmt_string[150];
+            
+            for(fmt_index=0; fmt_index < media->desc.fmt_count; fmt_index++)
+            {
+                strncpy(fmt_string, media->desc.fmt[fmt_index].ptr, media->desc.fmt[fmt_index].slen);
+                fmt_string[media->desc.fmt[fmt_index].slen] = '\0';
+                
+                // If our app supports h263+ codec and the app is active then we have to accept the sdp offer
+                if([[NSString stringWithCString:fmt_string encoding:NSASCIIStringEncoding] intValue] == accepted_fmt_video_codec_id)
+                {
+                    NSLog(@"*** SDP video offer accepted ***");
+                    sdp_video_offer_accepted = true; // Remote client is sending us a valid video media offer and app is active, so we accept it
+                }
+                
+                if(sdp_video_offer_accepted)
+                    break;
+            }
+            
+            // If the video offer has been accepted then the next step is to get the video direction to setup the local machine state
+            if(sdp_video_offer_accepted)
+            {
+                NSLog(@"*** SDP video offer accepted. Checking media direction. ***");
+                
+                //At this point we have to check the attributes assigned to the video media. Basicaly the media direction of the remote client
+                int attr_index=0;
+                char attr_name_string[255];
+                char attr_value_string[255];
+                bool video_direction_in_sdp = false; //There are cases when there are no video direction described in the SDP
+                
+                for(attr_index=0; (attr_index < media->attr_count) && (sdp_video_offer_accepted); attr_index++)
+                {
+                    strncpy(attr_name_string, media->attr[attr_index]->name.ptr, media->attr[attr_index]->name.slen);
+                    attr_name_string[media->attr[attr_index]->name.slen] = '\0';
+                    strncpy(attr_value_string, media->attr[attr_index]->value.ptr, media->attr[attr_index]->value.slen);
+                    attr_value_string[media->attr[attr_index]->value.slen] = '\0';
+                    
+                    NSString *attr_name_nsstring = [NSString stringWithCString:attr_name_string encoding:NSASCIIStringEncoding];
+                    
+                    video_direction_in_sdp = true;
+                    
+                    if([attr_name_nsstring isEqualToString:@"sendonly"])
+                    {
+                        current_call_remote_video_dir = PJMEDIA_DIR_ENCODING_DECODING;
+                        current_call_video_dir = PJMEDIA_DIR_ENCODING_DECODING;
+                    }
+                    else if([attr_name_nsstring isEqualToString:@"sendonly"])
+                    {
+                        // The requester only wants to send video
+                        current_call_remote_video_dir = PJMEDIA_DIR_ENCODING;
+                        current_call_video_dir = PJMEDIA_DIR_DECODING;
+                    }
+                    else if([attr_name_nsstring isEqualToString:@"recvonly"])
+                    {
+                        // The requester only wants to receive video
+                        current_call_remote_video_dir = PJMEDIA_DIR_DECODING;
+                        current_call_video_dir = PJMEDIA_DIR_ENCODING_DECODING;
+                    }
+                    else    video_direction_in_sdp = false;
+                    
+                    //NSLog(@"Attribute name (%s) | Value (%s)", attr_name_string, attr_value_string);
+                }
+            }
+            else
+            {
+                // If video SDP offer is rejected then both video directions must be set to PJMEDIA_DIR_NONE
+                current_call_remote_video_dir = PJMEDIA_DIR_NONE;
+                current_call_video_dir = PJMEDIA_DIR_NONE;
+                current_call_has_video = false;
+            }
+            
+        }
+    }
+    
+    // The video media will be accepted if sdp video offer was accepted
+    opt->vid_cnt = sdp_video_offer_accepted ? 1 : 0;
+    
+    // Case when we are in video call mode and the remote user wants to switch to audio mode
+    if((current_call_has_video) && (!sdp_video_offer_accepted))
+    {
+//        // Disable video mode
+//        pjsua_call_setting_default(&call_setting);
+//        call_setting.vid_cnt = 0; // 1 => hasVideo | 0 => hasNoVideo
+
+        current_call_video_dir = PJMEDIA_DIR_NONE; /* PJMEDIA_DIR_ENCODING; */
+        current_call_remote_video_dir = PJMEDIA_DIR_NONE; /* PJMEDIA_DIR_DECODING; */
+        current_call_has_video = false;
+    }
+}
 
 /* Make a sip call */
 int makeCall(NSString* destUri, int acc_identity)
