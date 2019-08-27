@@ -1367,8 +1367,8 @@ void setup_video_codec_params(void)
 {
     //Set Video Codec Parameters before this starts transmitting
     
-    pj_str_t h264_codec_id = {"H264", 12};      //pj_str("H263-1998/96");
-//    pjsua_vid_codec_set_priority(&h264_codec_id, 2);
+    pj_str_t h264_codec_id = {"H264", 4};      //pj_str("H263-1998/96");
+    pjsua_vid_codec_set_priority(&h264_codec_id, 2);
     
     pjsua_codec_info vid_codec_ids[32];
     unsigned int vid_codec_count=PJ_ARRAY_SIZE(vid_codec_ids);
