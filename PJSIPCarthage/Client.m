@@ -81,12 +81,6 @@ static pjsua_acc_id acc_id;
 const size_t MAX_SIP_ID_LENGTH = 50;
 const size_t MAX_SIP_REG_URI_LENGTH = 50;
 
-// Enable/disable UA audio and video calls (should be always True if possible)
-bool current_call_has_video = false;
-bool call_is_active = false;
-pjmedia_dir current_call_video_dir = PJMEDIA_DIR_NONE;          //SDP a=inactive
-pjmedia_dir current_call_remote_video_dir = PJMEDIA_DIR_NONE;   //SDP a=inactive
-
 /**
  * Display error and exit application
  *
@@ -247,13 +241,14 @@ int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NS
         pjsua_logging_config_default(&log_cfg);
         log_cfg.console_level = 4;
         
-        // Init PJ Media
-//        pjsua_media_config me_cfg;
-//        pjsua_media_config_default(&me_cfg);
+       //  Init PJ Media
+        pjsua_media_config me_cfg;
+        pjsua_media_config_default(&me_cfg);
+        me_cfg.vid_preview_enable_native = PJ_TRUE;
         
         // Init the pjsua
-//        status = pjsua_init(&cfg, &log_cfg, &me_cfg);
-        status = pjsua_init(&cfg, &log_cfg,NULL);
+        status = pjsua_init(&cfg, &log_cfg, &me_cfg);
+//        status = pjsua_init(&cfg, &log_cfg,NULL);
         
         if (status != PJ_SUCCESS)
             error_exit("Error in pjsua_init()", status);
@@ -652,30 +647,7 @@ static void on_incoming_call(pjsua_acc_id acc_id, pjsua_call_id call_id,
     
     NSString *contactID = [NSString stringWithFormat:@"%s" , ci.remote_info.ptr];
     
-    //----- video call method
-//    int vid_idx;
-//    pjsua_vid_win_id wid;
-//    pj_status_t status;
-//
-//    vid_idx = pjsua_call_get_vid_stream_idx(call_id);
-//    if (vid_idx >= 0) {
-//        pjsua_call_info ci;
-//
-//        pjsua_call_get_info(call_id, &ci);
-//        wid = ci.media[vid_idx].stream.vid.win_in;
-//        printf("videoCall: wid:", wid);
-//        printf("videoCall: idx:", vid_idx);
-//    }
-//
-//    pjsua_vid_win_info info;
-//    info.is_native = false;
-//    info.show = true;
-//
-//    status = pjsua_vid_win_get_info(wid, &info);
-//    printf("videoCall: status:", status);
     
-//    pjsua_vid_win_set_show(wid, true);
-    //-------
     
 #ifdef USE_GUI
     if (!showNotification(call_id))
@@ -929,42 +901,6 @@ static void on_call_state(pjsua_call_id call_id, pjsip_event *e)
     pjsua_call_info callInfo;
     pjsua_call_get_info(call_id, &callInfo);
     
-    if(callInfo.state == PJSIP_INV_STATE_CALLING)
-    {
-        NSLog(@"MyLogger: Calling...");
-        // Nothing to do
-    }
-    else if(callInfo.state == PJSIP_INV_STATE_INCOMING)
-    {
-        // Case when this is the user agent that receives an INVITE from another user agent
-//        NSString *fromString = to_NSString(&callInfo.remote_contact, NSUTF8StringEncoding);
-//        NSString *fromUser = getUserFromSIPUri(fromString);
-        NSLog(@"MyLogger: invite incoming...");
-        current_call_has_video = is_video_possible(call_id);
-//        [client receivedIncomingCall:call_id fromUser:fromUser];
-    }
-    else if(callInfo.state == PJSIP_INV_STATE_CONFIRMED)
-    {
-        NSLog(@"MyLogger: Call confirmed...");
-        
-        call_is_active = true;
-        current_call_video_dir = PJMEDIA_DIR_ENCODING_DECODING;
-        
-        //Every call has only audio media available until is stablished. At this point, both endpoints must enable the video media for possible video media request during call.
-//        setEnableVideoCall(true);
-    }
-    if(callInfo.state == PJSIP_INV_STATE_DISCONNECTED)
-    {
-        // If call has been disconnected from remote part then the video flag (and others) must be set to false
-        current_call_has_video = false;
-        call_is_active = false;
-        current_call_remote_video_dir = PJMEDIA_DIR_NONE;
-        current_call_video_dir = PJMEDIA_DIR_NONE;
-        
-    }
-    
-    
-    
     PJ_LOG(3,(THIS_FILE, "Call %d state=%.*s", call_id,
               (int)callInfo.state_text.slen,
               callInfo.state_text.ptr));
@@ -1002,6 +938,7 @@ static void on_call_media_state(pjsua_call_id call_id)
 {
     pjsua_call_info call_info;
     pjsua_call_get_info(call_id, &call_info);
+    bool isVideo = false;
     
     if (call_info.media_status == PJSUA_CALL_MEDIA_ACTIVE) {
         printf("MyLogger: media: active");
@@ -1009,62 +946,37 @@ static void on_call_media_state(pjsua_call_id call_id)
         pjsua_conf_connect(0, call_info.conf_slot);
     }
     
-//    pjsua_call_id current_call_id;
-//    pj_status_t status = search_first_active_call(&current_call_id);
-//    if(status != PJ_SUCCESS) {
-//        NSLog(@"Error searching first active call!");
-//        return;
-//    }
-//
-//
-//    if(is_video_active(call_id) || is_remote_video_active(call_id))
-//    {
-//        // Setup the current h.263+ configuration
-////        setup_video_codec_params();
-//
-//        // Start video stream
-//        set_video_stream(call_id, PJSUA_CALL_VID_STRM_START_TRANSMIT, PJMEDIA_DIR_NONE);
-//
-//    }
-//    else
-//    {
-//        stop_all_vid_previews();
-//    }
-    
-    
     unsigned mi;
     pj_bool_t has_error = PJ_FALSE;
     
     pjsua_call_get_info(call_id, &call_info);
     
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc]init];
     
     for (mi=0; mi<call_info.media_cnt; ++mi) {
         printf("MyLogger: looping ");
-        //        on_call_generic_media_state(&call_info, mi, &has_error);
-        
         switch (call_info.media[mi].type) {
             case PJMEDIA_TYPE_AUDIO:
                 printf("MyLogger: case audio ");
-                //                on_call_audio_state(&call_info, mi, &has_error);
                 break;
             case PJMEDIA_TYPE_VIDEO:
-                //                on_call_video_state(&call_info, mi, &has_error);
+                isVideo = true;
                 NSLog(@"windows id : %d",call_info.media[mi].stream.vid.win_in);
                 NSLog(@"media id : %d",mi);
-                printf("MyLogger: mediastatus", call_info.media_status);
-                //                if (ci.media_status != PJSUA_CALL_MEDIA_ACTIVE)
-                //                    return;
                 int i, last;
+                pjmedia_orient current_orient = PJMEDIA_ORIENT_ROTATE_90DEG;
+                pjsua_vid_dev_set_setting(call_info.media[mi].stream.vid.cap_dev, PJMEDIA_VID_DEV_CAP_ORIENTATION, &current_orient, PJ_TRUE);
                 pjsua_vid_win_id wid = call_info.media[mi].stream.vid.win_in;
                 i = (wid == PJSUA_INVALID_ID) ? 0 : wid;
                 last = (wid == PJSUA_INVALID_ID) ? PJSUA_MAX_VID_WINS : wid+1;
                 if(wid == PJSUA_INVALID_ID){
                     printf("MyLogger: displayWindow failed\n");
                 }else{
-                    pjsua_vid_win_info info;
-                    
-                    pjsua_vid_win_get_info(wid, pjsua_vid_win_info *wi)
                     printf("MyLogger: displayWindow success\n");
+                    pjsua_vid_preview_start(call_info.media[mi].stream.vid.cap_dev, NULL);
+                    int preview_window = pjsua_vid_preview_get_win(call_info.media[mi].stream.vid.cap_dev);
+                    [dictionary setObject:[NSNumber numberWithInt:preview_window] forKey:@"previewWindow"];
+                    [dictionary setObject:[NSNumber numberWithInt:wid] forKey:@"streamWindow"];
                 }
                 
                 PJ_UNUSED_ARG(has_error);
@@ -1076,124 +988,9 @@ static void on_call_media_state(pjsua_call_id call_id)
                 break;
         }
     }
-
-
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"on_call_media_state" object:NULL userInfo:NULL];
-}
-
-static void on_call_rx_offer(pjsua_call_id call_id, const pjmedia_sdp_session *offer, void *reserved, pjsip_status_code *code, pjsua_call_setting *opt)
-{
-    bool sdp_video_offer_accepted = false;
     
-    // We will accept only video codec H263+
-    int accepted_fmt_video_codec_id = 96; // Accepted video codec | 96 => H263-1998/90000
-    
-    //By default video media is disabled
-    opt->vid_cnt = 0; //Video must be disabled until the offer received is accepted
-    opt->aud_cnt = 1; //Audio is allways enabled
-    
-    pj_str_t video_media_type = {"video", 5};
-    pj_str_t video_transport_type = {"RTP/AVP", 7};
-    
-    // At this point we received an sdp offer from the remote call endpoint
-    // So, we have to check every media in the sdp and determine if we are able to run the media with the apropiate specs
-    int i=0;
-    for(i=0; i<offer->media_count; i++)
-    {
-        pjmedia_sdp_media *media = offer->media[i];
-        
-        // If media offer has video
-        if((pj_strcmp(&media->desc.media, &video_media_type) == 0) && (media->desc.port > 0) && (pj_strcmp(&media->desc.transport, &video_transport_type) == 0))
-        {
-            //At this point we have to check if the video media specs in the offer are compatible with our specs
-            int fmt_index=0;
-            char fmt_string[150];
-            
-            for(fmt_index=0; fmt_index < media->desc.fmt_count; fmt_index++)
-            {
-                strncpy(fmt_string, media->desc.fmt[fmt_index].ptr, media->desc.fmt[fmt_index].slen);
-                fmt_string[media->desc.fmt[fmt_index].slen] = '\0';
-                
-                // If our app supports h263+ codec and the app is active then we have to accept the sdp offer
-                if([[NSString stringWithCString:fmt_string encoding:NSASCIIStringEncoding] intValue] == accepted_fmt_video_codec_id)
-                {
-                    NSLog(@"*** SDP video offer accepted ***");
-                    sdp_video_offer_accepted = true; // Remote client is sending us a valid video media offer and app is active, so we accept it
-                }
-                
-                if(sdp_video_offer_accepted)
-                    break;
-            }
-            
-            // If the video offer has been accepted then the next step is to get the video direction to setup the local machine state
-            if(sdp_video_offer_accepted)
-            {
-                NSLog(@"*** SDP video offer accepted. Checking media direction. ***");
-                
-                //At this point we have to check the attributes assigned to the video media. Basicaly the media direction of the remote client
-                int attr_index=0;
-                char attr_name_string[255];
-                char attr_value_string[255];
-                bool video_direction_in_sdp = false; //There are cases when there are no video direction described in the SDP
-                
-                for(attr_index=0; (attr_index < media->attr_count) && (sdp_video_offer_accepted); attr_index++)
-                {
-                    strncpy(attr_name_string, media->attr[attr_index]->name.ptr, media->attr[attr_index]->name.slen);
-                    attr_name_string[media->attr[attr_index]->name.slen] = '\0';
-                    strncpy(attr_value_string, media->attr[attr_index]->value.ptr, media->attr[attr_index]->value.slen);
-                    attr_value_string[media->attr[attr_index]->value.slen] = '\0';
-                    
-                    NSString *attr_name_nsstring = [NSString stringWithCString:attr_name_string encoding:NSASCIIStringEncoding];
-                    
-                    video_direction_in_sdp = true;
-                    
-                    if([attr_name_nsstring isEqualToString:@"sendonly"])
-                    {
-                        current_call_remote_video_dir = PJMEDIA_DIR_ENCODING_DECODING;
-                        current_call_video_dir = PJMEDIA_DIR_ENCODING_DECODING;
-                    }
-                    else if([attr_name_nsstring isEqualToString:@"sendonly"])
-                    {
-                        // The requester only wants to send video
-                        current_call_remote_video_dir = PJMEDIA_DIR_ENCODING;
-                        current_call_video_dir = PJMEDIA_DIR_DECODING;
-                    }
-                    else if([attr_name_nsstring isEqualToString:@"recvonly"])
-                    {
-                        // The requester only wants to receive video
-                        current_call_remote_video_dir = PJMEDIA_DIR_DECODING;
-                        current_call_video_dir = PJMEDIA_DIR_ENCODING_DECODING;
-                    }
-                    else    video_direction_in_sdp = false;
-                    
-                    //NSLog(@"Attribute name (%s) | Value (%s)", attr_name_string, attr_value_string);
-                }
-            }
-            else
-            {
-                // If video SDP offer is rejected then both video directions must be set to PJMEDIA_DIR_NONE
-                current_call_remote_video_dir = PJMEDIA_DIR_NONE;
-                current_call_video_dir = PJMEDIA_DIR_NONE;
-                current_call_has_video = false;
-            }
-            
-        }
-    }
-    
-    // The video media will be accepted if sdp video offer was accepted
-    opt->vid_cnt = sdp_video_offer_accepted ? 1 : 0;
-    
-    // Case when we are in video call mode and the remote user wants to switch to audio mode
-    if((current_call_has_video) && (!sdp_video_offer_accepted))
-    {
-//        // Disable video mode
-//        pjsua_call_setting_default(&call_setting);
-//        call_setting.vid_cnt = 0; // 1 => hasVideo | 0 => hasNoVideo
-
-        current_call_video_dir = PJMEDIA_DIR_NONE; /* PJMEDIA_DIR_ENCODING; */
-        current_call_remote_video_dir = PJMEDIA_DIR_NONE; /* PJMEDIA_DIR_DECODING; */
-        current_call_has_video = false;
-    }
+    [dictionary setObject:[NSNumber numberWithBool:isVideo] forKey:@"isVideo"];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"on_call_media_state" object:NULL userInfo:dictionary];
 }
 
 /* Make a sip call */
@@ -1236,12 +1033,8 @@ int makeVideoCall(NSString* destUri, int acc_identity)
     pj_status_t status;
     const char *uriChar = [destUri UTF8String];
     pj_str_t uri = pj_str(uriChar);
-    //    pjsua_state state = pjsua_get_state();
     pjsua_acc_info info;
     
-    current_call_video_dir = PJMEDIA_DIR_ENCODING_DECODING;
-    current_call_remote_video_dir = PJMEDIA_DIR_ENCODING_DECODING;
-   
     status = pjsua_acc_get_info(acc_identity, &info);
     status = pjsua_call_make_call(acc_identity, &uri, &opt, NULL,NULL, &cid);
     
