@@ -898,8 +898,17 @@ static void on_call_state(pjsua_call_id call_id, pjsip_event *e)
 {
     PJ_UNUSED_ARG(e);
     
+    unsigned mi;
+    
     pjsua_call_info callInfo;
     pjsua_call_get_info(call_id, &callInfo);
+    bool isVideo = false;
+    
+    for (mi=0; mi<callInfo.media_cnt; ++mi) {
+        if (callInfo.media[mi].type == PJMEDIA_TYPE_VIDEO) {
+            isVideo = true;
+        }
+    }
     
     PJ_LOG(3,(THIS_FILE, "Call %d state=%.*s", call_id,
               (int)callInfo.state_text.slen,
@@ -923,6 +932,7 @@ static void on_call_state(pjsua_call_id call_id, pjsip_event *e)
     [dictionary setObject:[NSString stringWithFormat:@"%s",callInfo.remote_info.ptr] forKey:@"contactId"];
     [dictionary setObject:[NSString stringWithFormat:@"%d", call_id] forKey:@"callId"];
     [dictionary setObject:[NSNumber numberWithInt:code] forKey:@"statusCode"];
+    [dictionary setObject:[NSNumber numberWithBool:isVideo] forKey:@"isVideo"];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"on_call_state" object:NULL userInfo:dictionary];
 }
 
@@ -964,6 +974,7 @@ static void on_call_media_state(pjsua_call_id call_id)
                 NSLog(@"windows id : %d",call_info.media[mi].stream.vid.win_in);
                 NSLog(@"media id : %d",mi);
                 int i, last;
+//                setup_video_codec_params();
                 pjmedia_orient current_orient = PJMEDIA_ORIENT_ROTATE_90DEG;
                 pjsua_vid_dev_set_setting(call_info.media[mi].stream.vid.cap_dev, PJMEDIA_VID_DEV_CAP_ORIENTATION, &current_orient, PJ_TRUE);
                 pjsua_vid_win_id wid = call_info.media[mi].stream.vid.win_in;
