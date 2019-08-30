@@ -603,8 +603,9 @@ void switchCamera(int call_id, BOOL is_front) {
     
     pjsua_call_vid_strm_op_param param;
     pjsua_call_vid_strm_op_param_default(&param);
-    param.cap_dev = is_front ? 2 : 1;
-    param.med_idx = pjsua_call_get_vid_stream_idx(call_id);
+    param.cap_dev = is_front ? 1 : 2;
+    printf("captureDev:", param.cap_dev);
+//    param.med_idx = pjsua_call_get_vid_stream_idx(call_id);
     pjsua_call_set_vid_strm(call_id, PJSUA_CALL_VID_STRM_CHANGE_CAP_DEV, &param);
 }
 
