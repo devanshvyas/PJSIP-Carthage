@@ -27,6 +27,7 @@
 		05659C3022FC28D00085E937 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05659C2F22FC28D00085E937 /* CFNetwork.framework */; };
 		056AFB2F22FC5E1000249CF8 /* pjsua_app_common.c in Sources */ = {isa = PBXBuildFile; fileRef = 056AFB2C22FC5E1000249CF8 /* pjsua_app_common.c */; };
 		05817D5F22FC55B40076B7A7 /* libopus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05817D5D22FC55AA0076B7A7 /* libopus.a */; };
+		058626B2231905F900255478 /* Client.h in Sources */ = {isa = PBXBuildFile; fileRef = 05BF653222FD4230002D199A /* Client.h */; };
 		058BCBB822FC4CC8003F80A8 /* libopenh264.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 058BCBB722FC4C6B003F80A8 /* libopenh264.a */; };
 		05BF653422FD4252002D199A /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = 05BF653322FD4252002D199A /* Client.m */; };
 		05BF653D22FD48BE002D199A /* Client.h in Headers */ = {isa = PBXBuildFile; fileRef = 05BF653222FD4230002D199A /* Client.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1034,6 +1035,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				058626B2231905F900255478 /* Client.h in Sources */,
 				056AFB2F22FC5E1000249CF8 /* pjsua_app_common.c in Sources */,
 				05BF653422FD4252002D199A /* Client.m in Sources */,
 			);

@@ -27,5 +27,5 @@ void answerCall(int call_identity);
 void muteCall(BOOL status);
 void onSpeaker(BOOL status);
 int sendDTMS(NSString* digits);
-
+void switchCamera(int call_id, BOOL is_front);
 
