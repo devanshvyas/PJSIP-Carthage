@@ -21,11 +21,11 @@ int isRegisteredUser(void);
 int sendMessage(char* to, char* message, int account_id);
 int makeCall(NSString* destUri, int acc_identity);
 int makeVideoCall(NSString* destUri, int acc_identity);
-void endCall(void);
+void endAllCall(void);
 void declineCall(int call_id, int code);
 void answerCall(int call_identity);
 void muteCall(BOOL status);
 void onSpeaker(BOOL status);
 int sendDTMS(NSString* digits);
 void switchCamera(int call_id, BOOL is_front);
-
+void pauseStream(int call_id, BOOL is_paused);
