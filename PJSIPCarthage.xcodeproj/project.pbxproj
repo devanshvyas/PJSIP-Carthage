@@ -10,7 +10,6 @@
 		050208FC22FBF8B500068769 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 050208FB22FBF8B500068769 /* AudioToolbox.framework */; };
 		050208FE22FBF8BC00068769 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 050208FD22FBF8BC00068769 /* AVFoundation.framework */; };
 		0502090622FC013400068769 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0502090522FC013400068769 /* Foundation.framework */; };
-		0502090C22FC022700068769 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0502090B22FC022700068769 /* UIKit.framework */; };
 		0538E3F1231539D1008B417A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0538E3F0231539D1008B417A /* AppDelegate.swift */; };
 		0538E3F3231539D1008B417A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0538E3F2231539D1008B417A /* ViewController.swift */; };
 		0538E3F6231539D1008B417A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0538E3F4231539D1008B417A /* Main.storyboard */; };
@@ -22,7 +21,6 @@
 		0555A30722FC43D1008DAEF8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0555A30622FC43D1008DAEF8 /* QuartzCore.framework */; };
 		0555A30D22FC446A008DAEF8 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0555A30C22FC446A008DAEF8 /* CoreVideo.framework */; };
 		0555A30F22FC447A008DAEF8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0555A30E22FC447A008DAEF8 /* OpenGLES.framework */; };
-		05659C2C22FC28910085E937 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05659C2B22FC28910085E937 /* SystemConfiguration.framework */; };
 		05659C2E22FC28C50085E937 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05659C2D22FC28C40085E937 /* CoreGraphics.framework */; };
 		05659C3022FC28D00085E937 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05659C2F22FC28D00085E937 /* CFNetwork.framework */; };
 		056AFB2F22FC5E1000249CF8 /* pjsua_app_common.c in Sources */ = {isa = PBXBuildFile; fileRef = 056AFB2C22FC5E1000249CF8 /* pjsua_app_common.c */; };
@@ -215,6 +213,9 @@
 		05D97B2222FAAA620094F86C /* pjsip_auth.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D97B0622FAAA620094F86C /* pjsip_auth.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05D97B2322FAAA620094F86C /* pjmedia-codec in Headers */ = {isa = PBXBuildFile; fileRef = 05D97B0722FAAA620094F86C /* pjmedia-codec */; settings = {ATTRIBUTES = (Public, ); }; };
 		05D97B2422FAAA620094F86C /* pjmedia-videodev in Headers */ = {isa = PBXBuildFile; fileRef = 05D97B0822FAAA620094F86C /* pjmedia-videodev */; settings = {ATTRIBUTES = (Public, ); }; };
+		1AFE01AE2321313F00ACAAA2 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFE01AD2321313F00ACAAA2 /* CoreImage.framework */; };
+		1AFE01B02321314700ACAAA2 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFE01AF2321314600ACAAA2 /* CoreFoundation.framework */; };
+		1AFE01B22321316300ACAAA2 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFE01B12321316300ACAAA2 /* CoreAudio.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -450,6 +451,9 @@
 		05D97B0722FAAA620094F86C /* pjmedia-codec */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "pjmedia-codec"; path = "PJSIP/pjmedia-codec"; sourceTree = "<group>"; };
 		05D97B0822FAAA620094F86C /* pjmedia-videodev */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "pjmedia-videodev"; path = "PJSIP/pjmedia-videodev"; sourceTree = "<group>"; };
 		1A0FB8E2231F943700F665EC /* libLLVM-C.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libLLVM-C.tbd"; path = "usr/lib/libLLVM-C.tbd"; sourceTree = SDKROOT; };
+		1AFE01AD2321313F00ACAAA2 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		1AFE01AF2321314600ACAAA2 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		1AFE01B12321316300ACAAA2 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -465,6 +469,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AFE01B22321316300ACAAA2 /* CoreAudio.framework in Frameworks */,
+				1AFE01B02321314700ACAAA2 /* CoreFoundation.framework in Frameworks */,
+				1AFE01AE2321313F00ACAAA2 /* CoreImage.framework in Frameworks */,
 				05CD02DD22FC4E3400D995B7 /* VideoToolbox.framework in Frameworks */,
 				058BCBB822FC4CC8003F80A8 /* libopenh264.a in Frameworks */,
 				0555A30F22FC447A008DAEF8 /* OpenGLES.framework in Frameworks */,
@@ -624,8 +631,6 @@
 				05CD041322FC552C00D995B7 /* libilbccodec-armv7s-apple-darwin_ios.a in Frameworks */,
 				05CD041422FC552C00D995B7 /* libg7221codec-armv7-apple-darwin_ios.a in Frameworks */,
 				05CD041522FC552C00D995B7 /* libpjsip-armv7s-apple-darwin_ios.a in Frameworks */,
-				0502090C22FC022700068769 /* UIKit.framework in Frameworks */,
-				05659C2C22FC28910085E937 /* SystemConfiguration.framework in Frameworks */,
 				050208FE22FBF8BC00068769 /* AVFoundation.framework in Frameworks */,
 				050208FC22FBF8B500068769 /* AudioToolbox.framework in Frameworks */,
 			);
@@ -697,6 +702,9 @@
 		059C1FCD22FA957E00ED09CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1AFE01B12321316300ACAAA2 /* CoreAudio.framework */,
+				1AFE01AF2321314600ACAAA2 /* CoreFoundation.framework */,
+				1AFE01AD2321313F00ACAAA2 /* CoreImage.framework */,
 				1A0FB8E2231F943700F665EC /* libLLVM-C.tbd */,
 				05CD034F22FC552600D995B7 /* libcrypto.a */,
 				05817D5D22FC55AA0076B7A7 /* libopus.a */,

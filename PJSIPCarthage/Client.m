@@ -22,6 +22,7 @@
 #include "Client.h"
 #include <PJSIPCarthage/pjsua-lib/pjsua.h>
 #include <PJSIPCarthage/pjmedia_audiodev.h>
+#include <PJSIPCarthage/pjmedia_videodev.h>
 #include <PJSIPCarthage/pjmedia.h>
 
 static NSString *const kUpdateDeviceTokenToServer = @"UpdateDeviceTokenToServer";
@@ -282,18 +283,25 @@ int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NS
 //        cfg.cred_info[0].data = pj_str(password);
         
         //Normal Video Setup For Account
-        cfg.vid_in_auto_show = PJ_TRUE;
-        cfg.vid_out_auto_transmit = PJ_TRUE;
-//        cfg.vid_wnd_flags = PJMEDIA_VID_DEV_WND_BORDER | PJMEDIA_VID_DEV_WND_RESIZABLE;
+        app_config.auto_answer = 1;
+        app_config.auto_play = 1;
+        app_config.vid.vid_cnt = 1;
+        app_config.vid.vcapture_dev = PJMEDIA_VID_DEFAULT_CAPTURE_DEV;
+        app_config.vid.vrender_dev = PJMEDIA_VID_DEFAULT_RENDER_DEV;
+//        pjsua_acc_config cfg;
+//        pjsua_acc_config_default(&cfg);
+        
+//        cfg.vid_in_auto_show = PJ_TRUE;
+//        cfg.vid_out_auto_transmit = PJ_TRUE;
+        cfg.vid_wnd_flags = PJMEDIA_VID_DEV_WND_BORDER | PJMEDIA_VID_DEV_WND_RESIZABLE;
         cfg.vid_cap_dev = PJMEDIA_VID_DEFAULT_CAPTURE_DEV;
         cfg.vid_rend_dev = PJMEDIA_VID_DEFAULT_RENDER_DEV;
         cfg.reg_retry_interval = 300;
         cfg.reg_first_retry_interval = 30;
-        
-//        pj_str_t h264_codec_id = {"H264", 4};      //pj_str("H263-1998/96");
+
+        //        pj_str_t h264_codec_id = {"H264", 4};      //pj_str("H263-1998/96");
 //        pjsua_vid_codec_set_priority(&h264_codec_id, 2);
         
-        setup_video_codec_params();
         
         char sipId[MAX_SIP_ID_LENGTH];
         const char *user = [sipUser UTF8String];
@@ -322,6 +330,9 @@ int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NS
         if(status != PJ_SUCCESS)
             error_exit("Error adding account", status);
         app_config.acc_cfg[0]  = cfg;
+//        app_config_init_video(&cfg);
+        vid_list_devs();
+//        setup_video_codec_params();
     }
     
     
@@ -582,18 +593,31 @@ static void on_incoming_call(pjsua_acc_id acc_id, pjsua_call_id call_id,
                              pjsip_rx_data *rdata)
 {
     pjsua_call_info ci;
+    
+    PJ_UNUSED_ARG(acc_id);
+    PJ_UNUSED_ARG(rdata);
+    current_call = call_id;
+    
     pjsua_call_get_info(call_id, &ci);
 
     pjsua_call_setting_default(&call_opt);
     call_opt.aud_cnt = 1;
-    call_opt.vid_cnt = is_video_possible(call_id) ? 1 : 0;
+    printf("videoCount: %d", ci.rem_offerer && ci.rem_vid_cnt == 1 ? 1 : 0);
+    call_opt.vid_cnt = ci.rem_offerer && ci.rem_vid_cnt == 1 ? 1 : 0;
     pjsua_call_answer2(call_id, &call_opt, 180, NULL, NULL);
     
+    PJ_LOG(4,(THIS_FILE, "Incoming call from %.*s!!",
+              (int)ci.remote_info.slen,
+              ci.remote_info.ptr));
     BOOL isVideo;
-    isVideo = ci.rem_vid_cnt;
+    isVideo = ci.rem_offerer && ci.rem_vid_cnt == 1;
     
     NSString *contactID = [NSString stringWithFormat:@"%s" , ci.remote_info.ptr];
     
+#ifdef USE_GUI
+    if (!showNotification(call_id))
+        return;
+#endif
     NSMutableDictionary *dictionary = [[NSMutableDictionary alloc]init];
     [dictionary setObject:[NSString stringWithFormat:@"%d", call_id] forKey:@"callid"];
     [dictionary setObject:contactID forKey:@"caller"];
@@ -631,6 +655,118 @@ static void onCallTsxState(pjsua_call_id callId, pjsip_transaction *tsx, pjsip_e
     [[NSNotificationCenter defaultCenter] postNotificationName:@"onCallTsxState" object:NULL userInfo:NULL];
 }
 
+static void on_call_rx_offer(pjsua_call_id call_id, const pjmedia_sdp_session *offer, void *reserved, pjsip_status_code *code, pjsua_call_setting *opt)
+{
+    bool sdp_video_offer_accepted = false;
+    
+    // We will accept only video codec H263+
+    int accepted_fmt_video_codec_id = 97; // Accepted video codec | 96 => H263-1998/90000
+    
+    //By default video media is disabled
+    opt->vid_cnt = 0; //Video must be disabled until the offer received is accepted
+    opt->aud_cnt = 1; //Audio is allways enabled
+    
+    pj_str_t video_media_type = {"video", 5};
+    pj_str_t video_transport_type = {"RTP/AVP", 7};
+    
+    // At this point we received an sdp offer from the remote call endpoint
+    // So, we have to check every media in the sdp and determine if we are able to run the media with the apropiate specs
+    int i=0;
+    for(i=0; i<offer->media_count; i++)
+    {
+        pjmedia_sdp_media *media = offer->media[i];
+        
+        // If media offer has video
+        if((pj_strcmp(&media->desc.media, &video_media_type) == 0) && (media->desc.port > 0) && (pj_strcmp(&media->desc.transport, &video_transport_type) == 0))
+        {
+            //At this point we have to check if the video media specs in the offer are compatible with our specs
+            int fmt_index=0;
+            char fmt_string[150];
+            
+            for(fmt_index=0; fmt_index < media->desc.fmt_count; fmt_index++)
+            {
+                strncpy(fmt_string, media->desc.fmt[fmt_index].ptr, media->desc.fmt[fmt_index].slen);
+                fmt_string[media->desc.fmt[fmt_index].slen] = '\0';
+                
+                // If our app supports h263+ codec and the app is active then we have to accept the sdp offer
+                if([[NSString stringWithCString:fmt_string encoding:NSASCIIStringEncoding] intValue] == accepted_fmt_video_codec_id)
+                {
+                    NSLog(@"*** SDP video offer accepted ***");
+                    sdp_video_offer_accepted = true; // Remote client is sending us a valid video media offer and app is active, so we accept it
+                }
+                
+                if(sdp_video_offer_accepted)
+                    break;
+            }
+            
+            // If the video offer has been accepted then the next step is to get the video direction to setup the local machine state
+            if(sdp_video_offer_accepted)
+            {
+                NSLog(@"*** SDP video offer accepted. Checking media direction. ***");
+                
+                //At this point we have to check the attributes assigned to the video media. Basicaly the media direction of the remote client
+                int attr_index=0;
+                char attr_name_string[255];
+                char attr_value_string[255];
+                bool video_direction_in_sdp = false; //There are cases when there are no video direction described in the SDP
+                
+                for(attr_index=0; (attr_index < media->attr_count) && (sdp_video_offer_accepted); attr_index++)
+                {
+                    strncpy(attr_name_string, media->attr[attr_index]->name.ptr, media->attr[attr_index]->name.slen);
+                    attr_name_string[media->attr[attr_index]->name.slen] = '\0';
+                    strncpy(attr_value_string, media->attr[attr_index]->value.ptr, media->attr[attr_index]->value.slen);
+                    attr_value_string[media->attr[attr_index]->value.slen] = '\0';
+                    
+                    NSString *attr_name_nsstring = [NSString stringWithCString:attr_name_string encoding:NSASCIIStringEncoding];
+                    
+                    video_direction_in_sdp = true;
+                    
+//                    if([attr_name_nsstring isEqualToString:@"sendonly"])
+//                    {
+//                        current_call_remote_video_dir = PJMEDIA_DIR_ENCODING_DECODING;
+//                        current_call_video_dir = PJMEDIA_DIR_ENCODING_DECODING;
+//                    }
+//                    else if([attr_name_nsstring isEqualToString:@"sendonly"])
+//                    {
+//                        // The requester only wants to send video
+//                        current_call_remote_video_dir = PJMEDIA_DIR_ENCODING;
+//                        current_call_video_dir = PJMEDIA_DIR_DECODING;
+//                    }
+//                    else if([attr_name_nsstring isEqualToString:@"recvonly"])
+//                    {
+//                        // The requester only wants to receive video
+//                        current_call_remote_video_dir = PJMEDIA_DIR_DECODING;
+//                        current_call_video_dir = PJMEDIA_DIR_ENCODING_DECODING;
+//                    }
+//                    else    video_direction_in_sdp = false;
+                    
+                    //NSLog(@"Attribute name (%s) | Value (%s)", attr_name_string, attr_value_string);
+                }
+            }
+            else
+            {
+                // If video SDP offer is rejected then both video directions must be set to PJMEDIA_DIR_NONE
+//                current_call_remote_video_dir = PJMEDIA_DIR_NONE;
+//                current_call_video_dir = PJMEDIA_DIR_NONE;
+                
+            }
+            
+        }
+    }
+    
+    // The video media will be accepted if sdp video offer was accepted
+    opt->vid_cnt = sdp_video_offer_accepted ? 1 : 0;
+    
+    // Case when we are in video call mode and the remote user wants to switch to audio mode
+//    if((current_call_has_video) && (!sdp_video_offer_accepted))
+//    {
+//        // Disable video mode
+//        setEnableVideoCall(false);
+//        current_call_video_dir = PJMEDIA_DIR_NONE; /* PJMEDIA_DIR_ENCODING; */
+//        current_call_remote_video_dir = PJMEDIA_DIR_NONE; /* PJMEDIA_DIR_DECODING; */
+//        current_call_has_video = false;
+//    }
+}
 static void onSdpCreated(pjsua_call_id call_id, pjmedia_sdp_session *sdp, pj_pool_t *pool, const pjmedia_sdp_session *remote) {
     [[NSNotificationCenter defaultCenter]postNotificationName:@"onSdpCreated" object:NULL userInfo:NULL];
 }
@@ -850,23 +986,39 @@ static void on_call_state(pjsua_call_id call_id, pjsip_event *e)
             if (callInfo.media[mi].type == PJMEDIA_TYPE_VIDEO) {
                 isVideo = true;
                 
+                app_config.vid.in_auto_show = PJ_TRUE;
+                app_config.vid.out_auto_transmit = PJ_TRUE;
+                
+                pjsua_acc_config cfg;
+                pjsua_acc_config_default(&cfg);
+                app_config_init_video(&cfg);
+                
+                pjsua_vid_preview_param param;
+                pjsua_vid_preview_param_default(&param);
+                param.format.det.vid.size.w = 160;
+                param.format.det.vid.size.h = 90;
+                param.show = PJ_TRUE;
+                printf("confirmed video call");
+                pjsua_vid_preview_start(callInfo.media[mi].stream.vid.cap_dev, &param);
+                int preview_window = pjsua_vid_preview_get_win(callInfo.media[mi].stream.vid.cap_dev);
+                printf("previewWindow: %d", preview_window);
             }
         }
     }
     
-//    PJ_LOG(3,(THIS_FILE, "Call %d state=%.*s", call_id,
-//              (int)callInfo.state_text.slen,
-//              callInfo.state_text.ptr));
-//    printf("Call States in Format code : %d State : %s \n",callInfo.last_status, getstate(callInfo.last_status));
-//
-//    app_call_data *data;
-//    data = pjsua_call_get_user_data(call_id);
-//
-//    current_call = call_id;
+    PJ_LOG(3,(THIS_FILE, "Call %d state=%.*s", call_id,
+              (int)callInfo.state_text.slen,
+              callInfo.state_text.ptr));
+    printf("Call States in Format code : %d State : %s \n",callInfo.last_status, getstate(callInfo.last_status));
+    
+    app_call_data *data;
+    data = pjsua_call_get_user_data(call_id);
+    
+    current_call = call_id;
 //    int code;
 //    pj_str_t reason;
-//    pjsip_msg *msg;
-    
+//    pjsip_msg *msg = NULL;
+//
 //    code = msg->line.status.code;
 //    reason = msg->line.status.reason;
 //    printf("StatusCode : %d description : %s \n",code, reason);
@@ -891,17 +1043,18 @@ static void on_trasport_call_State(pjsip_transport *transport, pjsip_transport_s
 /* Callback called by the library when call's media state has changed */
 static void on_call_media_state(pjsua_call_id call_id)
 {
-//    dispatch_async(dispatch_get_main_queue(), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         pjsua_call_info call_info;
         pjsua_call_get_info(call_id, &call_info);
         bool isVideo = false;
-        
-//        if (call_info.media_status == PJSUA_CALL_MEDIA_ACTIVE) {
+        printf("MyLogger: media status: %u", call_info.media_status);
+    
+        if (call_info.media_status == PJSUA_CALL_MEDIA_ACTIVE) {
             printf("MyLogger: media: active");
             pjsua_conf_connect(call_info.conf_slot, 0);
             pjsua_conf_connect(0, call_info.conf_slot);
-//        }
-        
+        }
+    
         unsigned mi;
         pj_bool_t has_error = PJ_FALSE;
         
@@ -919,38 +1072,38 @@ static void on_call_media_state(pjsua_call_id call_id)
                     isVideo = true;
                     NSLog(@"windows id : %d",call_info.media[mi].stream.vid.win_in);
                     NSLog(@"media id : %d",mi);
-                    setup_video_codec_params();
-                    pjmedia_orient current_orient = PJMEDIA_ORIENT_ROTATE_90DEG;
-                    pjsua_vid_dev_set_setting(call_info.media[mi].stream.vid.cap_dev, PJMEDIA_VID_DEV_CAP_ORIENTATION, &current_orient, PJ_TRUE);
+//                    setup_video_codec_params();
+//                    pjmedia_orient current_orient = PJMEDIA_ORIENT_ROTATE_90DEG;
+//                    pjsua_vid_dev_set_setting(call_info.media[mi].stream.vid.cap_dev, PJMEDIA_VID_DEV_CAP_ORIENTATION, &current_orient, PJ_TRUE);
                     pjsua_vid_win_id wid = call_info.media[mi].stream.vid.win_in;
-                    
-                    pjmedia_rect_size size;
-                    size.w = 1280;
-                    size.h = 720;
-                    pjsua_vid_dev_set_setting(call_info.media[mi].stream.vid.cap_dev, PJMEDIA_VID_DEV_CAP_OUTPUT_RESIZE, &size, PJ_TRUE);
-
-                    pjmedia_format format;
-                    format.det.vid.size.w = 1280;
-                    format.det.vid.size.h = 720;
-                    pjsua_vid_dev_set_setting(call_info.media[mi].stream.vid.cap_dev, PJMEDIA_VID_DEV_CAP_FORMAT, &format, PJ_TRUE);
-                    
-                    pjmedia_coord coord;
-                    coord.x = 0;
-                    coord.y = 0;
-                    pjsua_vid_dev_set_setting(call_info.media[mi].stream.vid.cap_dev, PJMEDIA_VID_DEV_CAP_OUTPUT_POSITION, &format, PJ_TRUE);
+//
+//                    pjmedia_rect_size size;
+//                    size.w = 1280;
+//                    size.h = 720;
+//                    pjsua_vid_dev_set_setting(call_info.media[mi].stream.vid.cap_dev, PJMEDIA_VID_DEV_CAP_OUTPUT_RESIZE, &size, PJ_TRUE);
+//
+//                    pjmedia_format format;
+//                    format.det.vid.size.w = 1280;
+//                    format.det.vid.size.h = 720;
+//                    pjsua_vid_dev_set_setting(call_info.media[mi].stream.vid.cap_dev, PJMEDIA_VID_DEV_CAP_FORMAT, &format, PJ_TRUE);
+//
+//                    pjmedia_coord coord;
+//                    coord.x = 0;
+//                    coord.y = 0;
+//                    pjsua_vid_dev_set_setting(call_info.media[mi].stream.vid.cap_dev, PJMEDIA_VID_DEV_CAP_OUTPUT_POSITION, &format, PJ_TRUE);
                     
                     if(wid == PJSUA_INVALID_ID){
                         printf("MyLogger: displayWindow failed\n");
                     }else{
                         printf("MyLogger: displayWindow success\n");
-                        pjsua_vid_preview_param param;
-                        pjsua_vid_preview_param_default(&param);
-                        param.format.det.vid.size.w = 160;
-                        param.format.det.vid.size.h = 90;
-                        param.show = PJ_TRUE;
-                        pjsua_vid_preview_start(call_info.media[mi].stream.vid.cap_dev, &param);
-                        int preview_window = pjsua_vid_preview_get_win(call_info.media[mi].stream.vid.cap_dev);
-                        [dictionary setObject:[NSNumber numberWithInt:preview_window] forKey:@"previewWindow"];
+//                        pjsua_vid_preview_param param;
+//                        pjsua_vid_preview_param_default(&param);
+//                        param.format.det.vid.size.w = 160;
+//                        param.format.det.vid.size.h = 90;
+//                        param.show = PJ_TRUE;
+//                        pjsua_vid_preview_start(call_info.media[mi].stream.vid.cap_dev, &param);
+//                        int preview_window = pjsua_vid_preview_get_win(call_info.media[mi].stream.vid.cap_dev);
+                        [dictionary setObject:[NSNumber numberWithInt:-1] forKey:@"previewWindow"];
                         [dictionary setObject:[NSNumber numberWithInt:wid] forKey:@"streamWindow"];
                     }
                     
@@ -966,7 +1119,7 @@ static void on_call_media_state(pjsua_call_id call_id)
         
         [dictionary setObject:[NSNumber numberWithBool:isVideo] forKey:@"isVideo"];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"on_call_media_state" object:NULL userInfo:dictionary];
-//    });
+    });
 }
 
 /* Make a sip call */
@@ -1038,17 +1191,13 @@ void declineCall(int call_id, int code){
 
 void answerCall(int call_identity)
 {
-    pjsua_msg_data messageData;
-    pjsua_msg_data_init(&messageData);
-    pjsua_call_info call_info;
-    pjsua_call_get_info(call_identity, &call_info);
-    
     static pj_thread_desc a_thread_desc;
     static pj_thread_t *a_thread;
+//    pj_status_t status;
     if (!pj_thread_is_registered()) {
         pj_thread_register("ipjsua", a_thread_desc, &a_thread);
     }
-    setup_video_codec_params();
+    
     pjsua_call_setting_default(&call_opt);
     call_opt.aud_cnt = 1;
     call_opt.vid_cnt = is_video_possible(call_identity) ? 1 : 0;
@@ -1056,7 +1205,7 @@ void answerCall(int call_identity)
     
     dispatch_async(dispatch_get_main_queue(), ^{
         pj_status_t status;
-        status = pjsua_call_answer2(call_identity, &call_opt, 200, NULL, &messageData);
+        status = pjsua_call_answer2(call_identity, &call_opt, 200, NULL, NULL);
         if (status != PJ_SUCCESS) error_exit("Error receiving call", status);
     });
 }
@@ -1077,7 +1226,7 @@ static bool is_video_possible(pjsua_call_id call_id)
 {
     pjsua_call_info callInfo;
     pjsua_call_get_info(call_id, &callInfo);
-    return callInfo.setting.vid_cnt>0 && callInfo.rem_vid_cnt>0;
+    return callInfo.rem_offerer && callInfo.rem_vid_cnt>0;
 }
 
 static pj_status_t search_first_active_call(pjsua_call_id* pcall_id)
