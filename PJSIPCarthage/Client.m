@@ -280,7 +280,7 @@ int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NS
 //        cfg.cred_info[0].data_type = PJSIP_CRED_DATA_PLAIN_PASSWD;
 //        cfg.cred_info[0].data = pj_str(password);
 
-        setup_video_codec_params();
+//        setup_video_codec_params();
         
         //Normal Video Setup For Account
 //        cfg.vid_cap_dev = PJMEDIA_VID_DEFAULT_CAPTURE_DEV;
@@ -848,26 +848,24 @@ static void on_call_state(pjsua_call_id call_id, pjsip_event *e)
             if (call_info.media[mi].type == PJMEDIA_TYPE_VIDEO) {
                 if (is_video_possible(call_id)) {
                     isVideo = true;
-                    setup_video_codec_params();
+//                    setup_video_codec_params();
                     
                     bool running = pjsua_call_vid_stream_is_running(call_id, -1, PJMEDIA_DIR_ENCODING_DECODING);
                     printf("video call: running: %s \n", running ? "true":"false");
                     
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        set_video_stream(call_id, PJSUA_CALL_VID_STRM_START_TRANSMIT);
+                    });
                     // Start video stream
-//                    set_video_stream(call_id, PJSUA_CALL_VID_STRM_REMOVE);
-//                    set_video_stream(call_id, PJSUA_CALL_VID_STRM_ADD);
-//                    set_video_stream(call_id, PJSUA_CALL_VID_STRM_START_TRANSMIT);
-                    
-                    // Setup the current h.263+ configuration
                     
                     NSLog(@"video call: media id : %d\n",mi);
                     
                     pjsua_vid_win_id wid = call_info.media[mi].stream.vid.win_in;
                     
-//                    pjsua_vid_preview_start(call_info.media[mi].stream.vid.cap_dev, NULL);
-//                    int preview_window = pjsua_vid_preview_get_win(call_info.media[mi].stream.vid.cap_dev);
+                    pjsua_vid_preview_start(call_info.media[mi].stream.vid.cap_dev, NULL);
+                    int preview_window = pjsua_vid_preview_get_win(call_info.media[mi].stream.vid.cap_dev);
                     printf("video call: on call state win: %d\n", wid);
-//                    printf("video call: on call state preview: %d\n", preview_window);
+                    printf("video call: on call state preview: %d\n", preview_window);
                 } else {
                     stop_all_vid_previews();
                 }
@@ -920,11 +918,17 @@ static void on_call_media_state(pjsua_call_id call_id)
                 if(is_video_possible(call_id))
                 {
                     isVideo = true;
-                    printf("video call:  mediaState: windows id : %d \n",call_info.media[mi].stream.vid.win_in);
-                    printf("video call:  mediaState: media id : %d \n",mi);
-                    set_video_stream(call_id, PJSUA_CALL_VID_STRM_START_TRANSMIT);
+                    //            setup_video_codec_params();
+                    //
+                    //            // Start video stream
+                    //            set_video_stream(call_id, PJSUA_CALL_VID_STRM_START_TRANSMIT, PJMEDIA_DIR_CAPTURE);
+                    //
+                    //            // Setup the current h.263+ configuration
+                    //
+                    NSLog(@"video call:  mediaState: windows id : %d \n",call_info.media[mi].stream.vid.win_in);
+                    NSLog(@"video call:  mediaState: media id : %d \n",mi);
+
                     pjsua_vid_win_id wid = call_info.media[mi].stream.vid.win_in;
-                    
                     pjsua_vid_preview_start(call_info.media[mi].stream.vid.cap_dev, NULL);
                     int preview_window = pjsua_vid_preview_get_win(call_info.media[mi].stream.vid.cap_dev);
                     printf("video call: on media call state %d\n", preview_window);
@@ -933,7 +937,9 @@ static void on_call_media_state(pjsua_call_id call_id)
                     [dictionary setObject:[NSNumber numberWithInt:wid] forKey:@"streamWindow"];
                 default:
                     break;
-                } else {
+                }
+                else
+                {
                     printf("video call: stop preview");
                     stop_all_vid_previews();
                 }
@@ -1234,6 +1240,7 @@ static pj_status_t set_video_stream(pjsua_call_id call_id, pjsua_call_vid_strm_o
     pjsua_call_vid_strm_op_param param;
     pjsua_call_vid_strm_op_param_default(&param);
     param.cap_dev = PJSUA_SND_DEFAULT_CAPTURE_DEV;
+    param.dir = PJMEDIA_DIR_ENCODING_DECODING;
     pj_status_t status;
     status = pjsua_call_set_vid_strm(call_id, op, &param);
     return status;
