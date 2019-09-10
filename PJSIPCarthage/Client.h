@@ -12,7 +12,7 @@
 #import "pjsua_app_common.h"
 #import "pjsua_internal.h"
 
-int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* scheme, NSString* realm, NSString* username, int passwordType, NSString* passwd, NSString* proxy, int port, int maxCalls);
+int registerSipUser(NSString* sipUser, NSString* sipDomain, NSString* password, NSString* proxy, int port);
 void addSIPUserForCustomerSupport(char *sipUser, char* sipDomain, char* scheme, char* realm, char* username, int passwordType, char* passwd, char* proxy, int port);
 void unregisterAccount(void);
 void unregisterSupportAccount(int acc_id);
