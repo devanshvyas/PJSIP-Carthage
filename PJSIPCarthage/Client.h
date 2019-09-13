@@ -29,3 +29,4 @@ void onSpeaker(BOOL status);
 int sendDTMS(NSString* digits);
 void switchCamera(int call_id, BOOL is_front);
 void pauseStream(int call_id, BOOL is_paused);
+void setup_video_codec_params(void);

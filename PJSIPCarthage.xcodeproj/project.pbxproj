@@ -66,6 +66,9 @@
 		05D97B2222FAAA620094F86C /* pjsip_auth.h in Headers */ = {isa = PBXBuildFile; fileRef = 05D97B0622FAAA620094F86C /* pjsip_auth.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		05D97B2322FAAA620094F86C /* pjmedia-codec in Headers */ = {isa = PBXBuildFile; fileRef = 05D97B0722FAAA620094F86C /* pjmedia-codec */; settings = {ATTRIBUTES = (Public, ); }; };
 		05D97B2422FAAA620094F86C /* pjmedia-videodev in Headers */ = {isa = PBXBuildFile; fileRef = 05D97B0822FAAA620094F86C /* pjmedia-videodev */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A669E9A232B617800644D5B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A669E99232B617800644D5B /* Security.framework */; };
+		1A669E9C232B720500644D5B /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A669E9B232B720500644D5B /* libicucore.tbd */; };
+		1A669E9E232B720B00644D5B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A669E9D232B720B00644D5B /* libz.tbd */; };
 		1A8E6C7D2323B8FF00DC998D /* libpjsua-apple-darwin_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8E6C662323B8FE00DC998D /* libpjsua-apple-darwin_ios.a */; };
 		1A8E6C7E2323B8FF00DC998D /* libpjsua2-apple-darwin_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8E6C672323B8FE00DC998D /* libpjsua2-apple-darwin_ios.a */; };
 		1A8E6C7F2323B8FF00DC998D /* libg7221codec-apple-darwin_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A8E6C682323B8FE00DC998D /* libg7221codec-apple-darwin_ios.a */; };
@@ -176,6 +179,9 @@
 		05D97B0622FAAA620094F86C /* pjsip_auth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = pjsip_auth.h; path = PJSIP/pjsip_auth.h; sourceTree = "<group>"; };
 		05D97B0722FAAA620094F86C /* pjmedia-codec */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "pjmedia-codec"; path = "PJSIP/pjmedia-codec"; sourceTree = "<group>"; };
 		05D97B0822FAAA620094F86C /* pjmedia-videodev */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "pjmedia-videodev"; path = "PJSIP/pjmedia-videodev"; sourceTree = "<group>"; };
+		1A669E99232B617800644D5B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1A669E9B232B720500644D5B /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		1A669E9D232B720B00644D5B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		1A8E6C662323B8FE00DC998D /* libpjsua-apple-darwin_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpjsua-apple-darwin_ios.a"; path = "PODsLibrary/libpjsua-apple-darwin_ios.a"; sourceTree = "<group>"; };
 		1A8E6C672323B8FE00DC998D /* libpjsua2-apple-darwin_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libpjsua2-apple-darwin_ios.a"; path = "PODsLibrary/libpjsua2-apple-darwin_ios.a"; sourceTree = "<group>"; };
 		1A8E6C682323B8FE00DC998D /* libg7221codec-apple-darwin_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libg7221codec-apple-darwin_ios.a"; path = "PODsLibrary/libg7221codec-apple-darwin_ios.a"; sourceTree = "<group>"; };
@@ -216,6 +222,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A669E9E232B720B00644D5B /* libz.tbd in Frameworks */,
+				1A669E9C232B720500644D5B /* libicucore.tbd in Frameworks */,
+				1A669E9A232B617800644D5B /* Security.framework in Frameworks */,
 				1A8E6C9A2323BABF00DC998D /* CoreAudio.framework in Frameworks */,
 				1A8E6C982323BAB000DC998D /* CoreFoundation.framework in Frameworks */,
 				05659C3022FC28D00085E937 /* CFNetwork.framework in Frameworks */,
@@ -324,6 +333,9 @@
 		059C1FCD22FA957E00ED09CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A669E9D232B720B00644D5B /* libz.tbd */,
+				1A669E9B232B720500644D5B /* libicucore.tbd */,
+				1A669E99232B617800644D5B /* Security.framework */,
 				1A8E6C992323BABE00DC998D /* CoreAudio.framework */,
 				1A8E6C972323BAB000DC998D /* CoreFoundation.framework */,
 				1A8E6C742323B8FF00DC998D /* libcrypto.a */,
