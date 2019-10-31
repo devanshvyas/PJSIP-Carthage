@@ -30,3 +30,5 @@ int sendDTMS(NSString* digits);
 void switchCamera(int call_id, BOOL is_front);
 void pauseStream(int call_id, BOOL is_paused);
 void setup_video_codec_params(void);
+void registerThread(void);
+void stop_all_vid_previews(void);

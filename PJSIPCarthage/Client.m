@@ -157,14 +157,15 @@ static void onSdpCreated(pjsua_call_id callId, pjmedia_sdp_session *sdp, pj_pool
 static void on_ip_change_progress(pjsua_ip_change_op op, pj_status_t status, const pjsua_ip_change_op_info *info);
 static void on_nat(const pj_stun_nat_detect_result *result);
 static void on_dtmf(pjsua_call_id call_id, int code);
-
+static void on_call_generic_media_state(pjsua_call_info *ci, unsigned mi,
+                                        pj_bool_t *has_error);
 static bool is_video_possible(pjsua_call_id call_id);
 static pj_status_t search_first_active_call(pjsua_call_id* pcall_id);
 static bool is_audio_active(pjsua_call_id call_id);
 static bool is_video_active(pjsua_call_id call_id);
 static bool is_remote_video_active(pjsua_call_id call_id);
 void setup_video_codec_params(void);
-static void stop_all_vid_previews(void);
+//static void stop_all_vid_previews(void);
 static pj_status_t set_video_stream(pjsua_call_id call_id, pjsua_call_vid_strm_op op, pjmedia_dir dir);
 
 typedef struct _ringtone_port_info {
@@ -863,23 +864,23 @@ static void on_call_media_state(pjsua_call_id call_id)
                         pjsua_vid_dev_set_setting(call_info.media[mi].stream.vid.cap_dev, PJMEDIA_VID_DEV_CAP_ORIENTATION, &current_orient, PJ_TRUE);
                         pjsua_vid_win_id wid = call_info.media[mi].stream.vid.win_in;
                         
-//                        pjmedia_rect_size size;
-//                        size.w = 720;
-//                        size.h = 1280;
-//
-//                        //                    dispatch_async(dispatch_get_main_queue(), ^{
-//                        pjsua_vid_dev_set_setting(call_info.media[mi].stream.vid.cap_dev, PJMEDIA_VID_DEV_CAP_OUTPUT_RESIZE, &size, PJ_TRUE);
-//                        //                    });
-//
-//                        pjmedia_format format;
-//                        format.det.vid.size.w = 720;
-//                        format.det.vid.size.h = 1280;
-//                        pjsua_vid_dev_set_setting(call_info.media[mi].stream.vid.cap_dev, PJMEDIA_VID_DEV_CAP_FORMAT, &format, PJ_TRUE);
-//
-//                        pjmedia_coord coord;
-//                        coord.x = 0;
-//                        coord.y = 0;
-//                        pjsua_vid_dev_set_setting(call_info.media[mi].stream.vid.cap_dev, PJMEDIA_VID_DEV_CAP_OUTPUT_POSITION, &format, PJ_TRUE);
+                        pjmedia_rect_size size;
+                        size.w = 720;
+                        size.h = 1280;
+                        
+                        //                    dispatch_async(dispatch_get_main_queue(), ^{
+                        pjsua_vid_dev_set_setting(call_info.media[mi].stream.vid.cap_dev, PJMEDIA_VID_DEV_CAP_OUTPUT_RESIZE, &size, PJ_TRUE);
+                        //                    });
+                        
+                        pjmedia_format format;
+                        format.det.vid.size.w = 720;
+                        format.det.vid.size.h = 1280;
+                        pjsua_vid_dev_set_setting(call_info.media[mi].stream.vid.cap_dev, PJMEDIA_VID_DEV_CAP_FORMAT, &format, PJ_TRUE);
+                        
+                        pjmedia_coord coord;
+                        coord.x = 0;
+                        coord.y = 0;
+                        pjsua_vid_dev_set_setting(call_info.media[mi].stream.vid.cap_dev, PJMEDIA_VID_DEV_CAP_OUTPUT_POSITION, &format, PJ_TRUE);
                         
                         printf("videostate: inside confirmed state");
                         
@@ -994,25 +995,25 @@ void answerCall(int call_identity)
         static pj_thread_desc a_thread_desc;
         static pj_thread_t *a_thread;
         if (!pj_thread_is_registered()) {
-            pj_thread_register(NULL, a_thread_desc, &a_thread);
+            pj_thread_register("main", a_thread_desc, &a_thread);
         }
 
         pjsua_msg_data messageData;
         pjsua_msg_data_init(&messageData);
-        
+    
         pjsua_call_info call_info;
         pjsua_call_get_info(call_identity, &call_info);
-        
+    
         pjsua_call_setting_default(&call_opt);
         call_opt.aud_cnt = 1;
         call_opt.vid_cnt = is_video_possible(call_identity) ? 1 : 0;
         printf("video available: %d", call_opt.vid_cnt);
-        
+    
         pj_status_t status;
     
         status = pjsua_call_answer2(call_identity, &call_opt,200, NULL, NULL);
         if (status != PJ_SUCCESS) error_exit("Error receiving call", status);
-        
+    
 //        PJSUA_UNLOCK();
 //    });
 }
@@ -1103,13 +1104,8 @@ void setup_video_codec_params(void)
 {
     //Set Video Codec Parameters before this starts transmitting
     
-//    pj_str_t h263_codec_id = {"H264", 4};      //pj_str("H263-1998/96");
-//    pjsua_vid_codec_set_priority(&h263_codec_id, 1);
-    static pj_thread_desc a_thread_desc;
-    static pj_thread_t *a_thread;
-    if (!pj_thread_is_registered()) {
-        pj_thread_register(NULL, a_thread_desc, &a_thread);
-    }
+    pj_str_t h263_codec_id = {"H264", 4};      //pj_str("H263-1998/96");
+    pjsua_vid_codec_set_priority(&h263_codec_id, 2);
     
     pjsua_codec_info vid_codec_ids[32];
     unsigned int vid_codec_count=PJ_ARRAY_SIZE(vid_codec_ids);
@@ -1120,22 +1116,25 @@ void setup_video_codec_params(void)
     for(int i=0;i<vid_codec_count; i++){
         pjmedia_vid_codec_param codec_param;
         pjsua_vid_codec_get_param(&vid_codec_ids[i].codec_id, &codec_param);
-        codec_param.ignore_fmtp = PJ_TRUE;
+//        codec_param.ignore_fmtp = PJ_TRUE;
         
         codec_param.enc_fmt.det.vid.size.w = 320;
         codec_param.enc_fmt.det.vid.size.h = 240;
-//        codec_param.enc_fmt.det.vid.fps.num   = 30;
+//        codec_param.enc_fmt.det.vid.fps.num   = 30000;
 //        codec_param.enc_fmt.det.vid.fps.denum = 1;
-//        codec_param.enc_fmt.det.vid.avg_bps = 512000;
-//        codec_param.enc_fmt.det.vid.max_bps = 1024000;
-//        codec_param.enc_fmt.id = PJMEDIA_FORMAT_I420;
+        codec_param.enc_fmt.det.vid.avg_bps = 512000;
+        codec_param.enc_fmt.det.vid.max_bps = 1024000;
+        codec_param.enc_fmt.id = PJMEDIA_FORMAT_H264;
         
-        codec_param.dec_fmt.det.vid.size.w = 320;
-        codec_param.dec_fmt.det.vid.size.h = 240;
+        codec_param.dec_fmt.det.vid.size.w = 240;
+        codec_param.dec_fmt.det.vid.size.h = 320;
+        codec_param.dec_fmt.det.vid.avg_bps = 512000;
+        codec_param.dec_fmt.det.vid.max_bps = 1024000;
 //        codec_param.dec_fmtp.cnt = 1;
 //        codec_param.dec_fmtp.param[0].name = pj_str("profile-level-id");
 //        codec_param.dec_fmtp.param[0].val = pj_str("42e01f");
-//        codec_param.dec_fmt.id = PJMEDIA_FORMAT_I420;
+        codec_param.dec_fmt.id = PJMEDIA_FORMAT_H264;
+        
         // Set Configuration to codec in codecs list.
         pj_status_t status_codec_set_params = pjsua_vid_codec_set_param(&(vid_codec_ids[i].codec_id), &codec_param);
         
@@ -1152,7 +1151,7 @@ void setup_video_codec_params(void)
     }
 }
 
-static void stop_all_vid_previews()
+void stop_all_vid_previews()
 {
     static const int MAX_DEVS = 10;
     pjmedia_vid_dev_info info_devs[MAX_DEVS];
@@ -1162,10 +1161,9 @@ static void stop_all_vid_previews()
         for(int i=0; i<num_devs; i++)
         {
             pjmedia_vid_dev_info dev_info = info_devs[i];
+            if (dev_info.id == PJMEDIA_VID_DEFAULT_CAPTURE_DEV)
             {
-                printf("preview stop");
-                pjsua_vid_preview_param vid_preview_param;
-                pjsua_vid_preview_param_default(&vid_preview_param);
+                printf("preview stop id: %d \n", dev_info.id);
                 //pjsua_vid_preview_start(dev_info.id, &vid_preview_param);
                 pjsua_vid_preview_stop(dev_info.id);
             }
@@ -1183,4 +1181,35 @@ static pj_status_t set_video_stream(pjsua_call_id call_id, pjsua_call_vid_strm_o
     param.cap_dev = PJMEDIA_VID_DEFAULT_CAPTURE_DEV;
     printf("MyLogger: In set video stream:");
     return pjsua_call_set_vid_strm(call_id, op, &param);
+}
+
+void registerThread(void) {
+    static pj_thread_desc a_thread_desc1;
+    static pj_thread_t *a_thread1;
+    static pj_thread_desc a_thread_desc2;
+    static pj_thread_t *a_thread2;
+    if (!pj_thread_is_registered()) {
+        pj_thread_register("mainthread", a_thread_desc1, &a_thread1);
+        pj_thread_set_prio(a_thread1, pj_thread_get_prio_max(a_thread1));
+        pj_thread_register("ipjsua", a_thread_desc2, &a_thread2);
+        pj_thread_set_prio(a_thread1, pj_thread_get_prio_max(a_thread2));
+    }
+}
+
+/* General processing for media state. "mi" is the media index */
+static void on_call_generic_media_state(pjsua_call_info *ci, unsigned mi,
+                                        pj_bool_t *has_error)
+{
+    const char *status_name[] = {
+        "None",
+        "Active",
+        "Local hold",
+        "Remote hold",
+        "Error"
+    };
+    
+    PJ_UNUSED_ARG(has_error);
+    
+    pj_assert(ci->media[mi].status <= PJ_ARRAY_SIZE(status_name));
+    pj_assert(PJSUA_CALL_MEDIA_ERROR == 4);
 }
