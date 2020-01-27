@@ -1,4 +1,4 @@
-# TimelineView
+# PJSIP-Carthage
 
 Carthage support for PJSIP (https://github.com/chebur/pjsip)
 
