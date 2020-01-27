@@ -4,6 +4,7 @@ Carthage support for PJSIP (https://github.com/chebur/pjsip)
 
 ## Installation
 Add the following line to your ```Cartfile``` and run ```carthage update``` command.
+
 ```github "devanshvyas/PJSIP-Carthage" ~> 1.0```
 
 ## Requirements
